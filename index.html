@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Document</title>
+    <meta
+      name="description"
+      content="沖縄の美しい自然と優雅なラグジュアリーが融合するゴールデンホテル那覇で、至福のリゾート体験を堪能しませんか？贅沢な客室、絶景を望むプライベートビーチ、そしてワールドクラスのサービスが、心に残る旅の思い出を演出します。日常の喧騒を忘れ、極上のくつろぎと幸福を求める方々にとって、理想的な癒しのオアシスとなることでしょう。"
+    />
+    <meta name="keywords" content="ゴールデンホテル那覇" />
+    <!-- ogp -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="ゴールデンホテル那覇 ｜ 沖縄の那覇に本格的なラグジュアリーホテルが誕生"
+    />
+    <meta property="og:url" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:site_name" content="わくわくこども園" />
+    <meta
+      property="og:description"
+      content="沖縄の美しい自然と優雅なラグジュアリーが融合するゴールデンホテル那覇で、至福のリゾート体験を堪能しませんか？贅沢な客室、絶景を望むプライベートビーチ、そしてワールドクラスのサービスが、心に残る旅の思い出を演出します。日常の喧騒を忘れ、極上のくつろぎと幸福を求める方々にとって、理想的な癒しのオアシスとなることでしょう。"
+    />
+    <!-- Favicon -->
+    <!-- <link rel="icon" href=""> -->
+    <!-- Google Fonts -->
+    <!-- css -->
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <header>
+      <div class="header__container">
+        <h1 class="header__logo">
+          <img src="img/logo.png" alt="">
+        </h1>
+        <div class="header__search">
+          <img src="img/Frame.svg" alt="">
+          <h3 class="header__title">空室・プラン検索</h3>
+        </div>
+        <div class="header__menu">
+          <div class="openbtn">
+            <span></span><span></span><span></span>
+          </div>
+          <h3 class="header__title">MENU</h3>
+          <nav id="g-nav">
+            <div class="menu__flex">
+
+            </div>
+            <!-- /.menu__flex -->
+          </nav>
+          <!-- /#g-nav -->
+        </div><!-- /.header__menu -->
+      </div><!-- /.header__container -->
+    </header>
+    <main>
+      <div id="mainvisual">
+        <img src="img/unsplash_UFhM8kMuQbo.jpg" alt="" class="mv-1">
+      </div>      <!-- /#mainvisual -->
+      <div class="tab__wrapper">
+        <ul class="tab">
+          <li class="active"><a href="#stay" class="icon-before-tab icon-before-tab--stay">宿泊</a></li>
+          <li><a href="#ticket" class="icon-before-tab icon-before-tab--ticket">航空券＋宿泊</a></li>
+          <li><a href="#restaurant" class="icon-before-tab icon-before-tab--restaurant">レストラン予約</a></li>
+        </ul>
+        <section id="stay" class="area">
+          <ul class="gnavi__list">
+            <li class="stay__checkin">
+              <legend>チェックイン日</legend>
+              <div class="stay_calendar"></div>
+            </li>
+            <li class="stay__notdecided">
+              <legend>日付未定</legend>
+              <div class="checkbox">
+                <input type="checkbox" name="notdecided" id="notdecided">
+              </div>
+
+            </li>
+            <li class="stay__duration">
+              <legend>泊数</legend>
+              <select name="stay__duration" id="stay__duration" class="dropdown">
+                <option value="1">１泊</option>
+                <option value="2">２泊</option>
+                <option value="3">３泊</option>
+              </select>
+            </li>
+            <li class="stay__adults">
+              <legend>大人</legend>
+              <select name="stay__adults" id="stay__adults" class="dropdown">
+                <option value="0">０人</option>
+                <option value="1">１人</option>
+                <option value="2">２人</option>
+                <option value="3">３人</option>
+              </select>
+            </li>
+            <li class="stay__children">
+              <legend>子供</legend>
+              <select name="stay__children" id="stay__children" class="dropdown">
+                <option value="0">０人</option>
+                <option value="1">１人</option>
+                <option value="2">２人</option>
+                <option value="3">３人</option>
+              </select>
+            </li>
+            <li class="stay__rooms">
+              <legend>室数</legend>
+              <select name="stay__rooms" id="stay__rooms" class="dropdown">
+                <option value="1">１室</option>
+                <option value="2">２室</option>
+                <option value="3">３室</option>
+              </select>
+            </li>
+            <div class="stay__search"><a href="" class="search-button">この条件で検索</a></div>
+          </ul>
+        </section>
+        <section id="ticket" class="area">
+          <ul>
+            <li class="ticket__departure"></li>
+            <li class="ticket__checkin-date"></li>
+            <li class="ticket__duration"></li>
+            <li class="ticket__adults"></li>
+            <li class="ticket__children"></li>
+            <li class="ticket__search"></li>
+          </ul>
+        </section>
+        <section id="restauant" class="area">
+          <li class="restaurant__date"></li>
+          <li class="restaurant__restaurant"></li>
+          <li class="restaurant__time"></li>
+          <li class="restaurant__adults"></li>
+          <li class="restaurant__children"></li>
+          <li class="restaurant__search"></li>
+        </section>
+      </div>      <!-- /.tab__wrapper -->
+
+<footer>
+
+</footer>
+    </main>
+  </body>
+</html>
