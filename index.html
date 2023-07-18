@@ -61,9 +61,9 @@
       <div id="mainvisual">
         <img src="img/unsplash_UFhM8kMuQbo.jpg" alt="" class="mv-1">
       </div>      <!-- /#mainvisual -->
-      <div class="tab__wrapper">
+      <div id="tab-selector" class="tab__wrapper">
         <ul class="tab">
-          <li class="active"><a href="#stay" class="icon-before-tab icon-before-tab--stay">宿泊</a></li>
+          <li><a href="#stay" class="icon-before-tab icon-before-tab--stay">宿泊</a></li>
           <li><a href="#ticket" class="icon-before-tab icon-before-tab--ticket">航空券＋宿泊</a></li>
           <li><a href="#restaurant" class="icon-before-tab icon-before-tab--restaurant">レストラン予約</a></li>
         </ul>
@@ -71,12 +71,13 @@
           <ul class="gnavi__list">
             <li class="stay__checkin">
               <legend>チェックイン日</legend>
-              <div class="stay_calendar"></div>
+              <input type="date" name="checkin" id="stay-today" class="stay__calendar">
+          
             </li>
             <li class="stay__notdecided">
               <legend>日付未定</legend>
-              <div class="checkbox">
-                <input type="checkbox" name="notdecided" id="notdecided">
+              <div class="checkbox__container">
+                <input type="checkbox" name="notdecided" id="notdecided" class="stay__checckbox">
               </div>
 
             </li>
@@ -118,28 +119,132 @@
           </ul>
         </section>
         <section id="ticket" class="area">
-          <ul>
-            <li class="ticket__departure"></li>
-            <li class="ticket__checkin-date"></li>
-            <li class="ticket__duration"></li>
-            <li class="ticket__adults"></li>
-            <li class="ticket__children"></li>
-            <li class="ticket__search"></li>
+          <ul class="gnavi__list">
+            <li class="ticket__departure">
+              <legend>出発空港</legend>
+              <select name="ticket__departure" id="ticket__departure" class="dropdown">
+                <option value="1">東京（羽田・成田）</option>
+                <option value="2">札幌</option>
+                <option value="3">仙台</option>
+                <option value="4">新潟</option>
+                <option value="5">長野</option>
+                <option value="6">名古屋（中部・小牧）</option>
+                <option value="7">大阪（伊丹・関西）</option>
+                <option value="8">高松</option>
+                <option value="9">広島</option>
+                <option value="10">福岡</option>
+              </select>
+            </li>
+            <li class="ticket__checkin">
+              <legend>チェックイン日</legend>
+              <input type="date" name="checkin" id="ticket-today" class="ticket__calendar">
+            </li>
+            <li class="ticket__duration">
+              <legend>泊数</legend>
+              <select name="ticket__duration" id="ticket__duration" class="dropdown">
+                <option value="1">１泊</option>
+                <option value="2">２泊</option>
+                <option value="3">３泊</option>
+              </select>
+            </li>
+            <li class="ticket__adults">
+              <legend>大人</legend>
+              <select name="ticket__adults" id="ticket__adults" class="dropdown">
+                <option value="0">０人</option>
+                <option value="1">１人</option>
+                <option value="2">２人</option>
+                <option value="3">３人</option>
+              </select>
+            </li>
+            <li class="ticket__children">
+              <legend>子供</legend>
+              <select name="ticket__children" id="ticket__children" class="dropdown">
+                <option value="0">０人</option>
+                <option value="1">１人</option>
+                <option value="2">２人</option>
+                <option value="3">３人</option>
+              </select>
+            </li>
+            <li class="ticket__search"><a href="" class="search-button">この条件で検索</a></li>
           </ul>
         </section>
-        <section id="restauant" class="area">
-          <li class="restaurant__date"></li>
-          <li class="restaurant__restaurant"></li>
-          <li class="restaurant__time"></li>
-          <li class="restaurant__adults"></li>
-          <li class="restaurant__children"></li>
-          <li class="restaurant__search"></li>
-        </section>
+        <section id="restaurant" class="area">
+          <ul class="gnavi__list">
+
+            <li class="restaurant__date">
+              <legend>レストランご利用日</legend>
+              <input type="date" name="reservation" id="restaurant-today" class="restaurant__calendar">
+            </li>
+            <li class="restaurant__site">
+              <legend>ご利用レストラン</legend>
+              <select name="restaurant__site" id="restaurant__site" class="dropdown">
+                <option value="0">オールデイダイニング</option>
+                <option value="1">ロビーラウンジ</option>
+                <option value="2">メインバー </option>
+                <option value="3">中華料理</option>
+                <option value="4">鉄板焼</option>
+                <option value="5">日本料理</option>
+              </select>
+            </li>
+            <li class="restaurant__time">
+              <legend>時間</legend>
+              <select name="restaurant__time" id="restaurant__time" class="dropdown">
+                <option value="0">１０：００</option>
+                <option value="1">１１：００</option>
+                <option value="2">１２：００</option>
+                <option value="3">１３：００</option>
+                <option value="4">１４：００</option>
+                <option value="5">１５：００</option>
+                <option value="6">１６：００</option>
+                <option value="7">１７：００</option>
+                <option value="8">１８：００</option>
+                <option value="9">１９：００</option>
+                <option value="10">２０：００</option>
+              </select>
+            </li>
+            <li class="restaurant__adults">
+              <legend>大人</legend>
+              <select name="restaurant__adults" id="restaurant__adults" class="dropdown">
+                <option value="0">０人</option>
+                <option value="1">１人</option>
+                <option value="2">２人</option>
+                <option value="3">３人</option>
+              </select>
+            </li>
+            <li class="restaurant__children">
+              <legend>子供</legend>
+              <select name="restaurant__children" id="restaurant__children" class="dropdown">
+                <option value="0">０人</option>
+                <option value="1">１人</option>
+                <option value="2">２人</option>
+                <option value="3">３人</option>
+              </select>
+            </li>
+            <li class="restaurant__search"><a href="" class="search-button">この条件で検索</a></li>
+          </ul>
+          </section>
       </div>      <!-- /.tab__wrapper -->
 
 <footer>
 
 </footer>
     </main>
+    <script type="text/javascript">
+      var date = new Date();
+          var yyyy = date.getFullYear();
+          var mm = ("0"+(date.getMonth()+1)).slice(-2);
+          var dd = ("0"+date.getDate()).slice(-2);
+      document.getElementById("stay-today").value=yyyy+'-'+mm+'-'+dd;
+      document.getElementById("ticket-today").value=yyyy+'-'+mm+'-'+dd;
+      document.getElementById("restaurant-today").value=yyyy+'-'+mm+'-'+dd;
+    </script>   
+        <!-- jQuery -->
+        <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"
+      ></script>
+      <!--自作のJS-->
+      <script src="js/main.js"></script>
   </body>
 </html>

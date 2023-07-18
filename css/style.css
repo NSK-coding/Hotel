@@ -89,6 +89,7 @@ footer {
   transition: all .3s;
 
 }
+.gnavi__list li:focus,
 .gnavi__list li:hover {
   opacity: 0.7;
 }
@@ -114,3 +115,50 @@ footer {
 .search-button {
 
 }
+.restaurant__calendar,
+.ticket__calendar,
+.stay__calendar {
+  width: 100%;
+  height: 60px;
+  color: white;
+  padding-left: 2em;
+  background-color: var(--color-accent);
+}
+.checkbox__container {
+  width: 100%;
+  height: 60px;
+  background-color: var(--color-accent);
+}
+.stay__checckbox::before {
+  top: 20px;/*ボックスの位置調整*/
+  left: 25px;/*ボックスの位置調整*/
+}
+.stay__checckbox::after {
+  top: -7px;/*チェック時の位置調整*/
+  left: 10px;/*チェック時の位置調整*/
+}
+.ticket__checkin,
+.ticket__departure {
+  width: 40%;
+}
+.ticket__children,
+.ticket__adults,
+.ticket__duration {
+  width: 30%;
+}
+.restaurant__date,
+.restaurant__site {
+  width: 40%;
+}
+
+.restaurant__children,
+.restaurant__adults,
+.restaurant__time {
+  width: 30%;
+}
+
+
+
+
+
+

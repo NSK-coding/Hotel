@@ -82,6 +82,67 @@ background-size: contain;
   height: 6px;
   background-color: white;
 }
+
+/*エリアの表示非表示と形状*/
+.area {
+  display: none;/*はじめは非表示*/
+  opacity: 0;/*透過0*/
+  background: #fff;
+  /* padding:50px 20px; */
+}
+
+/*areaにis-activeというクラスがついた時の形状*/
+.area.is-active {
+    display: block;/*表示*/
+    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes displayAnime{
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+/* || Calendar Styles */
+input[type="date"] {
+  position: relative;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  background: transparent;
+  z-index: 1;
+}
+input[type="date"]::after {
+  content: '';
+  background-image: url(../img/calendar.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 0;
+  width: 1.6em;
+  height: 1.6em;
+  position: absolute;
+  top: 50%;
+  right: 3em;
+  transform: translateY(-50%);
+}
+
+
+
+
+
 /* || Checkbox Styles */
 /*リセット */
 input[type="checkbox"]  {
@@ -97,11 +158,7 @@ input[type="checkbox"]  {
 }
 
 /* チェックボックスデザイン */
-.checkbox {
-  width: 100%;
-  height: 60px;
-  background-color: var(--color-accent);
-}
+
 input[type="checkbox"] {
   cursor: pointer;
   padding-left: 30px;/*label手前にチェックボックス用の余白を開ける*/
@@ -121,8 +178,7 @@ input[type="checkbox"]::before {
   width: 30px;/*チェックボックスの横幅*/
   height: 30px;/*チェックボックスの縦幅*/
   transform: translateY(-50%);
-  top: 20px;
-  left: 25px;
+
 }
 input[type="checkbox"]::after {
   border-bottom: 2px solid white;/*チェックの太さ*/
@@ -131,8 +187,7 @@ input[type="checkbox"]::after {
   height: 6px;/*チェックの高さ*/
   width: 11px;/*チェックの横幅*/
   transform: rotate(-45deg);
-  top: -7px;/*チェック時の位置調整*/
-  left: 10px;/*チェック時の位置調整*/
+
 }
 input[type="checkbox"]:checked::after {
   opacity: 1;/*チェック後表示*/
