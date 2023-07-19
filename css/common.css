@@ -6,6 +6,7 @@
   --color-base: #eac375;
   --color-main: #3b5e92;
   --color-accent: #8f9eb5;
+  --color-content-bg: rgb(143, 158, 181, 0.6);
   --color-body-bg: #ffffff;
   --color-body-txt: #000000;
   /* --color-btn-bg: #e9654b;
@@ -37,6 +38,17 @@ img {
 }
 li {
   list-style: none;
+}
+
+.section__title {
+  display: block;
+  text-align: center;
+}
+.section__subtitle{
+  display: block;
+}
+.content__titile {
+  text-align: left;
 }
 
 /* || UTILITIES */
@@ -229,9 +241,13 @@ pointer-events: none;
   padding: 2em 3em;
   /* width: 346px; */
   border-radius: 22px;
-
   color: white;
   background-color: var(--color-base);
+  border: 1px solid #ccc;
+  outline: none;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2), 0 0 40px rgba(128, 128, 128, 0.1);
+  /*アニメーションの設定*/
+  transition: all .3s;
 }
 .search-button::before {
   display: inline-block;
@@ -243,7 +259,12 @@ pointer-events: none;
   background-image: url(../img/Frame.svg);
   transform: translateY(30%);
 }
-
+/*hoverをしたらボックスの影が拡がり色が濃くなる*/
+.search-button:focus,
+.search-button:hover {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1) ;
+  border-color: transparent;
+}
 
 
 .btn04 {
@@ -254,7 +275,6 @@ pointer-events: none;
   padding: 10px 30px;
   width: 400px;
   height: 60px;
-  color: #333;
   border: 1px solid #ccc;
   text-decoration: none;
   outline: none;
@@ -264,7 +284,7 @@ pointer-events: none;
 
 /*hoverした際のボタンの形状*/
 .btn04:hover {
-  color: #ccc;
+  color: white;
   border-color: transparent;
   /*色の変化を遅らせる*/
   transition-delay: 0.6s;
@@ -294,7 +314,7 @@ pointer-events: none;
   width: 0;
   height: 1px;
   /*線の形状*/
-  background: #333;
+  background: var(--color-accent);
   /*アニメーションの設定*/
   transition: all 0.3s;
 }
@@ -328,7 +348,7 @@ pointer-events: none;
   /*背景の形状*/
   height: 100%;
   width: 0;
-  background: #333;
+  background: var(--color-accent);
   /*アニメーションの設定*/
   transition: all 0.3s;
 }
@@ -343,32 +363,194 @@ pointer-events: none;
 /* || Card Styles */
 .card {
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+
 }
+
 .card__img-wrapper {
   position: relative;
   padding-top: 56.25%;
+  padding-top: 66.25%;
   overflow: hidden;
+
 }
 .card__img {
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
   width: 100%;
-  transform: translateY(-50%);
+  /* transform: translateY(-50%); */
+  top: 0;
+  left: 0;
 }
 .card__body {
   padding: 15px;
+  color: black;
 }
 .card__body > *:last-child {
   margin-bottom: 0;
+}
+.card__date {
+  color: black;
 }
 .card__title {
   margin-bottom: 5px;
   font-size: 1.125rem;
   font-weight: bold;
 }
-.card__txt {
-  color: #777;
+.card__text {
+  color: black;
 }
 /* || SLIDER  */
+
+.card {
+      /* dim unselected */
+      opacity: 0.7;
+      -webkit-transform: scale(0.85);
+              transform: scale(0.85);
+      -webkit-filter: blur(5px);
+              filter: blur(5px);
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+              transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+}
+/* brighten selected  */
+.card.is-selected {
+  opacity: 1;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  -webkit-filter: none;
+          filter: none;
+}
+.flickity-page-dots{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: -8%;
+}
+.flickity-page-dots .dot {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  background-color: white;
+
+}
+/* fill-in selected dot */
+.flickity-page-dots .dot.is-selected {
+  width: 12px;
+  height: 12px;
+  background: var(--color-base);
+}
+/* || Scroll Styles  */
+.scroll {
+  width: 10vw;
+  height: 10vw;
+  margin: 10vw auto;
+  border-top: 2px solid black;
+  border-right: 2px solid black;
+  transform: rotateZ(-45deg);
+}
+
+/* || MENU  */
+  /*==================================================
+　5-2-4 MENUがCLOSEに
+===================================*/
+
+  /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+  .openbtn {
+    /*ボタン内側の基点となるためrelativeを指定。
+追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
+    position: relative;
+    z-index: 9999;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+  }
+
+  /*ボタン内側*/
+  .openbtn span {
+    display: inline-block;
+    transition: all 0.4s; /*アニメーションの設定*/
+    position: absolute;
+    left: 14px;
+    height: 2px;
+    border-radius: 5px;
+    background: #fff;
+    width: 45%;
+  }
+
+  .openbtn span:nth-of-type(1) {
+    top: 13px;
+  }
+
+  .openbtn span:nth-of-type(2) {
+    top: 19px;
+  }
+
+  .openbtn span:nth-of-type(3) {
+    top: 25px;
+  }
+
+  .openbtn span:nth-of-type(3)::after {
+    content: "Menu"; /*3つ目の要素のafterにMenu表示を指定*/
+    position: absolute;
+    top: 5px;
+    left: -2px;
+    color: #fff;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+  }
+
+  /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+
+  .openbtn.active span:nth-of-type(1) {
+    top: 14px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+  }
+
+  .openbtn.active span:nth-of-type(2) {
+    opacity: 0;
+  }
+
+  .openbtn.active span:nth-of-type(3) {
+    top: 26px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+  }
+
+  .openbtn.active span:nth-of-type(3)::after {
+    content: "Close"; /*3つ目の要素のafterにClose表示を指定*/
+    transform: translateY(0) rotate(-45deg);
+    top: 5px;
+    left: 4px;
+  }
+
+  /*========= ナビゲーションのためのCSS ===============*/
+
+  #g-nav {
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position: fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+    /* top: -120%; */
+    top: 0;
+    left: 0;
+    opacity: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url(../img/AdobeStock_93456281_sp.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /*動き*/
+    transition: all 1.6s;
+  }
+
+  /*アクティブクラスがついたら位置を0に*/
+  #g-nav.panelactive {
+    /* top: 0; */
+    opacity: 1;
+  }
 
 /* || ANIMATIONS  */

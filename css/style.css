@@ -15,12 +15,21 @@
   width: 134px;
   background-color: var(--color-base);
   margin-left: auto;
+  position: relative;
   /* margin-right: 0; */
 }
 .header__search img {
   width: 60%;
   margin-top: 10px;
 
+}
+.header__search::after {
+  content: "空室・プラン検索"; 
+  position: absolute;
+  bottom: 15px;
+  left: 10px;
+  color: #fff;
+  font-size: 1.4rem;
 }
 .header__title {
   color: white;
@@ -157,8 +166,228 @@ footer {
   width: 30%;
 }
 
+.topics__wrapper {
+  width: 100%;
+  height: 1037px;
+  background-image: url(../img/topic.webp);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  margin-top: 10%;
+  color: white;
+}
+.gallery {
+  /* border: 1px solid red; */
+}
+
+
+.topics__card {
+  width: 56.8%;
+  height: 546px;
+  margin-right: 100px;
+  background-color: white;
+
+}
 
 
 
 
+.topics__button {
+  margin-top: 100px;
+  color: white;
+}
 
+.story__title {
+  text-align: center;
+}
+.story__image {
+  position: relative;
+  width: 90%;
+  height: auto;
+}
+.story__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: var(--color-content-bg);
+  color: white;
+  width: 90%;
+  height: 100%;
+}
+.cuisine__wrapper {
+  width: 100%;
+  padding: 0 50px;
+}
+.cuisine__title {
+
+}
+.cuisine__flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 2%;
+}
+.cuisine__visual {
+  width: 49%;
+  position: relative;
+}
+.cuisine__restaurant {
+  position: absolute;
+  left: 0;
+  bottom: 10%;
+  background-color: rgba(255, 255, 255, 0.67);
+  width: 80%;
+  height: 4rem;
+  text-align: center;
+  line-height: 4rem;
+}
+.special__wrapper {
+  margin-top: 10vw;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/Special_bg_sp.webp);
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.special__title {
+  color: var(--color-base);
+}
+.special__image {
+  width: 85%;
+  margin: 5vw 0 0 auto;
+  position: relative;
+}
+.special__container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 90%;
+  height: 100%;
+  background-color: var(--color-content-bg);
+  color: white;
+  padding: 5%;
+
+}
+.fitness__images {
+  position: relative;
+}
+.fitness__gallery {
+  display: flex;
+  justify-content: center;
+  gap: 0 2%;
+  position: absolute;
+  bottom: -20%;
+}
+.fitness__pic {
+  width: 28%;
+}
+.wedding__wrapper {
+  position: relative;
+  margin-top: 25vw;
+}
+.wedding__title {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  background-color: var(--color-content-bg);
+  padding: 5%;
+}
+.wedding__chapel {
+  position: absolute;
+  width: 70%;
+  bottom: 0;
+  right: 0;
+}
+
+.event__wrapper {
+  margin-top: 10vw;
+  width: 100%;
+  height: 100vh;
+  background-image: url(../img/Special_bg_sp.webp);
+  background-position: right;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.event__title {
+  color: var(--color-base);
+}
+.event__image {
+  width: 85%;
+  margin: 5vw auto 0 0;
+  position: relative;
+}
+.event__container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 100%;
+  background-color: var(--color-content-bg);
+  color: white;
+  padding: 5%;
+
+}
+.footer__caption {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto;
+}
+.footer__info {
+  position: relative;
+  padding: 2%;
+}
+.footer__info::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 1px;
+  height: 2em;
+  background-color: black;
+}
+.footer__info:last-child::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 1px;
+  height: 2em;
+  background-color: black;
+}
+.footer__sns {
+  display: flex;
+  justify-content: space-between;
+  width: 60%;
+  margin: 4vw auto;
+}
+.footer__sns a {
+  display: block;
+  width: 4rem;
+  height: 4rem;
+}
+.footer__facebook {
+  background: url('https://api.iconify.design/ri/facebook-fill.svg') no-repeat center center / contain;
+}
+.footer__instagram {
+  background: url('https://api.iconify.design/mdi/instagram.svg') no-repeat center center / contain;
+}
+.footer__twitter {
+  background: url('https://api.iconify.design/mdi/twitter.svg') no-repeat center center / contain;
+}
+.footer__youtube {
+  background: url('https://api.iconify.design/mdi/youtube.svg') no-repeat center center / contain;
+}
+.footer__last {
+  width: 100%;
+  background-color: var(--color-main);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  text-align: right;
+  padding: 4vw 4vw 0;
+}
+.footer__logo {
+  width: 30%;
+}

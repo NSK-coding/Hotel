@@ -27,6 +27,7 @@
     <!-- <link rel="icon" href=""> -->
     <!-- Google Fonts -->
     <!-- css -->
+    <link rel="stylesheet" href="css/flickity.min.css" media="screen">
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/style.css" />
@@ -40,13 +41,11 @@
         </h1>
         <div class="header__search">
           <img src="img/Frame.svg" alt="">
-          <h3 class="header__title">空室・プラン検索</h3>
         </div>
         <div class="header__menu">
           <div class="openbtn">
             <span></span><span></span><span></span>
           </div>
-          <h3 class="header__title">MENU</h3>
           <nav id="g-nav">
             <div class="menu__flex">
 
@@ -224,9 +223,220 @@
           </ul>
           </section>
       </div>      <!-- /.tab__wrapper -->
+<article id="topics">
+  <div class="topics__wrapper">
+    <h2 class="section__title">Topics<span class="section__subtitle">お知らせ・イベント情報</span></h2>
 
+    <ul class="gallery js-flickity" data-flickity-options='{"": "", "prevNextButtons": false }'>
+      <li class="topics__card card">
+        <figure class="card__img-wrapper">
+          <img src="img/firework.webp" alt="" class="card__img">
+        </figure>
+        <div class="card__body">
+          <time datetime="2023-07-01" class="card__date">2023/7/1</time>
+          <h3 class="card__title">花火大会のお知らせ</h3>
+          <p class="card__text">毎年恒例の、花火大会が近づいてまいりました。<br>
+            毎週金・土曜日の20時より打ち上げいたしますので、ぜひご鑑賞くださいませ。<br>
+            また、１Fプールサイドには屋台も出ますので、夏祭り気分をお楽しみください。</p>
+        </div>
+      </li>
+      <li class="topics__card card">
+        <figure class="card__img-wrapper">
+          <img src="img/food.webp" alt="" class="card__img">
+        </figure>
+        <div class="card__body">
+          <time datetime="2023-06-20" class="card__date">2023/6/20</time>
+          <h3 class="card__title">オールデイダイニング・夏期メニュー</h3>
+          <p class="card__text">オールデイダイニングでは、7/1より夏期メニューにリニューアルいたします。<br>
+            BBQの雰囲気が味わえるライブキッチンもございますので、ぜひご利用ください。</p>
+        </div>
+      </li>
+      <li class="topics__card card">
+        <figure class="card__img-wrapper">
+          <img src="img/shark.webp" alt="" class="card__img">
+        </figure>
+        <div class="card__body">
+          <time datetime="2023-06-01" class="card__date">2023/6/1</time>
+          <h3 class="card__title">限定プランのお知らせ</h3>
+          <p class="card__text">本日より、夏限定プランを販売いたします。<br>
+            毎年人気のアクティビティか近隣施設の入場券のついたプランとなっております。公式サイト限定のプランとなっておりますので、ぜひご利用くださいませ。</p>
+        </div>
+      </li>
+      <li class="topics__card card">
+        <figure class="card__img-wrapper">
+
+        </figure>
+        <div class="card__body">
+          <time datetime="2023-07-01" class="card__date">2023/7/1</time>
+          <h3 class="card__title"></h3>
+          <p class="card__text"></p>
+        </div>
+      </li>
+      <li class="topics__card card">
+        <figure class="card__img-wrapper">
+
+        </figure>
+        <div class="card__body">
+          <time datetime="2023-07-01" class="card__date">2023/7/1</time>
+          <h3 class="card__title"></h3>
+          <p class="card__text"></p>
+        </div>
+      </li>
+    </ul>
+    <div><a href="#" class="topics__button btn04 borderleft"><span>View More</span></a></div>
+  </div>     <!-- /.topics__wrapper -->
+</article>
+<article id="story">
+  <div class="story__titile">
+    <h2 class="section__title">Story<span class="section__subtitle">私たちができる5つのこと</span></h2>
+  </div>
+
+  <div class="story__image">
+    <img src="img/AdobeStock_348383908_sp.webp" alt="">
+    <div class="story__container">
+      <h3 class="story__titile content__titile">最高のロケーションとおもてなしで叶える<br>思い出のホテルステイ</h3>
+      <div class="story__content">
+              <p>『お客様に最高の思い出を作ってほしい』<br>私たちはそんな願いを持って、お客様との時間を大切にしています。<br>お客様にお約束する、５つのホスピタリティをのぞいてみませんか。</p>
+      </div>
+      <div><a href="#" class="story__button btn04 borderleft"><span>View More</span></a></div>
+    </div>
+  </div> <!-- /.story__image -->
+</article>
+<article id="cuisine" class="cuisine__wrapper">
+  <div class="cuisine__titile">
+    <h2 class="section__title">Cuisine<span class="section__subtitle">お食事</span></h2>
+  </div>
+  <ul class="cuisine__flex">
+    <li class="cuisine__visual">
+      <img src="img/dining.webp" alt="">
+      <h4 class="cuisine__restaurant">10階　オールデイダイニング</h4>
+    </li>
+    <li class="cuisine__visual">
+      <img src="img/lounge.webp" alt="">
+      <h4 class="cuisine__restaurant">10階　ロビーラウンジ</h4>
+    </li>
+    <li class="cuisine__visual">
+      <img src="img/bar.webp" alt="">
+      <h4 class="cuisine__restaurant">10階　メインバー</h4>
+    </li>
+    <li class="cuisine__visual">
+      <img src="img/chinese_food.webp" alt="">
+      <h4 class="cuisine__restaurant">12階　中華料理</h4>
+    </li>
+    <li class="cuisine__visual">
+      <img src="img/teppan.webp" alt="">
+      <h4 class="cuisine__restaurant">12階　鉄板焼</h4>
+    </li>
+    <li class="cuisine__visual">
+      <img src="img/Japanese_food.webp" alt="">
+      <h4 class="cuisine__restaurant">12階　日本料理</h4>
+    </li>
+  </ul>
+</article>
+<article id="special">
+  <div class="special__wrapper">
+    <div class="special__title">
+      <h2 class="section__title">Special Floor<span class="section__subtitle">ワンランク上のご宿泊を</span></h2>
+    </div>
+    <div class="special__image">
+      <img src="img/Special_floor_sp.webp" alt="">
+      <div class="special__container">
+        <h3 class="special__titile content__titile">当館自慢のロケーションで<br>ワンランク上の非日常をご体感ください</h3>
+        <div class="special__content">
+                <p>スペシャルフロアではお食事のご予約から、お出かけのお手伝いまでコンシェルジュがサポートいたします。 また海側の絶景を楽しめるお部屋を確約しております。</p>
+        </div>
+        <div><a href="#" class="special__button btn04 borderleft"><span>View More</span></a></div>
+      </div>
+    </div> <!-- /.special__image -->
+  </div>  <!-- /.special__wrapper -->
+</article>
+<article id="fitness" class="fitness__flex">
+  <div class="fitness__container">
+    <div class="fitness__title">
+      <h2 class="section__title">Fitness<span class="section__subtitle">フィットネスエリア</span></h2>
+    </div>
+    <div class="fitness__description">
+      <p>当館18階にあるフィットエリアには、多彩なトレーニングマシンを完備。<br>また屋内プールや大浴場、サウナも楽しめます。</p>
+    </div>
+    <div><a href="#" class="fitness__button btn04 borderleft"><span>View More</span></a></div>
+  </div> <!-- /.fitness__container -->
+  <div class="fitness__images">
+    <img src="img/gym_sp.webp" alt="">
+    <div class="fitness__gallery">
+      <div class="fitness__pic">
+        <img src="img/fitness-1_sp.webp" alt="プール">
+      </div>
+      <div class="fitness__pic">
+        <img src="img/fitness-2_sp.webp" alt="大浴場">
+      </div>
+      <div class="fitness__pic">
+        <img src="img/fitness-3_sp.webp" alt="サウナルーム">
+      </div>
+    </div>
+  </div>
+</article>
+<article id="wedding">
+  <div class="wedding__wrapper">
+    <img src="img/wedding_sp.webp" alt="">
+    <div class="wedding__title">
+      <h2 class="section__title">Wedding<span class="section__subtitle">一生忘れられない思い出を</span></h2>
+    </div>
+    <div class="wedding__chapel">
+      <img src="img/chapel_sp.webp" alt="">
+    </div>
+  </div>
+</article>
+<article id="event">
+  <div class="event__wrapper">
+    <div class="event__title">
+      <h2 class="section__title">Event&Meeting<span class="section__subtitle">宴会場・会議室</span></h2>
+    </div>
+    <div class="event__image">
+      <img src="img/event_sp.webp" alt="">
+      <div class="event__container">
+        <h3 class="event__titile content__titile">小規模の会議から大規模の宴会まで<br>幅広くご利用いただけます</h3>
+        <div class="event__content">
+                <p>ご予定にあわせて、最適なご提案をいたします。 設備やお料理、ご宿泊の手配までお手伝いいたしますので、ぜひご相談ください。</p>
+        </div>
+        <div><a href="#" class="event__button btn04 borderleft"><span>View More</span></a></div>
+      </div>
+    </div> <!-- /.event__image -->
+  </div>  <!-- /.event__wrapper -->
+</article>
+<section id="scroll">
+  <div class="scroll"></div>
+</section>
 <footer>
-
+  <ul class="footer__caption">
+    <li class="footer__info">ホテル情報</li>
+    <li class="footer__info">お問い合わせ</li>
+    <li class="footer__info">個人情報保護方針</li>
+    <li class="footer__info">ご利用規則・宿泊約款</li>
+  </ul>
+  <ul class="footer__sns">
+    <li><a href="" class="footer__facebook"></a></li>
+    <li><a href="" class="footer__instagram"></a></li>
+    <li><a href="" class="footer__twitter"></a></li>
+    <li><a href="" class="footer__youtube"></a></li>
+  </ul>
+  <div class="footer__last">
+    <div class="footer__logo">
+      <img src="img/logo2.png" alt="">
+    </div>
+    <div class="footer__address">
+      <p>ゴールデンホテル沖縄<br>
+        〒123-4567<br>
+        沖縄県那覇市XXX３ ・3 XXX<br>
+        Naha-shi Okinawa 123-4567 Japan<br>
+        <br>
+        TEL:098-123-4567<br>
+                +81-98-123-4567
+                <br>
+                <br>
+                <br>
+              <small>&copy;2023 golden hotel okinawa</small></p>
+    </div>
+  </div>
 </footer>
     </main>
     <script type="text/javascript">
@@ -246,5 +456,6 @@
       ></script>
       <!--自作のJS-->
       <script src="js/main.js"></script>
+      <script src="js/flickity.pkgd.min.js"></script>
   </body>
 </html>
