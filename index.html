@@ -41,10 +41,12 @@
         </h1>
         <div class="header__search">
           <img src="img/Frame.svg" alt="">
+          <p>空室・プラン検索</p>
         </div>
         <div class="header__menu">
           <div class="openbtn">
             <span></span><span></span><span></span>
+            <p>Menu</p>
           </div>
           <nav id="g-nav">
             <div class="menu__flex">
@@ -62,9 +64,9 @@
       </div>      <!-- /#mainvisual -->
       <div id="tab-selector" class="tab__wrapper">
         <ul class="tab">
-          <li><a href="#stay" class="icon-before-tab icon-before-tab--stay">宿泊</a></li>
-          <li><a href="#ticket" class="icon-before-tab icon-before-tab--ticket">航空券＋宿泊</a></li>
-          <li><a href="#restaurant" class="icon-before-tab icon-before-tab--restaurant">レストラン予約</a></li>
+          <li><a href="#stay" class="tab__page tab__page--stay">宿泊</a></li>
+          <li><a href="#ticket" class="tab__page tab__page--ticket">航空券＋宿泊</a></li>
+          <li><a href="#restaurant" class="tab__page tab__page--restaurant">レストラン予約</a></li>
         </ul>
         <section id="stay" class="area">
           <ul class="gnavi__list">
@@ -114,7 +116,7 @@
                 <option value="3">３室</option>
               </select>
             </li>
-            <div class="stay__search"><a href="" class="search-button">この条件で検索</a></div>
+            <div class="tab__search stay__search"><a href="" class="search-button">この条件で検索</a></div>
           </ul>
         </section>
         <section id="ticket" class="area">
@@ -164,7 +166,7 @@
                 <option value="3">３人</option>
               </select>
             </li>
-            <li class="ticket__search"><a href="" class="search-button">この条件で検索</a></li>
+            <li class="tab__search ticket__search"><a href="" class="search-button">この条件で検索</a></li>
           </ul>
         </section>
         <section id="restaurant" class="area">
@@ -219,15 +221,15 @@
                 <option value="3">３人</option>
               </select>
             </li>
-            <li class="restaurant__search"><a href="" class="search-button">この条件で検索</a></li>
+            <li class="tab__search restaurant__search"><a href="" class="search-button">この条件で検索</a></li>
           </ul>
           </section>
       </div>      <!-- /.tab__wrapper -->
 <article id="topics">
   <div class="topics__wrapper">
-    <h2 class="section__title">Topics<span class="section__subtitle">お知らせ・イベント情報</span></h2>
+    <h2 class="topics__title section__title">Topics<span class="section__subtitle">お知らせ・イベント情報</span></h2>
 
-    <ul class="gallery js-flickity" data-flickity-options='{"": "", "prevNextButtons": false }'>
+    <ul class="topics__slider gallery js-flickity" data-flickity-options='{"": "", "prevNextButtons": false }'>
       <li class="topics__card card">
         <figure class="card__img-wrapper">
           <img src="img/firework.webp" alt="" class="card__img">
@@ -283,27 +285,30 @@
         </div>
       </li>
     </ul>
-    <div><a href="#" class="topics__button btn04 borderleft"><span>View More</span></a></div>
+    <div><a href="#" class="topics__button main-button borderleft"><span>View More</span></a></div>
   </div>     <!-- /.topics__wrapper -->
 </article>
 <article id="story">
-  <div class="story__titile">
+  <div class="story__title">
     <h2 class="section__title">Story<span class="section__subtitle">私たちができる5つのこと</span></h2>
   </div>
 
   <div class="story__image">
     <img src="img/AdobeStock_348383908_sp.webp" alt="">
     <div class="story__container">
-      <h3 class="story__titile content__titile">最高のロケーションとおもてなしで叶える<br>思い出のホテルステイ</h3>
-      <div class="story__content">
-              <p>『お客様に最高の思い出を作ってほしい』<br>私たちはそんな願いを持って、お客様との時間を大切にしています。<br>お客様にお約束する、５つのホスピタリティをのぞいてみませんか。</p>
+      <div class="story__inner">
+        <h3 class="story__title content__title">最高のロケーションとおもてなしで叶える<br>思い出のホテルステイ</h3>
+        <div class="story__content">
+          <p>『お客様に最高の思い出を作ってほしい』<br>私たちはそんな願いを持って、お客様との時間を大切にしています。<br>お客様にお約束する、５つのホスピタリティをのぞいてみませんか。</p>
+        </div>
+        <div><a href="#" class="story__button main-button borderleft"><span>View More</span></a></div>
       </div>
-      <div><a href="#" class="story__button btn04 borderleft"><span>View More</span></a></div>
+
     </div>
   </div> <!-- /.story__image -->
 </article>
 <article id="cuisine" class="cuisine__wrapper">
-  <div class="cuisine__titile">
+  <div class="cuisine__title">
     <h2 class="section__title">Cuisine<span class="section__subtitle">お食事</span></h2>
   </div>
   <ul class="cuisine__flex">
@@ -341,11 +346,11 @@
     <div class="special__image">
       <img src="img/Special_floor_sp.webp" alt="">
       <div class="special__container">
-        <h3 class="special__titile content__titile">当館自慢のロケーションで<br>ワンランク上の非日常をご体感ください</h3>
+        <h3 class="special__content-title content__title">当館自慢のロケーションで<br>ワンランク上の非日常をご体感ください</h3>
         <div class="special__content">
                 <p>スペシャルフロアではお食事のご予約から、お出かけのお手伝いまでコンシェルジュがサポートいたします。 また海側の絶景を楽しめるお部屋を確約しております。</p>
         </div>
-        <div><a href="#" class="special__button btn04 borderleft"><span>View More</span></a></div>
+        <div><a href="#" class="special__button main-button borderleft"><span>View More</span></a></div>
       </div>
     </div> <!-- /.special__image -->
   </div>  <!-- /.special__wrapper -->
@@ -358,7 +363,7 @@
     <div class="fitness__description">
       <p>当館18階にあるフィットエリアには、多彩なトレーニングマシンを完備。<br>また屋内プールや大浴場、サウナも楽しめます。</p>
     </div>
-    <div><a href="#" class="fitness__button btn04 borderleft"><span>View More</span></a></div>
+    <div><a href="#" class="fitness__button main-button borderleft"><span>View More</span></a></div>
   </div> <!-- /.fitness__container -->
   <div class="fitness__images">
     <img src="img/gym_sp.webp" alt="">
@@ -394,11 +399,11 @@
     <div class="event__image">
       <img src="img/event_sp.webp" alt="">
       <div class="event__container">
-        <h3 class="event__titile content__titile">小規模の会議から大規模の宴会まで<br>幅広くご利用いただけます</h3>
+        <h3 class="event__content-title content__title">小規模の会議から大規模の宴会まで<br>幅広くご利用いただけます</h3>
         <div class="event__content">
                 <p>ご予定にあわせて、最適なご提案をいたします。 設備やお料理、ご宿泊の手配までお手伝いいたしますので、ぜひご相談ください。</p>
         </div>
-        <div><a href="#" class="event__button btn04 borderleft"><span>View More</span></a></div>
+        <div><a href="#" class="event__button main-button borderleft"><span>View More</span></a></div>
       </div>
     </div> <!-- /.event__image -->
   </div>  <!-- /.event__wrapper -->

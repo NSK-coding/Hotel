@@ -43,12 +43,16 @@ li {
 .section__title {
   display: block;
   text-align: center;
+  font-size: 3.6rem;
+  font-size: clamp(2.8rem, 5vw, 3.6rem);
 }
 .section__subtitle{
   display: block;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
-.content__titile {
+.content__title {
   text-align: left;
+  font-size: clamp(1.2rem, 3.7vw, 2.8rem);
 }
 
 /* || UTILITIES */
@@ -61,21 +65,21 @@ li {
   justify-content: center;
   border-bottom: 1px solid black;
 }
-.icon-before-tab {
-  display: block;
-  box-sizing: border-box;
-  /* background:#ddd; */
+.tab li {
   border-top: 1px solid black;
   border-left: 1px solid black;
-  padding: 1em 2em;
-  color: black;
   position: relative;
-  font-size: 1.8rem;
 }
-.tab li:last-child a {
+.tab__page {
+  display: block;
+  box-sizing: border-box;
+
+  position: relative;
+}
+.tab li:last-child {
   border-right: 1px solid black;
 }
-.icon-before-tab:before {
+.tab__page:before {
   display: inline-block;
   margin-right: .5em;
 content: "";
@@ -85,13 +89,13 @@ background-size: contain;
 }
 
 /*liにactiveクラスがついた時の形状*/
-.tab li.active a::after{
+.tab li.active::after{
   position: absolute;
   bottom: -3px;
-  left: 0;
+  left: 1px;
   content: "";
-  width: 100%;
-  height: 6px;
+  width: calc(100% - 2px );
+  height: 5px;
   background-color: white;
 }
 
@@ -143,11 +147,11 @@ input[type="date"]::after {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 0 0;
-  width: 1.6em;
-  height: 1.6em;
+  width: 2em;
+  height: 2em;
   position: absolute;
-  top: 50%;
-  right: 3em;
+  top: 46%;
+  right: 5vw;
   transform: translateY(-50%);
 }
 
@@ -173,9 +177,9 @@ input[type="checkbox"]  {
 
 input[type="checkbox"] {
   cursor: pointer;
-  padding-left: 30px;/*label手前にチェックボックス用の余白を開ける*/
+  padding-left: 4vw;/*label手前にチェックボックス用の余白を開ける*/
   vertical-align: middle;
-  position: relative;
+  /* position: relative; */
 }
 input[type="checkbox"]::before,
 input[type="checkbox"]::after {
@@ -187,20 +191,30 @@ input[type="checkbox"]::before {
   background-color: var(--color-accent);
   border-radius: 0%;
   border: 1px solid white;
-  width: 30px;/*チェックボックスの横幅*/
-  height: 30px;/*チェックボックスの縦幅*/
-  transform: translateY(-50%);
+  width: 5vw;/*チェックボックスの横幅*/
+  height: 5vw;/*チェックボックスの縦幅*/
 
+
+  transform: translateY(-50%);
+/* top: 2vw; */
+top: 50%;
 }
 input[type="checkbox"]::after {
-  border-bottom: 2px solid white;/*チェックの太さ*/
-  border-left: 2px solid white;/*チェックの太さ*/
-  opacity: 0;/*チェック前は非表示*/
-  height: 6px;/*チェックの高さ*/
-  width: 11px;/*チェックの横幅*/
-  transform: rotate(-45deg);
 
+  opacity: 0;/*チェック前は非表示*/
+  background-image: url(../img/check.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0;
+  width: 7vw;
+  height: 7vw;
+  transform: translateY(-50%);
+/* top: 2vw; */
+top: 45%;
+  /* border: 1px solid red; */
+  
 }
+
 input[type="checkbox"]:checked::after {
   opacity: 1;/*チェック後表示*/
 }
@@ -210,7 +224,7 @@ input[type="checkbox"]:checked::after {
 /* || Dropdown Styles */
 .dropdown {
 width: 100%;
-height: 60px;
+/* height: 60px; */
 color: white;
   background-color: var(--color-accent);
   display: inline-block;
@@ -223,14 +237,14 @@ li:has(>.dropdown) {
 li:has(>.dropdown)::after {
   content: "";
   display: block;
-  width: 16px;
-  height: 16px;
+  width: 2vw;
+  height: 2vw;
   border-top: 1px solid white;
   border-right: 1px solid white;
   transform: rotate(135deg);
 position: absolute;
-right: 35px;
-top: calc(50% + 5px);
+right: 5vw;
+top: calc(50% + 1vw);
 pointer-events: none;
 }
 
@@ -238,7 +252,7 @@ pointer-events: none;
 .search-button {
   position: relative;
   display: inline-block;
-  padding: 2em 3em;
+  padding: 1em 3em 1.2em;
   /* width: 346px; */
   border-radius: 22px;
   color: white;
@@ -253,8 +267,8 @@ pointer-events: none;
   display: inline-block;
   margin-right: .5em;
   content: "";
-  width: 1.8rem;
-  height: 1.8rem;
+  width: 5vw;
+  height: 5vw;
   background-size: contain;
   background-image: url(../img/Frame.svg);
   transform: translateY(30%);
@@ -265,15 +279,44 @@ pointer-events: none;
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.4), 0 0 50px rgba(128, 128, 128, 0.1) ;
   border-color: transparent;
 }
-
-
+/* FIXME: 後で */
+/* ボタン共通設定 */
 .btn04 {
+  /*線の基点とするためrelativeを指定*/
+position: relative;
+  /*ボタンの形状*/
+display:inline-block;
+  padding: 10px 30px;
+
+color:#333;
+border:1px solid #ccc;
+  text-decoration: none;
+  outline: none;
+  /*はみ出す背景色を隠す*/
+overflow: hidden;
+}
+
+/*hoverした際のボタンの形状*/
+.btn04:hover {
+color:#ccc;
+border-color: transparent;
+  /*色の変化を遅らせる*/
+transition-delay: .6s;
+}
+
+/*線の設定*/
+.btn04 span{
+  display: block;
+  z-index: 2;
+}
+
+.main-button {
   /*線の基点とするためrelativeを指定*/
   position: relative;
   /*ボタンの形状*/
   display: inline-block;
   padding: 10px 30px;
-  width: 400px;
+  width: 90%;
   height: 60px;
   border: 1px solid #ccc;
   text-decoration: none;
@@ -283,7 +326,7 @@ pointer-events: none;
 }
 
 /*hoverした際のボタンの形状*/
-.btn04:hover {
+.main-button:hover {
   color: white;
   border-color: transparent;
   /*色の変化を遅らせる*/
@@ -291,7 +334,7 @@ pointer-events: none;
 }
 
 /*線の設定*/
-.btn04 span {
+.main-button span {
   position: absolute;
   display: block;
   z-index: 2;
@@ -384,20 +427,23 @@ pointer-events: none;
 .card__body {
   padding: 15px;
   color: black;
+  text-align: left;
 }
 .card__body > *:last-child {
   margin-bottom: 0;
 }
 .card__date {
   color: black;
+  font-size: clamp(1.4rem, 2.7vw, 2rem);
 }
 .card__title {
   margin-bottom: 5px;
-  font-size: 1.125rem;
+  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
   font-weight: bold;
 }
 .card__text {
   color: black;
+  font-size: clamp(1rem, 2vw, 1.4rem);
 }
 /* || SLIDER  */
 
@@ -423,26 +469,26 @@ pointer-events: none;
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: -8%;
+  bottom: -10%;
 }
 .flickity-page-dots .dot {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
   opacity: 1;
   background-color: white;
 
 }
 /* fill-in selected dot */
 .flickity-page-dots .dot.is-selected {
-  width: 12px;
-  height: 12px;
+  width: 18px;
+  height: 18px;
   background: var(--color-base);
 }
 /* || Scroll Styles  */
 .scroll {
-  width: 10vw;
-  height: 10vw;
-  margin: 10vw auto;
+  width: 7vw;
+  height: 7vw;
+  margin: 13vw auto 0;
   border-top: 2px solid black;
   border-right: 2px solid black;
   transform: rotateZ(-45deg);
@@ -460,9 +506,9 @@ pointer-events: none;
     position: relative;
     z-index: 9999;
     cursor: pointer;
-    width: 50px;
-    height: 50px;
-    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+
   }
 
   /*ボタン内側*/
@@ -470,35 +516,26 @@ pointer-events: none;
     display: inline-block;
     transition: all 0.4s; /*アニメーションの設定*/
     position: absolute;
-    left: 14px;
-    height: 2px;
+    left: 25%;
+    height: 2%;
     border-radius: 5px;
     background: #fff;
-    width: 45%;
+    width: 50%;
   }
 
   .openbtn span:nth-of-type(1) {
-    top: 13px;
+    top: 20%;
   }
 
   .openbtn span:nth-of-type(2) {
-    top: 19px;
+    top: 32%;
   }
 
   .openbtn span:nth-of-type(3) {
-    top: 25px;
+    top: 44%;
   }
 
-  .openbtn span:nth-of-type(3)::after {
-    content: "Menu"; /*3つ目の要素のafterにMenu表示を指定*/
-    position: absolute;
-    top: 5px;
-    left: -2px;
-    color: #fff;
-    font-size: 0.6rem;
-    text-transform: uppercase;
-  }
-
+ 
   /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
 
   .openbtn.active span:nth-of-type(1) {
@@ -529,6 +566,7 @@ pointer-events: none;
   /*========= ナビゲーションのためのCSS ===============*/
 
   #g-nav {
+    display: none;
     /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
     position: fixed;
     z-index: 999;
@@ -537,6 +575,7 @@ pointer-events: none;
     top: 0;
     left: 0;
     opacity: 0;
+    pointer-events: none;
     width: 100%;
     height: 100vh;
     background-image: url(../img/AdobeStock_93456281_sp.webp);

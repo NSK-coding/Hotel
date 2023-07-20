@@ -3,50 +3,51 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 134px;
+
   text-align: center;
 }
 .header__logo {
-  width: 134px;
-  height: 100%;
+  width: 18%;
+  height: auto;
   background-color: rgba(255, 255, 255, 0.67);
+
 }
 .header__search {
-  width: 134px;
+  width: 18%;
   background-color: var(--color-base);
   margin-left: auto;
   position: relative;
   /* margin-right: 0; */
+
 }
 .header__search img {
-  width: 60%;
-  margin-top: 10px;
+  width: 40%;
+  margin-top: 15%;
 
 }
-.header__search::after {
-  content: "空室・プラン検索"; 
-  position: absolute;
-  bottom: 15px;
-  left: 10px;
-  color: #fff;
-  font-size: 1.4rem;
+.header__search p {
+  color: white;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  margin-top: 10%;
 }
-.header__title {
+
+.header__menu {
+  width: 18%;
+  background-color: var(--color-accent);
+
+}
+.header__menu p {
   color: white;
   font-size: 1.6rem;
-}
-.header__menu {
-  width: 134px;
-  background-color: var(--color-accent);
-}
-footer {
-  width: 100%;
-  height: 50px;
-}
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
 
+padding-top: 65%;
+text-align: center;
+  text-transform: uppercase;
+}
 
 #mainvisual {
-  padding-top: calc(100vh - 134px);
+  padding-top: calc(100vh - 18%);
 }
 
 .mv-1 {
@@ -58,28 +59,36 @@ footer {
 }
 
 .tab__wrapper {
-  margin-top: 20px;
+  margin-top: 22px;
 }
 .tab li {
   width: 30%;
 }
-.icon-before-tab::before {
+.tab__page {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  color: black;
+  padding: 1em ;
+}
+.tab__page::before {
   transform: translateY(15%);
 }
-.icon-before-tab--stay:before {
+.tab__page--stay {
+  text-align: center;
+}
+.tab__page--stay:before {
   background-image: url('https://api.iconify.design/ri/hotel-line.svg');
   /* transform: translateY(15%); */
 }
-.icon-before-tab--ticket {
+.tab__page--ticket {
   padding: 1em;
 }
-.icon-before-tab--ticket:before {
+.tab__page--ticket:before {
   width: 5rem;
   height: 2rem;
   background-image: url(../img/ticket.svg);
   /* transform: translateY(15%); */
 }
-.icon-before-tab--restaurant:before {
+.tab__page--restaurant:before {
   background-image: url('https://api.iconify.design/fluent/food-16-filled.svg');
   /* transform: translateY(15%); */
 }
@@ -89,28 +98,39 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 90%;
-  margin: 10px auto;
+  width: 86%;
+  margin: 20px auto;
   gap: 10px 5%;
 }
 .gnavi__list li {
-  height: 80px;
+  /* height: 80px; */
   transition: all .3s;
-
+  display: flex;
+  flex-direction: column;
+  /* align-items: stretch; */
 }
 .gnavi__list li:focus,
 .gnavi__list li:hover {
   opacity: 0.7;
 }
+.gnavi__list {
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
+}
+
 
 .stay__checkin {
-  width: 40%;
+  width: 44%;
 }
 .stay__notdecided {
-  width: 20%;
+  width: 15%;
+
 }
+
 .stay__duration {
-  width: 30%;
+  width: 31%;
+}
+.stay__duration select {
+  flex-grow: 1;
 }
 .stay__adults {
   width: 30%;
@@ -121,71 +141,84 @@ footer {
 .stay__rooms {
   width: 30%;
 }
-.search-button {
-
+.tab__search {
+  margin-top: 10px;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
 }
 .restaurant__calendar,
 .ticket__calendar,
 .stay__calendar {
   width: 100%;
-  height: 60px;
+  /* height: 60px; */
   color: white;
-  padding-left: 2em;
+  /* padding-left: 2em; */
+  padding: 1.9em 0 2em 1.9em;
   background-color: var(--color-accent);
 }
 .checkbox__container {
   width: 100%;
-  height: 60px;
+  /* height: 100%; */
+  /* height: 60px; */
   background-color: var(--color-accent);
+  flex-grow: 1;
+  position: relative;
 }
-.stay__checckbox::before {
-  top: 20px;/*ボックスの位置調整*/
-  left: 25px;/*ボックスの位置調整*/
+.dropdown {
+  padding: 2em 1em;
 }
-.stay__checckbox::after {
-  top: -7px;/*チェック時の位置調整*/
-  left: 10px;/*チェック時の位置調整*/
-}
+
 .ticket__checkin,
 .ticket__departure {
-  width: 40%;
+  width: 45%;
+}
+.ticket__departure select {
+  flex-grow: 1;
 }
 .ticket__children,
 .ticket__adults,
 .ticket__duration {
   width: 30%;
 }
-.restaurant__date,
-.restaurant__site {
-  width: 40%;
+.restaurant__date {
+  width: 45%;
 }
-
+.restaurant__site {
+  width: 50%;
+}
+.restaurant__site select {
+flex-grow: 1;
+}
 .restaurant__children,
-.restaurant__adults,
+.restaurant__adults {
+  width: 28%;
+}
 .restaurant__time {
-  width: 30%;
+  width: 34%;
 }
 
 .topics__wrapper {
   width: 100%;
-  height: 1037px;
+  min-height:100vw;
   background-image: url(../img/topic.webp);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   text-align: center;
-  margin-top: 10%;
+  margin-top: 8%;
   color: white;
 }
-.gallery {
-  /* border: 1px solid red; */
+.topics__title {
+  padding-top: 7%;
+}
+.topics__slider  {
+  margin-top: 7%;
 }
 
 
 .topics__card {
   width: 56.8%;
-  height: 546px;
-  margin-right: 100px;
+  min-height: 50vh;
+  margin-right: 8vw;
   background-color: white;
 
 }
@@ -194,17 +227,21 @@ footer {
 
 
 .topics__button {
-  margin-top: 100px;
+  margin: 15% auto 5%;
   color: white;
+  max-width: 300px;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
 }
 
 .story__title {
-  text-align: center;
+  text-align: left;
+  margin-top: 7%;
 }
 .story__image {
   position: relative;
   width: 90%;
   height: auto;
+  margin-top: 7%;
 }
 .story__container {
   position: absolute;
@@ -215,9 +252,23 @@ footer {
   width: 90%;
   height: 100%;
 }
+.story__inner {
+  margin-top: 16%;
+  margin-left: 7%;
+
+}
+.story__content {
+  margin-top: 4%;
+  width: 68%;
+  font-size: clamp(1rem, 2.7vw, 2rem);
+}
+.story__button {
+  margin-top: 7%;
+}
 .cuisine__wrapper {
   width: 100%;
-  padding: 0 50px;
+  padding: 0 5vw;
+  margin-top: 9%;
 }
 .cuisine__title {
 
@@ -226,6 +277,8 @@ footer {
   display: flex;
   flex-wrap: wrap;
   gap: 10px 2%;
+  margin-top: 7%;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
 }
 .cuisine__visual {
   width: 49%;
@@ -236,26 +289,29 @@ footer {
   left: 0;
   bottom: 10%;
   background-color: rgba(255, 255, 255, 0.67);
-  width: 80%;
+  min-width: 80%;
   height: 4rem;
   text-align: center;
   line-height: 4rem;
+  padding: 0 0.5em;
 }
 .special__wrapper {
   margin-top: 10vw;
   width: 100%;
-  height: 100vh;
+  min-height: 85vh;
   background-image: url(../img/Special_bg_sp.webp);
-  background-position: left;
+  background-position: top left;
   background-size: contain;
   background-repeat: no-repeat;
 }
 .special__title {
   color: var(--color-base);
+  padding-top: 8%;
+
 }
 .special__image {
-  width: 85%;
-  margin: 5vw 0 0 auto;
+  width: 88%;
+  margin: 6vw 0 0 auto;
   position: relative;
 }
 .special__container {
@@ -266,36 +322,58 @@ footer {
   height: 100%;
   background-color: var(--color-content-bg);
   color: white;
-  padding: 5%;
+  padding: 6%;
 
+}
+/* TODO: 文字装飾 */
+.special__content-title {
+  padding-top: 9%;
+  text-align: right;
+}
+.special__content {
+  margin-top: 9%;
+  font-size: clamp(1rem, 2.7vw, 2rem);
+}
+.special__button {
+  margin-top: 27%;
+}
+.fitness__container {
+  margin-top: 8%;
+}
+.fitness__description {
+  width: 65%;
+  margin: 6% auto;
+  font-size: clamp(1rem, 3vw, 2.2rem);
 }
 .fitness__images {
   position: relative;
+  margin-top: 7%;
 }
 .fitness__gallery {
   display: flex;
   justify-content: center;
   gap: 0 2%;
   position: absolute;
-  bottom: -20%;
+  bottom: -18%;
 }
 .fitness__pic {
   width: 28%;
 }
 .wedding__wrapper {
   position: relative;
-  margin-top: 25vw;
+  margin-top: 23vw;
 }
 .wedding__title {
   position: absolute;
   top: 0;
-  left: 10%;
+  left: 7%;
   background-color: var(--color-content-bg);
-  padding: 5%;
+  padding: 3% 2%;
+  color: white;
 }
 .wedding__chapel {
   position: absolute;
-  width: 70%;
+  width: 67%;
   bottom: 0;
   right: 0;
 }
@@ -303,18 +381,19 @@ footer {
 .event__wrapper {
   margin-top: 10vw;
   width: 100%;
-  height: 100vh;
+  min-height: 85vh;
   background-image: url(../img/Special_bg_sp.webp);
-  background-position: right;
+  background-position: top right;
   background-size: contain;
   background-repeat: no-repeat;
 }
 .event__title {
   color: var(--color-base);
+  padding-top: 8%;
 }
 .event__image {
-  width: 85%;
-  margin: 5vw auto 0 0;
+  width: 88%;
+  margin: 6vw auto 0 0;
   position: relative;
 }
 .event__container {
@@ -325,14 +404,28 @@ footer {
   height: 100%;
   background-color: var(--color-content-bg);
   color: white;
-  padding: 5%;
+  padding: 7%;
 
+}
+/* TODO: 文字装飾 */
+.event__content-title {
+  padding-top: 9%;
+  text-align: left;
+}
+.event__content {
+  margin-top: 9%;
+  font-size: clamp(1rem, 2.7vw, 2rem);
+}
+.event__button {
+  margin-top: 27%;
 }
 .footer__caption {
   display: flex;
   justify-content: space-between;
-  width: 80%;
-  margin: 0 auto;
+  width: 78%;
+  margin: 4% auto;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  text-align: center;
 }
 .footer__info {
   position: relative;
@@ -340,7 +433,7 @@ footer {
 }
 .footer__info::before {
   position: absolute;
-  top: 0;
+  top: 1vw;
   left: 0;
   content: "";
   width: 1px;
@@ -349,7 +442,7 @@ footer {
 }
 .footer__info:last-child::after {
   position: absolute;
-  top: 0;
+  top: 1vw;
   right: 0;
   content: "";
   width: 1px;
@@ -359,13 +452,13 @@ footer {
 .footer__sns {
   display: flex;
   justify-content: space-between;
-  width: 60%;
+  width: 45%;
   margin: 4vw auto;
 }
 .footer__sns a {
   display: block;
-  width: 4rem;
-  height: 4rem;
+  width: clamp(2rem, 6.7vw, 5rem);
+  height: clamp(2rem, 6.7vw, 5rem);
 }
 .footer__facebook {
   background: url('https://api.iconify.design/ri/facebook-fill.svg') no-repeat center center / contain;
@@ -386,8 +479,10 @@ footer {
   display: flex;
   justify-content: space-between;
   text-align: right;
-  padding: 4vw 4vw 0;
+  padding: 4vw 10vw 0 4vw;
+  margin-top: 9%;
+  font-size: clamp(1rem, 2.2vw, 1.6rem);
 }
 .footer__logo {
-  width: 30%;
+  width: 36%;
 }
