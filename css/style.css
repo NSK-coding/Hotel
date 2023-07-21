@@ -5,6 +5,7 @@
   width: 100%;
 
   text-align: center;
+  position: relative;
 }
 .header__logo {
   width: 18%;
@@ -46,8 +47,9 @@ text-align: center;
   text-transform: uppercase;
 }
 
-#mainvisual {
-  padding-top: calc(100vh - 18%);
+.mainvisual {
+
+  padding-top: 152%;
 }
 
 .mv-1 {
@@ -55,11 +57,11 @@ text-align: center;
   top: 0;
   left: 0;
   z-index: -1;
-  height: 100vh;
+width: 100%;
 }
 
 .tab__wrapper {
-  margin-top: 22px;
+  margin-top: 3vw;
 }
 .tab li {
   width: 30%;
@@ -69,6 +71,7 @@ text-align: center;
   color: black;
   padding: 1em ;
 }
+/* TODO:アイコンで改行させるレスポンシブ */
 .tab__page::before {
   transform: translateY(15%);
 }
@@ -99,8 +102,9 @@ text-align: center;
   flex-wrap: wrap;
   justify-content: center;
   width: 86%;
-  margin: 20px auto;
+  margin: 3vw auto;
   gap: 10px 5%;
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
 }
 .gnavi__list li {
   /* height: 80px; */
@@ -113,19 +117,13 @@ text-align: center;
 .gnavi__list li:hover {
   opacity: 0.7;
 }
-.gnavi__list {
-  font-size: clamp(1rem, 2.5vw, 1.8rem);
-}
-
 
 .stay__checkin {
   width: 44%;
 }
 .stay__notdecided {
   width: 15%;
-
 }
-
 .stay__duration {
   width: 31%;
 }
@@ -142,29 +140,25 @@ text-align: center;
   width: 30%;
 }
 .tab__search {
-  margin-top: 10px;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-top: 1%;
+  font-size: clamp(1rem, 3vw, 2.2rem);
 }
 .restaurant__calendar,
 .ticket__calendar,
 .stay__calendar {
   width: 100%;
-  /* height: 60px; */
   color: white;
-  /* padding-left: 2em; */
-  padding: 1.9em 0 2em 1.9em;
+  padding: 1.5em 0 1.5em 1.9em;
   background-color: var(--color-accent);
 }
 .checkbox__container {
   width: 100%;
-  /* height: 100%; */
-  /* height: 60px; */
   background-color: var(--color-accent);
   flex-grow: 1;
   position: relative;
 }
 .dropdown {
-  padding: 2em 1em;
+  padding: 1.5em 1em;
 }
 
 .ticket__checkin,
@@ -206,14 +200,23 @@ flex-grow: 1;
   text-align: center;
   margin-top: 8%;
   color: white;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 .topics__title {
   padding-top: 7%;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
 }
 .topics__slider  {
   margin-top: 7%;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
 }
-
+.topics__grid--3 {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
 
 .topics__card {
   width: 56.8%;
@@ -239,7 +242,7 @@ flex-grow: 1;
 }
 .story__image {
   position: relative;
-  width: 90%;
+  width: 93%;
   height: auto;
   margin-top: 7%;
 }
@@ -249,7 +252,7 @@ flex-grow: 1;
   left: 0;
   background: var(--color-content-bg);
   color: white;
-  width: 90%;
+  width: 93%;
   height: 100%;
 }
 .story__inner {
@@ -262,8 +265,14 @@ flex-grow: 1;
   width: 68%;
   font-size: clamp(1rem, 2.7vw, 2rem);
 }
+.story__buttonWrapper {
+  padding: 6% 0 4%;
+}
 .story__button {
-  margin-top: 7%;
+  margin: 0 auto;
+  color: white;
+  max-width: 300px;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
 }
 .cuisine__wrapper {
   width: 100%;
@@ -295,24 +304,34 @@ flex-grow: 1;
   line-height: 4rem;
   padding: 0 0.5em;
 }
+
 .special__wrapper {
   margin-top: 10vw;
   width: 100%;
-  min-height: 85vh;
   background-image: url(../img/Special_bg_sp.webp);
   background-position: top left;
-  background-size: contain;
+  background-size: 83% 100%;
   background-repeat: no-repeat;
+  position: relative;
+}
+.special__wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 129%;
 }
 .special__title {
   color: var(--color-base);
+  position: absolute;
+  top: 0;
+  left: 31%;
   padding-top: 8%;
-
 }
 .special__image {
   width: 88%;
   margin: 6vw 0 0 auto;
-  position: relative;
+  position: absolute;
+  top: 16%;
+right: 0;
 }
 .special__container {
   position: absolute;
@@ -335,33 +354,58 @@ flex-grow: 1;
   font-size: clamp(1rem, 2.7vw, 2rem);
 }
 .special__button {
-  margin-top: 27%;
+  margin: 15% auto 5%;
+  color: white;
+  max-width: 300px;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+}
+
+#fitness {
+  position: relative;
+}
+.fitness__flex {
+  display: flex;
+  flex-direction: column;
+
 }
 .fitness__container {
   margin-top: 8%;
+  text-align: center;
 }
 .fitness__description {
   width: 65%;
   margin: 6% auto;
   font-size: clamp(1rem, 3vw, 2.2rem);
 }
-.fitness__images {
-  position: relative;
+.fitness__gym {
+  width: 100%;
   margin-top: 7%;
 }
 .fitness__gallery {
   display: flex;
   justify-content: center;
   gap: 0 2%;
-  position: absolute;
-  bottom: -18%;
+position: absolute;
+bottom: -10%;
 }
 .fitness__pic {
   width: 28%;
 }
+.fitness__button {
+  margin: 0 auto 5%;
+  color: black;
+  border: 1px solid black;
+  max-width: 300px;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+
+}
+
+
+
 .wedding__wrapper {
   position: relative;
   margin-top: 23vw;
+  width: 100%;
 }
 .wedding__title {
   position: absolute;
@@ -381,20 +425,30 @@ flex-grow: 1;
 .event__wrapper {
   margin-top: 10vw;
   width: 100%;
-  min-height: 85vh;
-  background-image: url(../img/Special_bg_sp.webp);
+  background-image: url(../img/event_bg_sp.webp);
   background-position: top right;
-  background-size: contain;
+  background-size: 83%;
   background-repeat: no-repeat;
+  position: relative;
+}
+.event__wrapper::before {
+  content: "";
+  display: block;
+  padding-top: 129%;
 }
 .event__title {
   color: var(--color-base);
+  position: absolute;
+  top: 0;
+  left: 31%;
   padding-top: 8%;
 }
 .event__image {
   width: 88%;
   margin: 6vw auto 0 0;
-  position: relative;
+  position: absolute;
+  top: 16%;
+  left: 0;
 }
 .event__container {
   position: absolute;
@@ -417,7 +471,10 @@ flex-grow: 1;
   font-size: clamp(1rem, 2.7vw, 2rem);
 }
 .event__button {
-  margin-top: 27%;
+  margin: 5% auto 5%;
+  color: white;
+  max-width: 300px;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
 }
 .footer__caption {
   display: flex;

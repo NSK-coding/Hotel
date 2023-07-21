@@ -44,11 +44,11 @@ li {
   display: block;
   text-align: center;
   font-size: 3.6rem;
-  font-size: clamp(2.8rem, 5vw, 3.6rem);
+  font-size: clamp(2.4rem, 5vw, 3.6rem);
 }
 .section__subtitle{
   display: block;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
 }
 .content__title {
   text-align: left;
@@ -139,7 +139,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   width: auto;
   height: auto;
   background: transparent;
-  z-index: 1;
 }
 input[type="date"]::after {
   content: '';
@@ -193,14 +192,10 @@ input[type="checkbox"]::before {
   border: 1px solid white;
   width: 5vw;/*チェックボックスの横幅*/
   height: 5vw;/*チェックボックスの縦幅*/
-
-
   transform: translateY(-50%);
-/* top: 2vw; */
-top: 50%;
+  top: 50%;
 }
 input[type="checkbox"]::after {
-
   opacity: 0;/*チェック前は非表示*/
   background-image: url(../img/check.svg);
   background-repeat: no-repeat;
@@ -209,10 +204,7 @@ input[type="checkbox"]::after {
   width: 7vw;
   height: 7vw;
   transform: translateY(-50%);
-/* top: 2vw; */
-top: 45%;
-  /* border: 1px solid red; */
-  
+  top: 45%;
 }
 
 input[type="checkbox"]:checked::after {
@@ -252,9 +244,9 @@ pointer-events: none;
 .search-button {
   position: relative;
   display: inline-block;
-  padding: 1em 3em 1.2em;
+  padding: 0.8em 3em 1.4em;
   /* width: 346px; */
-  border-radius: 22px;
+  border-radius: 12px;
   color: white;
   background-color: var(--color-base);
   border: 1px solid #ccc;
@@ -315,10 +307,11 @@ transition-delay: .6s;
   position: relative;
   /*ボタンの形状*/
   display: inline-block;
-  padding: 10px 30px;
+  /* padding: 10px 30px; */
+  padding: 10px 0px;
   width: 90%;
   height: 60px;
-  border: 1px solid #ccc;
+  border: 1px solid white;
   text-decoration: none;
   outline: none;
   /*はみ出す背景色を隠す*/
@@ -339,10 +332,10 @@ transition-delay: .6s;
   display: block;
   z-index: 2;
   top: 0;
-  left: 0;
-  padding: 10px 30px 0px 28px;
-  width: 398px;
-  height: 58px;
+  left: 18%;
+  /* padding: 10px 30px 0px 28px; */
+  /* width: 398px; */
+  /* height: 58px; */
   /* border: 1px solid red; */
 }
 
@@ -378,6 +371,7 @@ transition-delay: .6s;
 .borderleft:hover span::before,
 .borderleft:hover span::after {
   width: 100%;
+  width: 0%;
 }
 
 /*背景の設定*/
@@ -470,18 +464,19 @@ transition-delay: .6s;
   justify-content: center;
   align-items: center;
   bottom: -10%;
+
 }
 .flickity-page-dots .dot {
-  width: 12px;
-  height: 12px;
+  width: 1.6vw;
+  height: 1.6vw;
   opacity: 1;
   background-color: white;
 
 }
 /* fill-in selected dot */
 .flickity-page-dots .dot.is-selected {
-  width: 18px;
-  height: 18px;
+  width: 2.4vw;
+  height: 2.4vw;
   background: var(--color-base);
 }
 /* || Scroll Styles  */
