@@ -28,7 +28,10 @@
 }
 .header__search p {
   color: white;
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  /* font-size: clamp(1rem, 2vw, 1.4rem); */
+  --min-size: 10;
+  --max-size: 14;
+  font-size: var(--clamp-size);
   margin-top: 10%;
 }
 
@@ -39,8 +42,11 @@
 }
 .header__menu p {
   color: white;
-  font-size: 1.6rem;
-  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  /* font-size: 1.6rem; */
+  /* font-size: clamp(1rem, 2.2vw, 1.6rem); */
+  --min-size: 10;
+  --max-size: 16;
+  font-size: var(--clamp-size);
 
 padding-top: 65%;
 text-align: center;
@@ -67,7 +73,10 @@ width: 100%;
   width: 30%;
 }
 .tab__page {
-  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  /* font-size: clamp(1rem, 2.5vw, 1.8rem); */
+  --min-size: 10;
+  --max-size: 18;
+  font-size: var(--clamp-size);
   color: black;
   padding: 1em ;
 }
@@ -102,9 +111,13 @@ width: 100%;
   flex-wrap: wrap;
   justify-content: center;
   width: 86%;
+  height: 10vw;
   margin: 3vw auto;
   gap: 10px 5%;
-  font-size: clamp(1rem, 2.5vw, 1.8rem);
+  /* font-size: clamp(1rem, 2.5vw, 1.8rem); */
+  --min-size: 10;
+  --max-size: 18;
+  font-size: var(--clamp-size);
 }
 .gnavi__list li {
   /* height: 80px; */
@@ -141,7 +154,10 @@ width: 100%;
 }
 .tab__search {
   margin-top: 1%;
-  font-size: clamp(1rem, 3vw, 2.2rem);
+  /* font-size: clamp(1rem, 3vw, 2.2rem); */
+  --min-size: 10;
+  --max-size: 22;
+  font-size: var(--clamp-size);
 }
 .restaurant__calendar,
 .ticket__calendar,
@@ -233,7 +249,10 @@ flex-grow: 1;
   margin: 15% auto 5%;
   color: white;
   max-width: 300px;
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  /* font-size: clamp(2.4rem, 4vw, 3.6rem); */
+  --min-size: 24;
+  --max-size: 36;
+  font-size: var(--clamp-size);
 }
 
 .story__title {
@@ -262,21 +281,26 @@ flex-grow: 1;
 }
 .story__content {
   margin-top: 4%;
-  width: 68%;
-  font-size: clamp(1rem, 2.7vw, 2rem);
+  width: 100%;
+  /* font-size: clamp(1rem, 2.7vw, 2rem); */
+  --min-size: 10;
+  --max-size: 20;
+  font-size: var(--clamp-size);
 }
 .story__buttonWrapper {
-  padding: 6% 0 4%;
+  --min-size: 20;
+  --max-size: 66;
+  margin-top: var(--fluid-size);
 }
 .story__button {
-  margin: 0 auto;
+  margin-left: 0;
   color: white;
   max-width: 300px;
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+
 }
 .cuisine__wrapper {
   width: 100%;
-  padding: 0 5vw;
+  padding: 0 6vw;
   margin-top: 9%;
 }
 .cuisine__title {
@@ -285,28 +309,31 @@ flex-grow: 1;
 .cuisine__flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px 2%;
+  gap: 1vw 2%;
   margin-top: 7%;
-  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  /* font-size: clamp(1rem, 2.2vw, 1.6rem); */
+  --min-size: 10;
+  --max-size: 16;
+  font-size: var(--clamp-size);
 }
 .cuisine__visual {
   width: 49%;
   position: relative;
 }
-.cuisine__restaurant {
+.cuisine__banner {
   position: absolute;
   left: 0;
-  bottom: 10%;
+  bottom: 3%;
   background-color: rgba(255, 255, 255, 0.67);
-  min-width: 80%;
-  height: 4rem;
+  min-width: 82%;
+  height: 5rem;
   text-align: center;
-  line-height: 4rem;
-  padding: 0 0.5em;
+  line-height: 5rem;
+  padding: 0 0.3em;
 }
 
 .special__wrapper {
-  margin-top: 10vw;
+  margin-top: 8vw;
   width: 100%;
   background-image: url(../img/Special_bg_sp.webp);
   background-position: top left;
@@ -324,7 +351,8 @@ flex-grow: 1;
   position: absolute;
   top: 0;
   left: 31%;
-  padding-top: 8%;
+  /* padding-topは320pxのために少しずらす */
+  padding-top: 7%;
 }
 .special__image {
   width: 88%;
@@ -341,23 +369,28 @@ right: 0;
   height: 100%;
   background-color: var(--color-content-bg);
   color: white;
-  padding: 6%;
+  padding: 0 6%;
 
 }
 /* TODO: 文字装飾 */
 .special__content-title {
-  padding-top: 9%;
+  margin-top: 9%;
   text-align: right;
 }
 .special__content {
   margin-top: 9%;
-  font-size: clamp(1rem, 2.7vw, 2rem);
+  /* font-size: clamp(1rem, 2.7vw, 2rem); */
+  --min-size: 10;
+  --max-size: 20;
+  font-size: var(--clamp-size);
 }
 .special__button {
-  margin: 15% auto 5%;
+  --min-size_mt: 40;
+  --max-size_mt: 124;
+  margin-top: var(--clamp-size_mt);
+margin-right: 1%;
+margin-left: auto;
   color: white;
-  max-width: 300px;
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
 }
 
 #fitness {
@@ -373,13 +406,16 @@ right: 0;
   text-align: center;
 }
 .fitness__description {
-  width: 65%;
+  width: 70%;
   margin: 6% auto;
-  font-size: clamp(1rem, 3vw, 2.2rem);
+  /* font-size: clamp(1rem, 3vw, 2.2rem); */
+  --min-size: 10;
+  --max-size: 22;
+  font-size: var(--clamp-size);
 }
 .fitness__gym {
   width: 100%;
-  margin-top: 7%;
+  margin-top: 6%;
 }
 .fitness__gallery {
   display: flex;
@@ -392,11 +428,10 @@ bottom: -10%;
   width: 28%;
 }
 .fitness__button {
-  margin: 0 auto 5%;
+  margin: 0 auto;
   color: black;
   border: 1px solid black;
-  max-width: 300px;
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+
 
 }
 
@@ -441,7 +476,8 @@ bottom: -10%;
   position: absolute;
   top: 0;
   left: 31%;
-  padding-top: 8%;
+    /* padding-topは320pxのために少しずらす */
+  padding-top: 7%;
 }
 .event__image {
   width: 88%;
@@ -458,30 +494,41 @@ bottom: -10%;
   height: 100%;
   background-color: var(--color-content-bg);
   color: white;
-  padding: 7%;
+  padding: 0 7%;
 
 }
 /* TODO: 文字装飾 */
 .event__content-title {
-  padding-top: 9%;
+  margin-top: 18%;
   text-align: left;
 }
 .event__content {
   margin-top: 9%;
-  font-size: clamp(1rem, 2.7vw, 2rem);
+  /* font-size: clamp(1rem, 2.7vw, 2rem); */
+  --min-size: 10;
+  --max-size: 20;
+  font-size: var(--clamp-size);
 }
 .event__button {
-  margin: 5% auto 5%;
+  --min-size_mt: 40;
+  --max-size_mt: 124;
+  margin-top: var(--clamp-size_mt);
+  margin-left: 1%;
+  margin-right: auto;
   color: white;
-  max-width: 300px;
-  font-size: clamp(2.4rem, 4vw, 3.6rem);
+
 }
+
+
 .footer__caption {
   display: flex;
   justify-content: space-between;
   width: 78%;
   margin: 4% auto;
-  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  /* font-size: clamp(1rem, 2.2vw, 1.6rem); */
+  --min-size: 10;
+  --max-size: 16;
+  font-size: var(--clamp-size);
   text-align: center;
 }
 .footer__info {
@@ -538,7 +585,10 @@ bottom: -10%;
   text-align: right;
   padding: 4vw 10vw 0 4vw;
   margin-top: 9%;
-  font-size: clamp(1rem, 2.2vw, 1.6rem);
+  /* font-size: clamp(1rem, 2.2vw, 1.6rem); */
+  --min-size: 10;
+  --max-size: 16;
+  font-size: var(--clamp-size);
 }
 .footer__logo {
   width: 36%;

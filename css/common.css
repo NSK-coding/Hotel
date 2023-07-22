@@ -40,20 +40,71 @@ li {
   list-style: none;
 }
 
+/* Clamp */  
+*, *::before, *::after {
+  /* 最小サイズ、 最大サイズ、 最小画面幅、最大画面幅（単位px） */
+  --min-size: 10;
+  --max-size: 36;
+  --min-viewport: 375;
+  --max-viewport: 750;
+
+  /* a 傾き */
+  --slope: calc((var(--max-size) - var(--min-size))/ (var(--max-viewport) - var(--min-viewport)));
+  /* b 切片 */
+  --intercept: calc(var(--min-size) - var(--slope) * var(--min-viewport));
+  /* y = ax + b 可変サイズ */
+  --fluid-size: calc(var(--slope) * 100vw + var(--intercept) * 1px);
+  /* clamp(最小サイズ, 可変サイズ, 最大サイズ) */
+  --clamp-size: clamp(var(--min-size) * 1px, var(--fluid-size), var(--max-size) * 1px);
+
+  --min-size_w: 10;
+  --max-size_w: 36;
+  --slope_w: calc((var(--max-size_w) - var(--min-size_w))/ (var(--max-viewport) - var(--min-viewport)));
+  --intercept_w: calc(var(--min-size_w) - var(--slope_w) * var(--min-viewport));
+  --fluid-size_w: calc(var(--slope_w) * 100vw + var(--intercept_w) * 1px);
+  --clamp-size_w: clamp(var(--min-size_w) * 1px, var(--fluid-size_w), var(--max-size_w) * 1px);
+
+  --min-size_h: 10;
+  --max-size_h: 36;
+  --slope_h: calc((var(--max-size_h) - var(--min-size_h))/ (var(--max-viewport) - var(--min-viewport)));
+  --intercept_h: calc(var(--min-size_h) - var(--slope_h) * var(--min-viewport));
+  --fluid-size_h: calc(var(--slope_h) * 100vw + var(--intercept_h) * 1px);
+  --clamp-size_h: clamp(var(--min-size_h) * 1px, var(--fluid-size_h), var(--max-size_h) * 1px);
+
+  --min-size_mt: 10;
+  --max-size_mt: 36;
+  --slope_mt: calc((var(--max-size_mt) - var(--min-size_mt))/ (var(--max-viewport) - var(--min-viewport)));
+  --intercept_mt: calc(var(--min-size_mt) - var(--slope_mt) * var(--min-viewport));
+  --fluid-size_mt: calc(var(--slope_mt) * 100vw + var(--intercept_mt) * 1px);
+  --clamp-size_mt: clamp(var(--min-size_mt) * 1px, var(--fluid-size_mt), var(--max-size_mt) * 1px);
+}
+
+
 .section__title {
   display: block;
   text-align: center;
-  font-size: 3.6rem;
-  font-size: clamp(2.4rem, 5vw, 3.6rem);
+  /* font-size: 3.6rem; */
+  --min-size: 24;
+  --max-size: 36;
+  font-size: var(--clamp-size);
+  /* font-size: clamp(2.4rem, 5vw, 3.6rem); */
 }
 .section__subtitle{
   display: block;
-  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  /* font-size: clamp(1.4rem, 3vw, 2.2rem); */
+  --min-size: 14;
+  --max-size: 22;
+  font-size: var(--clamp-size);
 }
 .content__title {
   text-align: left;
-  font-size: clamp(1.2rem, 3.7vw, 2.8rem);
+  /* font-size: clamp(1.2rem, 3.7vw, 2.8rem); */
+  --min-size: 12;
+  --max-size: 28;
+  font-size: var(--clamp-size);
 }
+
+
 
 /* || UTILITIES */
 
@@ -307,15 +358,32 @@ transition-delay: .6s;
   position: relative;
   /*ボタンの形状*/
   display: inline-block;
-  /* padding: 10px 30px; */
-  padding: 10px 0px;
-  width: 90%;
-  height: 60px;
+
   border: 1px solid white;
   text-decoration: none;
   outline: none;
   /*はみ出す背景色を隠す*/
   overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.main-button {
+  /* padding: 10px 30px; */
+  max-width: 300px;
+  --min-size_w: 80;
+  --max-size_w: 300;
+  width: var(--clamp-size_w);
+  width: clamp(80px, calc(0.5867 * 100vw - 140px), 300px);
+  max-height: 81px;
+  --min-size_h: 25;
+  --max-size_h: 81;
+  height: var(--clamp-size_h);
+  height: clamp(25px, calc(0.149 * 100vw - 31px), 81px);
+  --min-size: 12;
+  --max-size: 30;
+  font-size: var(--clamp-size);
 }
 
 /*hoverした際のボタンの形状*/
@@ -328,11 +396,12 @@ transition-delay: .6s;
 
 /*線の設定*/
 .main-button span {
-  position: absolute;
+  /* position: absolute; */
   display: block;
   z-index: 2;
   top: 0;
   left: 18%;
+
   /* padding: 10px 30px 0px 28px; */
   /* width: 398px; */
   /* height: 58px; */
@@ -347,6 +416,7 @@ transition-delay: .6s;
   content: "";
   /*絶対配置で線の位置を決める*/
   position: absolute;
+  z-index: 2;
   width: 0;
   height: 1px;
   /*線の形状*/
@@ -428,16 +498,25 @@ transition-delay: .6s;
 }
 .card__date {
   color: black;
-  font-size: clamp(1.4rem, 2.7vw, 2rem);
+  /* font-size: clamp(1.4rem, 2.7vw, 2rem); */
+  --min-size: 14;
+  --max-size: 20;
+  font-size: var(--clamp-size);
 }
 .card__title {
   margin-bottom: 5px;
-  font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+  /* font-size: clamp(1.4rem, 2.5vw, 1.8rem); */
+  --min-size: 14;
+  --max-size: 18;
+  font-size: var(--clamp-size);
   font-weight: bold;
 }
 .card__text {
   color: black;
-  font-size: clamp(1rem, 2vw, 1.4rem);
+  /* font-size: clamp(1rem, 2vw, 1.4rem); */
+  --min-size: 10;
+  --max-size: 14;
+  font-size: var(--clamp-size);
 }
 /* || SLIDER  */
 
