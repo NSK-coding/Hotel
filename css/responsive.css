@@ -61,6 +61,61 @@
     width: 10%;
   }
 
+  #g-navi {
+    background-image: url(../img/menu_pc.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .menu__left > li,
+  .menu__right li {
+    --min-size_h: 90;
+    --max-size_h: 40;
+    --min-viewport: 750;
+    --max-viewport: 1200;
+    height: var(--fluid-size_h);
+
+  }
+  .menu__left > li:not(:last-child)::before,
+  .menu__right li:not(:last-child)::before {
+    --min-size_h: 105;
+    --max-size_h: 40;
+    --min-viewport: 750;
+    --max-viewport: 1200;
+    top: var(--fluid-size_h);
+
+  }
+
+  .menu__mainbox {
+    --min-size: 30;
+    --max-size: 30;
+    font-size: var(--clamp-size);
+  }
+  .menu__cuisinelist {
+    --min-size: 24;
+    --max-size: 24;
+    font-size: var(--clamp-size);
+  }
+.menu__button{
+  --min-size: 24;
+  --max-size: 28;
+  font-size: var(--clamp-size);
+}
+.menu__lang {
+  --min-size: 22;
+  --max-size: 24;
+  font-size: var(--clamp-size);
+}
+.menu__reservationButton, 
+.menu__cancelButton {
+  --min-size: 24;
+  --max-size: 24;
+  font-size: var(--clamp-size);
+}
+
+
+
 .mainvisual {
   padding-top: 56.25%;
 }
@@ -78,7 +133,9 @@
     font-size: var(--clamp-size);
   }
 
-.gnavi__list {
+  .gnavi__list-1,
+.gnavi__list-2,
+.gnavi__list-3 {
     /* font-size: clamp(1.8rem, 1vw, 2rem); */
     --min-size: 18;
     --max-size: 20;
@@ -472,6 +529,13 @@ width: var(--fluid-size_w);
 
 
 
+
+
+
+
+
+
+
 }
 @media screen and (min-width: 900px) {
   .br--sp {
@@ -482,7 +546,9 @@ width: var(--fluid-size_w);
 
 @media screen and (min-width: 1000px) {
 
-  .gnavi__list {
+  .gnavi__list-1,
+.gnavi__list-2,
+  .gnavi__list-3 {
     justify-content: space-between;
   }
   .stay__checkin {
@@ -576,9 +642,72 @@ width: var(--fluid-size_w);
     width: 23%;
   }
 
+
+
 }
 
 
+@media screen and (min-width: 1200px) {
+
+.openbtn {
+  width: 10%;
+  height: 10vw;
+}
+
+  .menu__flex {
+    flex-direction: row;
+    justify-content: space-between;
+    /* gap: 5vw; */
+    width: 75%;
+    margin: 12vw auto;
+  }
+.menu__mainbox {
+  width: 70%;
+  justify-content: left;
+}
+.menu__others {
+  flex: 1;
+}
+.menu__right {
+  margin-left: 5vw;
+}
+
+  .menu__left,
+.menu__right {
+  gap: 20px;
+  width: 100%;
+}
+.menu__left > li,
+.menu__right li {
+  height: 3.3vw;
+}
+.menu__left > li:not(:last-child)::before,
+.menu__right li:not(:last-child)::before {
+  top: 3vw;
+  width: 19vw;
+
+}
+
+.menu__button {
+  flex-direction: column;
+  gap: 1vw 0;
+
+}
+.menu__lang {
+flex-direction: column;
+
+  margin-top: 10%;
+  margin-left: 10%;
+}
+.menu__reservationButton, 
+.menu__cancelButton {
+  padding: 1em 10px;
+  width: 100%;
+
+}
+
+
+}
 
 
 
@@ -717,7 +846,9 @@ width: var(--fluid-size_w);
 
 @media screen and (min-width: 1920px) {
 
-  .gnavi__list {
+  .gnavi__list-1,
+.gnavi__list-2,
+  .gnavi__list-3 {
     flex-wrap: nowrap;
     justify-content: space-between;
     width: 88%;

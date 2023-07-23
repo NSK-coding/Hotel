@@ -11,7 +11,10 @@
   width: 18%;
   height: auto;
   background-color: rgba(255, 255, 255, 0.67);
-
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
 }
 .header__search {
   width: 18%;
@@ -51,6 +54,125 @@
 padding-top: 65%;
 text-align: center;
   text-transform: uppercase;
+}
+
+#g-nav {
+  overflow-y: scroll;
+}
+
+.menu__flex {
+  display: flex;
+  flex-direction: column;
+  width: 82%;
+  margin: 20% auto;
+  text-align: left;
+}
+
+.menu__mainbox {
+  display: flex;
+  justify-content: space-between;
+
+  --min-size: 12;
+  --max-size: 30;
+  font-size: var(--clamp-size);
+}
+.menu__left,
+.menu__right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 50%;
+}
+.menu__left > li,
+.menu__right li {
+  display: inline-block;
+  width: 100%;
+  height: 10vw;
+  position: relative;
+}
+.menu__left a,
+.menu__right a {
+  color: white;
+}
+.menu__right {
+  margin-left: 16vw;
+}
+.menu__left > li:not(:last-child)::before,
+.menu__right li:not(:last-child)::before {
+  position: absolute;
+  top: 12vw;
+  left: -0.4em;
+  display: inline-block;
+  width: 34vw;
+  height: 1px;
+  content: "";
+  background-color: white;
+}
+
+.menu__cuisinelist {
+  --min-size: 10;
+  --max-size: 24;
+  font-size: var(--clamp-size);
+}
+.menu__cuisinelist li {
+margin-left: 10%;
+}
+.menu__lang li:before,
+.menu__cuisinelist li::before {
+  position: relative;
+  top: -0.2em;
+  left: -0.6em;
+   display: inline-block;
+   width: 0.2em;
+  height: 0.2em;
+   content: '';
+   border-radius: 100%;
+  background-color: white;
+}
+
+.menu__others {
+
+}
+.menu__button {
+  display: flex;
+  justify-content: space-between;
+  gap: 0 5vw;
+  margin-top: 10%;
+  --min-size: 10;
+  --max-size: 24;
+  font-size: var(--clamp-size);
+}
+.menu__lang {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0 5vw;
+  margin-top: 5%;
+  --min-size: 10;
+  --max-size: 22;
+  font-size: var(--clamp-size);
+
+}
+.menu__lang a {
+  color: white;
+}
+.menu__reservationButton, 
+.menu__cancelButton {
+  padding: 1em 10px;
+  width: 40vw;
+  --min-size: 10;
+  --max-size: 24;
+  font-size: var(--clamp-size);
+}
+
+.menu__cancelButton {
+  background-color: white;
+  color: black;
+}
+.menu__cancelButton:focus,
+.menu__cancelButton:hover {
+  background-color: var(--color-accent);
+  border-color: currentColor;
+  color: white;
 }
 
 .mainvisual {
@@ -112,8 +234,9 @@ width: 100%;
   /* transform: translateY(15%); */
 }
 
-
-.gnavi__list {
+.gnavi__list-1,
+.gnavi__list-2,
+.gnavi__list-3 {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;

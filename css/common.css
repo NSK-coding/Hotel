@@ -292,6 +292,28 @@ pointer-events: none;
 }
 
 /* || Button Styles */
+.basic-button {
+  display: inline-block;
+  width: 300px;
+  max-width: 100%;
+  padding: 20px 10px;
+  background-color: #eac375;
+  border: 2px solid transparent;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, .16);
+  color: white;
+  font-size: 1.6rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.25s;
+}
+.basic-button:focus,
+.basic-button:hover {
+  background-color: white;
+  border-color: currentColor;
+  color: #eac375;
+}
+
+
 .search-button {
   position: relative;
   display: inline-block;
@@ -577,11 +599,13 @@ transition-delay: .6s;
   .openbtn {
     /*ボタン内側の基点となるためrelativeを指定。
 追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
-    position: relative;
-    z-index: 9999;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 999;
     cursor: pointer;
-    width: 100%;
-    height: 100%;
+    width: 18%;
+    height: 18vw;
 
   }
 
@@ -595,6 +619,7 @@ transition-delay: .6s;
     border-radius: 5px;
     background: #fff;
     width: 50%;
+    z-index: 100;
   }
 
   .openbtn span:nth-of-type(1) {
@@ -613,10 +638,10 @@ transition-delay: .6s;
   /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
 
   .openbtn.active span:nth-of-type(1) {
-    top: 14px;
-    left: 18px;
-    transform: translateY(6px) rotate(-45deg);
-    width: 30%;
+top: 37%;
+left: 25%;
+    transform: translateY(50%) rotate(-45deg);
+    width: 45%;
   }
 
   .openbtn.active span:nth-of-type(2) {
@@ -624,26 +649,34 @@ transition-delay: .6s;
   }
 
   .openbtn.active span:nth-of-type(3) {
-    top: 26px;
-    left: 18px;
-    transform: translateY(-6px) rotate(45deg);
-    width: 30%;
+
+    top: 40%;
+    left: 25%;
+    transform: translateY(-50%) rotate(45deg);
+    width: 45%;
   }
 
   .openbtn.active span:nth-of-type(3)::after {
-    content: "Close"; /*3つ目の要素のafterにClose表示を指定*/
-    transform: translateY(0) rotate(-45deg);
+    content: ""; /*3つ目の要素のafterにClose表示を指定*/
+    /* transform: translateY(0) rotate(-45deg);
     top: 5px;
-    left: 4px;
+    left: 4px; */
+  }
+  .openbtn.active p {
+    display: none;
   }
 
+  .header__logo.panelactive {
+    background-color: transparent;
+    position: fixed;
+  }
   /*========= ナビゲーションのためのCSS ===============*/
 
   #g-nav {
-    display: none;
+    /* display: none; */
     /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
     position: fixed;
-    z-index: 999;
+    z-index: 99;
     /*ナビのスタート位置と形状*/
     /* top: -120%; */
     top: 0;
@@ -652,7 +685,7 @@ transition-delay: .6s;
     pointer-events: none;
     width: 100%;
     height: 100vh;
-    background-image: url(../img/AdobeStock_93456281_sp.webp);
+    background-image: url(../img/menu_sp.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -664,6 +697,7 @@ transition-delay: .6s;
   #g-nav.panelactive {
     /* top: 0; */
     opacity: 1;
+    pointer-events: initial;
   }
 
 /* || ANIMATIONS  */
