@@ -66,8 +66,10 @@
 }
 
   .tab li {
-    
-    width: 14%;
+    --min-size_mt: 225;
+    --max-size_mt: 269;
+    width: var(--clamp-size_mt);
+    /* width: 14%; */
   }
   .tab__page {
     /* font-size: clamp(1.8rem, 1vw, 2rem); */
@@ -75,97 +77,23 @@
     --max-size: 20;
     font-size: var(--clamp-size);
   }
-  .gnavi__list {
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    width: 88%;
-    margin: 3vw auto;
-    gap: initial;
+
+.gnavi__list {
     /* font-size: clamp(1.8rem, 1vw, 2rem); */
     --min-size: 18;
     --max-size: 20;
     font-size: var(--clamp-size);
-  }
-  .stay__checkin {
-    width: 17%;
-  }
-  .stay__notdecided {
-    width: 6%;
-  }
-  .stay__rooms,
-  .stay__children,
-  .stay__adults,
-  .stay__duration {
-    width: 12%;
-  }
-  .tab__search {
-    margin-top: 2%;
-    width: 20%;
+}
+.tab__search {
     /* font-size: clamp(2.2rem, 1.3vw, 2.4rem); */
     --min-size: 22;
     --max-size: 24;
     font-size: var(--clamp-size);
-  }
-  input[type="date"]::after {
-    right: 2vw;
-  }
-  .search-button {
-    padding: 0.4em 2em 0.8em;
-  }
-  .search-button::before {
-    width: 2vw;
-    height: 2vw;
-  }
-  li:has(> .dropdown)::after {
-    width: 1vw;
-    height: 1vw;
-    right: 2vw;
-    top: 50%;
-  }
-  input[type="checkbox"] {
-    padding-left: 1.5vw;
-  }
-  input[type="checkbox"]::before {
-    width: 2.2vw; /*チェックボックスの横幅*/
-    height: 2.2vw; /*チェックボックスの縦幅*/
-  }
-  input[type="checkbox"]::after {
-    width: 3vw;
-    height: 3vw;
-  }
-  .restaurant__calendar,
-  .ticket__calendar,
-  .stay__calendar {
-    padding: 1.5em 0 1.1em 1.9em;
-  }
-  .stay__duration select {
-    flex-grow: initial;
-  }
-  .ticket__checkin,
-  .ticket__departure {
-    width: 17%;
-  }
-  .ticket__children,
-  .ticket__adults,
-  .ticket__duration {
-    width: 12%;
-  }
-  .restaurant__date {
-    width: 17%;
-  }
-  .restaurant__site {
-    width: 17%;
-  }
-  .restaurant__children,
-  .restaurant__adults {
-    width: 12%;
-  }
-  .restaurant__time {
-    width: 12%;
-  }
+}
+
 
   .topics__wrapper {
-    grid-template-columns: 2fr 7fr;
+    grid-template-columns: 2fr 6fr;
     column-gap: 3%;
     min-height: 70vh;
   }
@@ -552,6 +480,108 @@ width: var(--fluid-size_w);
 
 }
 
+@media screen and (min-width: 1000px) {
+
+  .gnavi__list {
+    justify-content: space-between;
+  }
+  .stay__checkin {
+    width: 32%;
+  }
+  .stay__notdecided {
+    width: 9%;
+  }
+  .stay__rooms,
+  .stay__children,
+  .stay__adults,
+  .stay__duration {
+    width: 22%;
+  }
+  .stay__rooms {
+    margin-right: auto;
+  }
+  .tab__search {
+    margin-top: 1.5em;
+    width: 40%;
+
+  }
+  input[type="date"]::after {
+    right: 2vw;
+  }
+  .search-button {
+    padding: 0.4em 2em 0.8em;
+  }
+  .search-button::before {
+    width: 2vw;
+    height: 2vw;
+  }
+  li:has(> .dropdown)::after {
+    width: 1vw;
+    height: 1vw;
+    right: 2vw;
+    top: 55%;
+  }
+  input[type="checkbox"] {
+    padding-left: 2.8vw;
+  }
+  input[type="checkbox"]::before {
+    width: 2.2vw; /*チェックボックスの横幅*/
+    height: 2.2vw; /*チェックボックスの縦幅*/
+  }
+  input[type="checkbox"]::after {
+    width: 3vw;
+    height: 3vw;
+  }
+  .restaurant__calendar,
+  .ticket__calendar,
+  .stay__calendar {
+    padding: 1.5em 0 1.1em 1.9em;
+  }
+  .stay__duration select {
+    flex-grow: initial;
+  }
+  .ticket__checkin,
+  .ticket__departure {
+    width: 33%;
+  }
+  .ticket__departure select {
+    flex-grow: initial;
+  }
+  .ticket__children,
+  .ticket__adults,
+  .ticket__duration {
+    width: 22%;
+  }
+  .ticket__children {
+    margin-right: auto;
+  }
+
+  .restaurant__date {
+    width: 33%;
+  }
+  .restaurant__site {
+    width: 34%;
+  }
+  .restaurant__site select {
+    flex-grow: initial;
+    }
+  .restaurant__children{
+    width: 22%;
+    margin-right: auto;
+  }
+  .restaurant__adults {
+    width: 22%;
+  }
+  .restaurant__time {
+    width: 23%;
+  }
+
+}
+
+
+
+
+
 @media screen and (min-width: 1400px) {
   
 
@@ -686,6 +716,110 @@ width: var(--fluid-size_w);
 }
 
 @media screen and (min-width: 1920px) {
+
+  .gnavi__list {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 88%;
+    margin: 3vw auto;
+    gap: initial;
+
+  }
+  .stay__checkin {
+    width: 17%;
+  }
+  .stay__notdecided {
+    width: 6%;
+  }
+  .stay__rooms,
+  .stay__children,
+  .stay__adults,
+  .stay__duration {
+    width: 12%;
+  }
+  .stay__rooms {
+    margin-right: initial;
+  }
+  .tab__search {
+    margin-top: 1.2em;
+    width: 20%;
+
+  }
+  input[type="date"]::after {
+    right: 2vw;
+  }
+  .search-button {
+    padding: 0.4em 2em 0.8em;
+  }
+  .search-button::before {
+    width: 2vw;
+    height: 2vw;
+  }
+  li:has(> .dropdown)::after {
+    width: 1vw;
+    height: 1vw;
+    right: 2vw;
+    top: 50%;
+  }
+  input[type="checkbox"] {
+    padding-left: 1.5vw;
+  }
+  input[type="checkbox"]::before {
+    width: 2.2vw; /*チェックボックスの横幅*/
+    height: 2.2vw; /*チェックボックスの縦幅*/
+  }
+  input[type="checkbox"]::after {
+    width: 3vw;
+    height: 3vw;
+  }
+  .restaurant__calendar,
+  .ticket__calendar,
+  .stay__calendar {
+    padding: 1.5em 0 1.1em 1.9em;
+  }
+  .stay__duration select {
+    flex-grow: initial;
+  }
+  .ticket__checkin,
+  .ticket__departure {
+    width: 17%;
+  }
+  .ticket__departure select {
+    flex-grow: initial;
+  }
+  .ticket__children,
+  .ticket__adults,
+  .ticket__duration {
+    width: 12%;
+  }
+  .ticket__children {
+    margin-right: initial;
+  }
+  .restaurant__date {
+    width: 17%;
+  }
+  .restaurant__site {
+    width: 17%;
+  }
+  .restaurant__site select {
+    flex-grow: initial;
+    }
+  .restaurant__children,
+  .restaurant__adults {
+    width: 12%;
+  }
+  .restaurant__time {
+    width: 12%;
+  }
+  .restaurant__children{
+    margin-right: initial;
+  }
+
+
+
+
+
+
   .fitness__flex {
     flex-direction: row-reverse;
   }
