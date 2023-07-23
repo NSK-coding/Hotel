@@ -69,6 +69,13 @@ width: 100%;
 .tab__wrapper {
   margin-top: 3vw;
 }
+.tab__wrapper::after {
+  content: "";
+  display: block;
+  padding-top: 50%;
+}
+
+
 .tab li {
   width: 30%;
 }
@@ -404,10 +411,12 @@ margin-left: auto;
 .fitness__container {
   margin-top: 8%;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 .fitness__description {
   width: 70%;
-  margin: 6% auto;
+  margin: 6% auto 0;
   /* font-size: clamp(1rem, 3vw, 2.2rem); */
   --min-size: 10;
   --max-size: 22;
@@ -428,7 +437,7 @@ bottom: -10%;
   width: 28%;
 }
 .fitness__button {
-  margin: 0 auto;
+  margin: 6% auto 0;
   color: black;
   border: 1px solid black;
 
@@ -523,6 +532,7 @@ bottom: -10%;
 .footer__caption {
   display: flex;
   justify-content: space-between;
+
   width: 78%;
   margin: 4% auto;
   /* font-size: clamp(1rem, 2.2vw, 1.6rem); */

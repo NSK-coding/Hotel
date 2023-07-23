@@ -66,6 +66,7 @@
 }
 
   .tab li {
+    
     width: 14%;
   }
   .tab__page {
@@ -385,25 +386,12 @@
 
   }
 
-.fitness__flex {
-  flex-direction: row-reverse;
-}
-.fitness__gym {
-  width: 57%;
-  margin-top: 7%;
-  margin-left: 6%;
-}
-.fitness__container {
-  margin-top: 7%;
-}
-.fitness__gallery {
-  gap: 0 10px;
-left: 13%;
-bottom: -33%;
-}
-.fitness__pic {
-  width: 28%;
-}
+  .fitness__description {
+    /* font-size: clamp(1rem, 3vw, 2.2rem); */
+    --min-size: 22;
+    --max-size: 22;
+    font-size: var(--clamp-size);
+  }
 
 .wedding__wrapper {
   margin-top: 20vw;
@@ -521,7 +509,10 @@ bottom: -33%;
 }
 
 .footer__caption {
-  width: 30%;
+  /* width: 30%; */
+  --min-size_w: 585;
+  --max-size_w: 576;
+width: var(--fluid-size_w);
   margin: 2% auto 1.5%;
   font-size: 1.6rem;
   --min-size: 16;
@@ -539,10 +530,11 @@ bottom: -33%;
 }
 .footer__sns {
   width: 17.5%;
+  width: 336px;
   margin-top: 0;
 }
 .footer__last {
-  padding: 2vw 6vw 0 6vw;
+  padding: 2vw 6vw 2vw 6vw;
   margin-top: 4%;
 }
 .footer__logo {
@@ -679,12 +671,48 @@ bottom: -33%;
     
   }
 
-
-
-
+  .fitness__container {
+    flex-direction: row;
+    align-items: end;
+    justify-content: space-around;
+  }
+.fitness__description {
+  width: 100%;
+}
 
 
 
 
 }
 
+@media screen and (min-width: 1920px) {
+  .fitness__flex {
+    flex-direction: row-reverse;
+  }
+  .fitness__gym {
+    width: 57%;
+    margin-top: 7%;
+    margin-left: 6%;
+  }
+  .fitness__container {
+    margin-top: 7%;
+    flex-direction: column;
+    align-items: normal;
+    justify-content: flex-start;
+  }
+  .fitness__description {
+    width: 80%;
+    margin-top: 8%;
+  }
+  .fitness__gallery {
+    gap: 0 10px;
+  left: 13%;
+  bottom: -33%;
+  }
+  .fitness__pic {
+    width: 28%;
+  }
+  .fitness__button {
+    margin-top: 8%;
+  }
+}
