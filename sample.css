@@ -1,0 +1,132 @@
+.box {
+  width: 500px;
+  height: 500px;
+  background-color: gray;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.main-button {
+  /* padding: 10px 30px; */
+  max-width: 300px;
+  --min-size_w: 80;
+  --max-size_w: 300;
+  width: var(--clamp-size_w);
+  width: clamp(80px, calc(0.5867 * 100vw - 140px), 300px);
+  max-height: 81px;
+  --min-size_h: 25;
+  --max-size_h: 81;
+  height: var(--clamp-size_h);
+  height: clamp(25px, calc(0.149 * 100vw - 31px), 81px);
+  --min-size: 12;
+  --max-size: 30;
+  font-size: var(--clamp-size);
+  color: white;
+}
+
+.main-button {
+  /*線の基点とするためrelativeを指定*/
+  position: relative;
+  /*ボタンの形状*/
+  display: inline-block;
+
+  border: 1px solid white;
+  text-decoration: none;
+  outline: none;
+  /*はみ出す背景色を隠す*/
+  overflow: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
+/*hoverした際のボタンの形状*/
+.main-button:hover {
+  color: red;
+  border-color: transparent;
+border: 5px solid red;
+  /*色の変化を遅らせる*/
+  transition-delay: 0.6s;
+}
+
+/*線の設定*/
+.main-button span {
+  /* position: absolute; */
+  display: block;
+  z-index: 2;
+  /* top: 0;
+  left: 18%; */
+
+  /* padding: 10px 30px 0px 28px; */
+  /* width: 398px; */
+  /* height: 58px; */
+  /* border: 1px solid red; */
+}
+
+/*== 線から塗に変化（左から右） */
+
+/*線の設定*/
+.borderleft span::before,
+.borderleft span::after {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  z-index: 2;
+  width: 0;
+  height: 5px;
+  /*線の形状*/
+  background: red;
+  /*アニメーションの設定*/
+  transition: all 0.3s;
+}
+
+/*左上線*/
+.borderleft span::before {
+  left: 0;
+  top: 0;
+}
+
+/*左下線*/
+.borderleft span::after {
+  left: 0;
+  bottom: 0;
+}
+
+/*hoverをすると線が伸びる*/
+.borderleft:hover span::before,
+.borderleft:hover span::after {
+  width: 100%;
+}
+
+/*背景の設定*/
+.borderleft::before {
+  content: "";
+  /*絶対配置で線の位置を決める*/
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 0;
+  /*背景の形状*/
+  height: 100%;
+  width: 0;
+  background: white;
+  /*アニメーションの設定*/
+  transition: all 0.3s;
+}
+
+.borderleft--gold::before {
+  background: white;
+}
+
+/*hoverをすると背景が伸びる*/
+.borderleft:hover::before {
+  width: 100%;
+  /*0.4秒遅れてアニメーション*/
+  transition-delay: 0.4s;
+}
