@@ -129,7 +129,7 @@ margin-left: 10%;
    border-radius: 100%;
   background-color: white;
 }
-
+/* TODO: タブ移動でフォーカス tabindex */
 .menu__others {
 
 }
@@ -196,7 +196,7 @@ width: 100%;
   display: block;
   padding-top: 50%;
 }
-
+/* TODO: ホバーでセレクタが出てくる */
 
 .tab li {
   width: 30%;
@@ -338,7 +338,7 @@ flex-grow: 1;
 
 .topics__wrapper {
   width: 100%;
-  min-height:100vw;
+  min-height: 90vw;
   background-image: url(../img/topic.webp);
   background-position: center;
   background-size: cover;
@@ -358,6 +358,7 @@ flex-grow: 1;
   margin-top: 7%;
   grid-column: 1 / 2;
   grid-row: 2 / 3;
+  margin-left: 15vw;
 }
 .topics__grid--3 {
   grid-column: 1 / 2;
@@ -371,19 +372,25 @@ flex-grow: 1;
   background-color: white;
 
 }
-
-
-
-
 .topics__button {
-  margin: 15% auto 5%;
+  margin: 0 auto 11%;
   color: white;
-  max-width: 300px;
-  /* font-size: clamp(2.4rem, 4vw, 3.6rem); */
-  --min-size: 24;
-  --max-size: 36;
-  font-size: var(--clamp-size);
+  --min-size_mt: 70;
+  --max-size_mt: 143;
+  margin-top: var(--fluid-size_mt);
 }
+
+.flickity-page-dots{
+  --min-size_mt: -34;
+  --max-size_mt: -80;
+  bottom: var(--fluid-size_mt);
+  left: -8vw;
+}
+
+
+
+
+
 
 .story__title {
   text-align: left;

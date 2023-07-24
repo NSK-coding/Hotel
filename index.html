@@ -357,7 +357,7 @@
             Topics<span class="section__subtitle">お知らせ・イベント情報</span>
           </h2>
 
-          <ul
+          <ul id="main-carousel"
             class="topics__slider gallery js-flickity"
             data-flickity-options='{"groupCells": false, "prevNextButtons": false, "cellAlign": "left" }'
           >
@@ -402,19 +402,23 @@
               </div>
             </li>
             <li class="topics__card card">
-              <figure class="card__img-wrapper"></figure>
+              <figure class="card__img-wrapper">
+                <img src="img/dummy.webp" alt="ダミー画像" class="card__img">
+              </figure>
               <div class="card__body">
-                <time datetime="2023-07-01" class="card__date">2023/7/1</time>
-                <h3 class="card__title"></h3>
-                <p class="card__text"></p>
+                <time datetime="2023-05-01" class="card__date">2023/5/1</time>
+                <h3 class="card__title">タイトルタイトルタイトル</h3>
+                <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
               </div>
             </li>
             <li class="topics__card card">
-              <figure class="card__img-wrapper"></figure>
+              <figure class="card__img-wrapper">
+                <img src="img/dummy.webp" alt="ダミー画像" class="card__img">
+              </figure>
               <div class="card__body">
-                <time datetime="2023-07-01" class="card__date">2023/7/1</time>
-                <h3 class="card__title"></h3>
-                <p class="card__text"></p>
+                <time datetime="2023-04-01" class="card__date">2023/4/1</time>
+                <h3 class="card__title">タイトルタイトルタイトル</h3>
+                <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
               </div>
             </li>
           </ul>
@@ -679,6 +683,7 @@
       document.getElementById("restaurant-today").value =
         yyyy + "-" + mm + "-" + dd;
     </script>
+
     <!-- jQuery -->
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -687,6 +692,6 @@
     ></script>
     <!--自作のJS-->
     <script src="js/main.js"></script>
-    <script src="js/flickity.pkgd.min.js"></script>
+    <script src="js/flickity.pkgd.js"></script>
   </body>
 </html>

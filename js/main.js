@@ -55,4 +55,7 @@ $(window).on('load', function () {
   GethashID (hashName);//設定したタブの読み込み
 });
 
+//
+// SLIDER
+//
 
