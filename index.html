@@ -35,15 +35,15 @@
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <header>
+    <header class="header">
       <div class="header__container">
         <h1 class="header__logo">
           <img src="img/logo.png" alt="ゴールデンホテル沖縄" />
         </h1>
-        <!-- <div class="header__search">
+        <div class="header__search">
           <img src="img/Frame.svg" alt="検索ボタン" />
           <p>空室・プラン検索</p>
-        </div> -->
+        </div>
         <div class="header__menu">
           <div class="openbtn">
             <span></span><span></span><span></span>
@@ -108,8 +108,6 @@
         <!-- /.header__menu -->
       </div>
       <!-- /.header__container -->
-    </header>
-    <main>
       <div id="mainvisual" class="mainvisual">
         <picture>
           <source srcset="img/FV-1_pc.webp" media="(min-width: 768px)">
@@ -117,327 +115,261 @@
         </picture>
       </div>
       <!-- /#mainvisual -->
-      <div id="tab-selector" class="tab__wrapper">
-        <ul class="tab">
-          <li><a href="#stay" class="tab__page tab__page--stay">宿泊</a></li>
-          <li>
-            <a href="#ticket" class="tab__page tab__page--ticket"
-              >航空券＋宿泊</a
-            >
-          </li>
-          <li>
-            <a href="#restaurant" class="tab__page tab__page--restaurant"
-              >レストラン予約</a
-            >
-          </li>
-        </ul>
-        <section id="stay" class="area">
-          <ul class="gnavi__list-1">
-            <li class="gnavi__items stay__checkin">
-              <legend>チェックイン日</legend>
-              <input
-                type="date"
-                name="checkin"
-                id="stay-today"
-                class="stay__calendar"
-              />
-            </li>
-            <li class="gnavi__items stay__notdecided">
-              <legend>日付未定</legend>
-              <div class="checkbox__container">
-                <input
-                  type="checkbox"
-                  name="notdecided"
-                  id="notdecided"
-                  class="stay__checckbox"
-                />
-              </div>
-            </li>
-            <li class="gnavi__items stay__duration">
-              <legend>泊数</legend>
-              <select
-                name="stay__duration"
-                id="stay__duration"
-                class="dropdown"
-              >
-                <option value="1">１泊</option>
-                <option value="2">２泊</option>
-                <option value="3">３泊</option>
-              </select>
-            </li>
-            <li class="gnavi__items stay__adults">
-              <legend>大人</legend>
-              <select name="stay__adults" id="stay__adults" class="dropdown">
-                <option value="0">０人</option>
-                <option value="1">１人</option>
-                <option value="2">２人</option>
-                <option value="3">３人</option>
-              </select>
-            </li>
-            <li class="gnavi__items stay__children">
-              <legend>子供</legend>
-              <select
-                name="stay__children"
-                id="stay__children"
-                class="dropdown"
-              >
-                <option value="0">０人</option>
-                <option value="1">１人</option>
-                <option value="2">２人</option>
-                <option value="3">３人</option>
-              </select>
-            </li>
-            <li class="gnavi__items stay__rooms">
-              <legend>室数</legend>
-              <select name="stay__rooms" id="stay__rooms" class="dropdown">
-                <option value="1">１室</option>
-                <option value="2">２室</option>
-                <option value="3">３室</option>
-              </select>
-            </li>
-            <li class="gnavi__items tab__search stay__search">
-              <a href="" class="search-button">この条件で検索</a>
-            </li>
-          </ul>
-        </section>
-        <section id="ticket" class="area">
-          <ul class="gnavi__list-2">
-            <li class="gnavi__items ticket__departure">
-              <legend>出発空港</legend>
-              <select
-                name="ticket__departure"
-                id="ticket__departure"
-                class="dropdown"
-              >
-                <option value="1">東京（羽田・成田）</option>
-                <option value="2">札幌</option>
-                <option value="3">仙台</option>
-                <option value="4">新潟</option>
-                <option value="5">長野</option>
-                <option value="6">名古屋（中部・小牧）</option>
-                <option value="7">大阪（伊丹・関西）</option>
-                <option value="8">高松</option>
-                <option value="9">広島</option>
-                <option value="10">福岡</option>
-              </select>
-            </li>
-            <li class="gnavi__items ticket__checkin">
-              <legend>チェックイン日</legend>
-              <input
-                type="date"
-                name="checkin"
-                id="ticket-today"
-                class="ticket__calendar"
-              />
-            </li>
-            <li class="gnavi__items ticket__duration">
-              <legend>泊数</legend>
-              <select
-                name="ticket__duration"
-                id="ticket__duration"
-                class="dropdown"
-              >
-                <option value="1">１泊</option>
-                <option value="2">２泊</option>
-                <option value="3">３泊</option>
-              </select>
-            </li>
-            <li class="gnavi__items ticket__adults">
-              <legend>大人</legend>
-              <select
-                name="ticket__adults"
-                id="ticket__adults"
-                class="dropdown"
-              >
-                <option value="0">０人</option>
-                <option value="1">１人</option>
-                <option value="2">２人</option>
-                <option value="3">３人</option>
-              </select>
-            </li>
-            <li class="gnavi__items ticket__children">
-              <legend>子供</legend>
-              <select
-                name="ticket__children"
-                id="ticket__children"
-                class="dropdown"
-              >
-                <option value="0">０人</option>
-                <option value="1">１人</option>
-                <option value="2">２人</option>
-                <option value="3">３人</option>
-              </select>
-            </li>
-            <li class="gnavi__items tab__search ticket__search">
-              <a href="" class="search-button">この条件で検索</a>
-            </li>
-          </ul>
-        </section>
-        <section id="restaurant" class="area">
-          <ul class="gnavi__list-3">
-            <li class="gnavi__items restaurant__date">
-              <legend>レストランご利用日</legend>
-              <input
-                type="date"
-                name="reservation"
-                id="restaurant-today"
-                class="restaurant__calendar"
-              />
-            </li>
-            <li class="gnavi__items restaurant__site">
-              <legend>ご利用レストラン</legend>
-              <select
-                name="restaurant__site"
-                id="restaurant__site"
-                class="dropdown"
-              >
-                <option value="0">オールデイダイニング</option>
-                <option value="1">ロビーラウンジ</option>
-                <option value="2">メインバー</option>
-                <option value="3">中華料理</option>
-                <option value="4">鉄板焼</option>
-                <option value="5">日本料理</option>
-              </select>
-            </li>
-            <li class="gnavi__items restaurant__time">
-              <legend>時間</legend>
-              <select
-                name="restaurant__time"
-                id="restaurant__time"
-                class="dropdown"
-              >
-                <option value="0">１０：００</option>
-                <option value="1">１１：００</option>
-                <option value="2">１２：００</option>
-                <option value="3">１３：００</option>
-                <option value="4">１４：００</option>
-                <option value="5">１５：００</option>
-                <option value="6">１６：００</option>
-                <option value="7">１７：００</option>
-                <option value="8">１８：００</option>
-                <option value="9">１９：００</option>
-                <option value="10">２０：００</option>
-              </select>
-            </li>
-            <li class="gnavi__items restaurant__adults">
-              <legend>大人</legend>
-              <select
-                name="restaurant__adults"
-                id="restaurant__adults"
-                class="dropdown"
-              >
-                <option value="0">０人</option>
-                <option value="1">１人</option>
-                <option value="2">２人</option>
-                <option value="3">３人</option>
-              </select>
-            </li>
-            <li class="gnavi__items restaurant__children">
-              <legend>子供</legend>
-              <select
-                name="restaurant__children"
-                id="restaurant__children"
-                class="dropdown"
-              >
-                <option value="0">０人</option>
-                <option value="1">１人</option>
-                <option value="2">２人</option>
-                <option value="3">３人</option>
-              </select>
-            </li>
-            <li class="gnavi__items tab__search restaurant__search">
-              <a href="" class="search-button">この条件で検索</a>
-            </li>
-          </ul>
-        </section>
-      </div>
-      <!-- /.tab__wrapper -->
-      <article id="topics">
-        <div class="topics__wrapper">
-          <h2 class="topics__title section__title">
-            Topics<span class="section__subtitle">お知らせ・イベント情報</span>
-          </h2>
 
-          <ul id="main-carousel"
-            class="topics__slider gallery js-flickity"
-            data-flickity-options='{"groupCells": false, "prevNextButtons": false, "cellAlign": "left" }'
-          >
-            <li class="topics__card card">
-              <figure class="card__img-wrapper">
-                <img src="img/firework.webp" alt="花火大会" class="card__img" />
-              </figure>
-              <div class="card__body">
-                <time datetime="2023-07-01" class="card__date">2023/7/1</time>
-                <h3 class="card__title">花火大会のお知らせ</h3>
-                <p class="card__text">
-                  毎年恒例の、花火大会が近づいてまいりました。<br />
-                  毎週金・土曜日の20時より打ち上げいたしますので、ぜひご鑑賞くださいませ。<br />
-                  また、１Fプールサイドには屋台も出ますので、夏祭り気分をお楽しみください。
-                </p>
-              </div>
+      <div class="main-start">
+        <div id="tab-selector" class="tab__wrapper">
+          <ul class="tab">
+            <li><a href="#stay" class="tab__page tab__page--stay">宿泊</a></li>
+            <li>
+              <a href="#ticket" class="tab__page tab__page--ticket"
+                >航空券＋宿泊</a
+              >
             </li>
-            <li class="topics__card card">
-              <figure class="card__img-wrapper">
-                <img src="img/food.webp" alt="夏期メニュー" class="card__img" />
-              </figure>
-              <div class="card__body">
-                <time datetime="2023-06-20" class="card__date">2023/6/20</time>
-                <h3 class="card__title">オールデイダイニング・夏期メニュー</h3>
-                <p class="card__text">
-                  オールデイダイニングでは、7/1より夏期メニューにリニューアルいたします。<br />
-                  BBQの雰囲気が味わえるライブキッチンもございますので、ぜひご利用ください。
-                </p>
-              </div>
-            </li>
-            <li class="topics__card card">
-              <figure class="card__img-wrapper">
-                <img src="img/shark.webp" alt="夏限定プラン" class="card__img" />
-              </figure>
-              <div class="card__body">
-                <time datetime="2023-06-01" class="card__date">2023/6/1</time>
-                <h3 class="card__title">限定プランのお知らせ</h3>
-                <p class="card__text">
-                  本日より、夏限定プランを販売いたします。<br />
-                  毎年人気のアクティビティか近隣施設の入場券のついたプランとなっております。公式サイト限定のプランとなっておりますので、ぜひご利用くださいませ。
-                </p>
-              </div>
-            </li>
-            <li class="topics__card card">
-              <figure class="card__img-wrapper">
-                <img src="img/dummy.webp" alt="ダミー画像" class="card__img">
-              </figure>
-              <div class="card__body">
-                <time datetime="2023-05-01" class="card__date">2023/5/1</time>
-                <h3 class="card__title">タイトルタイトルタイトル</h3>
-                <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              </div>
-            </li>
-            <li class="topics__card card">
-              <figure class="card__img-wrapper">
-                <img src="img/dummy.webp" alt="ダミー画像" class="card__img">
-              </figure>
-              <div class="card__body">
-                <time datetime="2023-04-01" class="card__date">2023/4/1</time>
-                <h3 class="card__title">タイトルタイトルタイトル</h3>
-                <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
-              </div>
+            <li>
+              <a href="#restaurant" class="tab__page tab__page--restaurant"
+                >レストラン予約</a
+              >
             </li>
           </ul>
-          <div class="topics__grid--3">
-            <a href="#" class="topics__button main-button main-button--gold borderleft borderleft--gold"
-              ><span>View more</span></a
-            >
-          </div>
+
+
+          <section id="stay" class="area">
+            <ul class="gnavi__list-1">
+              <li class="gnavi__items stay__checkin">
+                <label for="stay-today">チェックイン日</label>
+                <input
+                  type="date"
+                  name="checkin"
+                  id="stay-today"
+                  class="stay__calendar"
+                />
+              </li>
+              <li class="gnavi__items stay__notdecided">
+                <label for="notdecided">日付未定</label>
+                <div class="checkbox__container">
+                  <input
+                    type="checkbox"
+                    name="notdecided"
+                    id="notdecided"
+                    class="stay__checckbox"
+                  />
+                </div>
+              </li>
+              <li class="gnavi__items stay__duration">
+                <label for="stay__duration">泊数</label>
+                <select
+                  name="stay__duration"
+                  id="stay__duration"
+                  class="dropdown"
+                >
+                  <option value="1">１泊</option>
+                  <option value="2">２泊</option>
+                  <option value="3">３泊</option>
+                </select>
+              </li>
+              <li class="gnavi__items stay__adults">
+                <label for="stay__adults">大人</label>
+                <select name="stay__adults" id="stay__adults" class="dropdown">
+                  <option value="0">０人</option>
+                  <option value="1">１人</option>
+                  <option value="2">２人</option>
+                  <option value="3">３人</option>
+                </select>
+              </li>
+              <li class="gnavi__items stay__children">
+                <label for="stay__children">子供</label>
+                <select
+                  name="stay__children"
+                  id="stay__children"
+                  class="dropdown"
+                >
+                  <option value="0">０人</option>
+                  <option value="1">１人</option>
+                  <option value="2">２人</option>
+                  <option value="3">３人</option>
+                </select>
+              </li>
+              <li class="gnavi__items stay__rooms">
+                <label for="stay__rooms">室数</label>
+                <select name="stay__rooms" id="stay__rooms" class="dropdown">
+                  <option value="1">１室</option>
+                  <option value="2">２室</option>
+                  <option value="3">３室</option>
+                </select>
+              </li>
+              <li class="gnavi__items tab__search stay__search">
+                <a class="search-button">この条件で検索</a>
+              </li>
+            </ul>
+          </section>
+          <section id="ticket" class="area">
+            <ul class="gnavi__list-2">
+              <li class="gnavi__items ticket__departure">
+                <label for="ticket__departure">出発空港</label>
+                <select
+                  name="ticket__departure"
+                  id="ticket__departure"
+                  class="dropdown"
+                >
+                  <option value="1">東京（羽田・成田）</option>
+                  <option value="2">札幌</option>
+                  <option value="3">仙台</option>
+                  <option value="4">新潟</option>
+                  <option value="5">長野</option>
+                  <option value="6">名古屋（中部・小牧）</option>
+                  <option value="7">大阪（伊丹・関西）</option>
+                  <option value="8">高松</option>
+                  <option value="9">広島</option>
+                  <option value="10">福岡</option>
+                </select>
+              </li>
+              <li class="gnavi__items ticket__checkin">
+                <label for="ticket-today">チェックイン日</label>
+                <input
+                  type="date"
+                  name="checkin"
+                  id="ticket-today"
+                  class="ticket__calendar"
+                />
+              </li>
+              <li class="gnavi__items ticket__duration">
+                <label for="ticket__duration">泊数</label>
+                <select
+                  name="ticket__duration"
+                  id="ticket__duration"
+                  class="dropdown"
+                >
+                  <option value="1">１泊</option>
+                  <option value="2">２泊</option>
+                  <option value="3">３泊</option>
+                </select>
+              </li>
+              <li class="gnavi__items ticket__adults">
+                <label for="ticket__adults">大人</label>
+                <select
+                  name="ticket__adults"
+                  id="ticket__adults"
+                  class="dropdown"
+                >
+                  <option value="0">０人</option>
+                  <option value="1">１人</option>
+                  <option value="2">２人</option>
+                  <option value="3">３人</option>
+                </select>
+              </li>
+              <li class="gnavi__items ticket__children">
+                <label for="ticket__children">子供</label>
+                <select
+                  name="ticket__children"
+                  id="ticket__children"
+                  class="dropdown"
+                >
+                  <option value="0">０人</option>
+                  <option value="1">１人</option>
+                  <option value="2">２人</option>
+                  <option value="3">３人</option>
+                </select>
+              </li>
+              <li class="gnavi__items tab__search ticket__search">
+                <a class="search-button">この条件で検索</a>
+              </li>
+            </ul>
+          </section>
+          <section id="restaurant" class="area">
+            <ul class="gnavi__list-3">
+              <li class="gnavi__items restaurant__date">
+                <label for="restaurant-today">レストランご利用日</label>
+                <input
+                  type="date"
+                  name="reservation"
+                  id="restaurant-today"
+                  class="restaurant__calendar"
+                />
+              </li>
+              <li class="gnavi__items restaurant__site">
+                <label for="restaurant__site">ご利用レストラン</label>
+                <select
+                  name="restaurant__site"
+                  id="restaurant__site"
+                  class="dropdown"
+                >
+                  <option value="0">オールデイダイニング</option>
+                  <option value="1">ロビーラウンジ</option>
+                  <option value="2">メインバー</option>
+                  <option value="3">中華料理</option>
+                  <option value="4">鉄板焼</option>
+                  <option value="5">日本料理</option>
+                </select>
+              </li>
+              <li class="gnavi__items restaurant__time">
+                <label for="restaurant__time">時間</label>
+                <select
+                  name="restaurant__time"
+                  id="restaurant__time"
+                  class="dropdown"
+                >
+                  <option value="0">１０：００</option>
+                  <option value="1">１１：００</option>
+                  <option value="2">１２：００</option>
+                  <option value="3">１３：００</option>
+                  <option value="4">１４：００</option>
+                  <option value="5">１５：００</option>
+                  <option value="6">１６：００</option>
+                  <option value="7">１７：００</option>
+                  <option value="8">１８：００</option>
+                  <option value="9">１９：００</option>
+                  <option value="10">２０：００</option>
+                </select>
+              </li>
+              <li class="gnavi__items restaurant__adults">
+                <label for="restaurant__adults">大人</label>
+                <select
+                  name="restaurant__adults"
+                  id="restaurant__adults"
+                  class="dropdown"
+                >
+                  <option value="0">０人</option>
+                  <option value="1">１人</option>
+                  <option value="2">２人</option>
+                  <option value="3">３人</option>
+                </select>
+              </li>
+              <li class="gnavi__items restaurant__children">
+                <label for="restaurant__children">子供</label>
+                <select
+                  name="restaurant__children"
+                  id="restaurant__children"
+                  class="dropdown"
+                >
+                  <option value="0">０人</option>
+                  <option value="1">１人</option>
+                  <option value="2">２人</option>
+                  <option value="3">３人</option>
+                </select>
+              </li>
+              <li class="gnavi__items tab__search restaurant__search">
+                <a class="search-button">この条件で検索</a>
+              </li>
+            </ul>
+          </section>
         </div>
-        <!-- /.topics__wrapper -->
-      </article>
+        <!-- /.tab__wrapper -->
+      </div>
+
+
+    </header>
+
+    <main>
+
+
+
       <article id="story">
         <div class="story__title">
           <h2 class="section__title">
             Story<span class="section__subtitle">私たちができる5つのこと</span>
           </h2>
         </div>
-
+        <div class="box" data-i="1"></div>
         <div class="story__image">
           <picture>
             <source srcset="img/story_pc.webp" media="(min-width: 1400px)">
@@ -594,11 +526,13 @@
               >
             </h2>
           </div>
-          <div class="wedding__chapel">
+          <div class="wedding__chapel"><a href="#">
             <picture>
               <source srcset="img/chapel_pc.webp" media="(min-width: 768px)">
               <img src="img/chapel_sp.webp" alt="挙式" />
             </picture>
+          </a>
+
           </div>
         </div>
       </article>
@@ -635,10 +569,91 @@
         </div>
         <!-- /.event__wrapper -->
       </article>
+
+      <article id="topics">
+        <div class="topics__wrapper">
+          <h2 class="topics__title section__title">
+            Topics<span class="section__subtitle">お知らせ・イベント情報</span>
+          </h2>
+
+          <ul id="main-carousel"
+            class="topics__slider gallery js-flickity"
+            data-flickity-options='{"groupCells": false, "prevNextButtons": false, "cellAlign": "left", "autoPlay": 4000, "pauseAutoPlayOnHover": false }'
+          >
+            <li class="topics__card card">
+              <figure class="card__img-wrapper">
+                <img src="img/firework.webp" alt="花火大会" class="card__img" />
+              </figure>
+              <div class="card__body">
+                <time datetime="2023-07-01" class="card__date">2023/7/1</time>
+                <h3 class="card__title">花火大会のお知らせ</h3>
+                <p class="card__text">
+                  毎年恒例の、花火大会が近づいてまいりました。<br />
+                  毎週金・土曜日の20時より打ち上げいたしますので、ぜひご鑑賞くださいませ。<br />
+                  また、１Fプールサイドには屋台も出ますので、夏祭り気分をお楽しみください。
+                </p>
+              </div>
+            </li>
+            <li class="topics__card card">
+              <figure class="card__img-wrapper">
+                <img src="img/food.webp" alt="夏期メニュー" class="card__img" />
+              </figure>
+              <div class="card__body">
+                <time datetime="2023-06-20" class="card__date">2023/6/20</time>
+                <h3 class="card__title">オールデイダイニング・夏期メニュー</h3>
+                <p class="card__text">
+                  オールデイダイニングでは、7/1より夏期メニューにリニューアルいたします。<br />
+                  BBQの雰囲気が味わえるライブキッチンもございますので、ぜひご利用ください。
+                </p>
+              </div>
+            </li>
+            <li class="topics__card card">
+              <figure class="card__img-wrapper">
+                <img src="img/shark.webp" alt="夏限定プラン" class="card__img" />
+              </figure>
+              <div class="card__body">
+                <time datetime="2023-06-01" class="card__date">2023/6/1</time>
+                <h3 class="card__title">限定プランのお知らせ</h3>
+                <p class="card__text">
+                  本日より、夏限定プランを販売いたします。<br />
+                  毎年人気のアクティビティか近隣施設の入場券のついたプランとなっております。公式サイト限定のプランとなっておりますので、ぜひご利用くださいませ。
+                </p>
+              </div>
+            </li>
+            <li class="topics__card card">
+              <figure class="card__img-wrapper">
+                <img src="img/dummy.webp" alt="ダミー画像" class="card__img">
+              </figure>
+              <div class="card__body">
+                <time datetime="2023-05-01" class="card__date">2023/5/1</time>
+                <h3 class="card__title">タイトルタイトルタイトル</h3>
+                <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              </div>
+            </li>
+            <li class="topics__card card">
+              <figure class="card__img-wrapper">
+                <img src="img/dummy.webp" alt="ダミー画像" class="card__img">
+              </figure>
+              <div class="card__body">
+                <time datetime="2023-04-01" class="card__date">2023/4/1</time>
+                <h3 class="card__title">タイトルタイトルタイトル</h3>
+                <p class="card__text">テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+              </div>
+            </li>
+          </ul>
+          <div class="topics__grid--3">
+            <a href="#" class="topics__button main-button main-button--gold borderleft borderleft--gold"
+              ><span>View more</span></a
+            >
+          </div>
+        </div>
+        <!-- /.topics__wrapper -->
+      </article>
+
       <section id="scroll">
-        <div class="scroll"></div>
+        <div><a href="#" class="scroll"></a></div>
       </section>
-      <footer>
+      <footer id="area-2">
         <ul class="footer__caption">
           <li class="footer__info">ホテル情報</li>
           <li class="footer__info">お問い合わせ</li>
@@ -683,6 +698,12 @@
         yyyy + "-" + mm + "-" + dd;
       document.getElementById("restaurant-today").value =
         yyyy + "-" + mm + "-" + dd;
+
+
+
+
+
+
     </script>
 
     <!-- jQuery -->

@@ -1,52 +1,57 @@
 /* || HEADER */
+.header {
+  width: 100%;
+height: 100vh;
+position: relative;
+}
 .header__container {
-  display: flex;
-  justify-content: space-between;
   width: 100%;
 
   text-align: center;
-  position: relative;
+  /* position: relative; */
 }
 .header__logo {
   width: 18%;
-  height: auto;
+height: auto;
   background-color: rgba(255, 255, 255, 0.67);
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 999;
 }
-/* .header__search {
-  display: none;
+.header__search {
   width: 18%;
+  height: 18vw;
   background-color: var(--color-base);
   margin-left: auto;
-  position: relative;
+  position: absolute;
+  top: 0;
+  right: 18%;
+  z-index: 999;
 }
 .header__search img {
-  display: none;
   width: 40%;
   margin-top: 15%;
 
 }
 .header__search p {
-  display: none;
   color: white;
   --min-size: 10;
   --max-size: 14;
   font-size: var(--clamp-size);
   margin-top: 10%;
-} */ 
+} 
 
-.header__menu {
-  width: 18%;
-flex-grow: 1;
-z-index: 100;
+.openbtn {
+  background-color: var(--color-accent);
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
 }
-.header__menu p {
+
+.openbtn p {
   color: white;
-  /* font-size: 1.6rem; */
-  /* font-size: clamp(1rem, 2.2vw, 1.6rem); */
   --min-size: 10;
   --max-size: 16;
   font-size: var(--clamp-size);
@@ -54,9 +59,7 @@ padding-top: 65%;
 text-align: center;
   text-transform: uppercase;
 }
-.openbtn {
-  background-color: var(--color-accent);
-}
+
 #g-nav {
   overflow-y: scroll;
 }
@@ -177,31 +180,98 @@ margin-left: 10%;
 }
 
 .mainvisual {
-
-  padding-top: 152%;
+  width: 100%;
+  padding-top: 100vh;
 }
 
 .mv-1 {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-width: 100%;
+height: 100vh;
+object-fit: cover;
 }
+
+/*　上に上がる動き　*/
+.main-start {
+position: relative;
+z-index: 999;
+}
+.tab__wrapper {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  left: 0;
+  --min-size_h: -20;
+  --max-size_h: 16;
+  top: calc(100vh - 4.3em - var(--fluid-size_h));
+
+}
+
+
+.main-start.UpMove{
+  pointer-events: all;
+	animation: UpAnime 0.5s forwards;
+}
+
+@keyframes UpAnime{
+  from {
+    opacity: 0;
+    --min-size_h: -20;
+    --max-size_h: 16;
+    top: calc(100vh - 4.3em - var(--fluid-size_h) - 100px);
+  }
+  to {
+    opacity: 1;
+    --min-size_h: -20;
+    --max-size_h: 16;
+    top: calc(100vh - 4.3em - var(--fluid-size_h));
+  }
+}
+
+/*　下に下がる動き　*/
+
+.main-start.DownMove{
+  pointer-events: none;
+	animation: DownAnime 0.5s forwards;
+}
+@keyframes DownAnime{
+  from {
+  	opacity: 1;
+    --min-size_h: -20;
+    --max-size_h: 16;
+    top: calc(100vh - 4.3em - var(--fluid-size_h));
+  }
+  to {
+  	opacity: 0;
+    --min-size_h: -20;
+    --max-size_h: 16;
+    top: calc(100vh - 4.3em - var(--fluid-size_h) + 100px);
+  }
+}
+
+
 
 .tab__wrapper {
   /* margin-top: 3vw; */
   background-color: transparent;
+  width: 100%;
+  transition: transform 0.5s;
 }
-.tab__wrapper::after {
+/* .tab__wrapper::after {
   content: "";
   display: block;
   padding-top: 50%;
+} */
+.tab__wrapper.is-active {
+
+transform: translateY(-75%);
 }
-/* TODO: ホバーでセレクタが出てくる */
+
 
 .tab li {
   width: 30%;
+  background-color: white;
 }
 .tab__page {
   /* font-size: clamp(1rem, 2.5vw, 1.8rem); */
@@ -210,6 +280,7 @@ width: 100%;
   font-size: var(--clamp-size);
   color: black;
   padding: 1em ;
+  line-height: 2.6em;
 }
 .tab__page::before {
   transform: translateY(30%);
@@ -234,6 +305,13 @@ width: 100%;
   background-image: url('https://api.iconify.design/fluent/food-16-filled.svg');
   /* transform: translateY(15%); */
 }
+.tab li:not(.active):hover {
+  background-color: var(--color-base);
+
+
+
+}
+
 
 .gnavi__list-1,
 .gnavi__list-2,
@@ -243,8 +321,8 @@ width: 100%;
   justify-content: center;
   width: 86%;
   /* height: 10vw; */
-  margin: 3vw auto;
-  gap: 10px 5%;
+  margin: 0 auto;
+  gap: 1em 5%;
   /* font-size: clamp(1rem, 2.5vw, 1.8rem); */
   --min-size: 10;
   --max-size: 18;
@@ -252,7 +330,7 @@ width: 100%;
 }
 .gnavi__items {
   /* height: 80px; */
-  transition: all .3s;
+  transition: opacity .3s;
   display: flex;
   flex-direction: column;
   /* align-items: stretch; */
@@ -601,8 +679,12 @@ bottom: -10%;
   bottom: 0;
   right: 0;
   box-shadow: -4px -4px 5px 0px rgba(255, 255, 255, 0.7);
+  transition: scale 0.5s;
 }
+.wedding__chapel:hover {
 
+  scale: 1.1;
+}
 .event__wrapper {
   margin-top: 10vw;
   width: 100%;

@@ -134,12 +134,17 @@ li {
   display: inline-block;
   margin-right: .5em;
 content: "";
-width: 1.8rem;
-height: 1.8rem;
+width: 1em;
+height: 1em;
 background-size: contain;
+background-position: 0 -0.15em;
+
 }
 
+
+
 /*liにactiveクラスがついた時の形状*/
+
 .tab li.active::after{
   position: absolute;
   bottom: -3px;
@@ -155,15 +160,20 @@ background-size: contain;
   display: none;/*はじめは非表示*/
   opacity: 0;/*透過0*/
   background: #fff;
+  padding-top: 1em;
+  padding-bottom: 12vw;
   /* padding:50px 20px; */
 }
 
 /*areaにis-activeというクラスがついた時の形状*/
 .area.is-active {
     display: block;/*表示*/
-    animation-name: displayAnime;/*ふわっと表示させるためのアニメーション*/
-    animation-duration: 2s;
-    animation-fill-mode: forwards;
+    opacity: 1;
+
+
+    /*animation-name: displayAnime;ふわっと表示させるためのアニメーション */
+    /* animation-duration: 2s;
+    animation-fill-mode: forwards;*/
 }
 
 @keyframes displayAnime{
@@ -336,8 +346,8 @@ pointer-events: none;
   display: inline-block;
   margin-right: .5em;
   content: "";
-  width: 5vw;
-  height: 5vw;
+  width: 1.6em;
+  height: 1.6em;
   background-size: contain;
   background-image: url(../img/Frame.svg);
   transform: translateY(30%);
@@ -605,6 +615,7 @@ transition-delay: .6s;
 
 /* || Scroll Styles  */
 .scroll {
+  display: block;
   width: 7vw;
   height: 7vw;
   margin: 13vw auto 0;
@@ -622,10 +633,7 @@ transition-delay: .6s;
   .openbtn {
     /*ボタン内側の基点となるためrelativeを指定。
 追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 999;
+
     cursor: pointer;
     width: 18%;
     height: 18vw;
@@ -659,6 +667,9 @@ transition-delay: .6s;
 
  
   /*activeクラスが付与されると線が回転して×になり、Menu⇒Closeに変更*/
+.openbtn.active {
+  background-color: transparent;
+}
 
   .openbtn.active span:nth-of-type(1) {
 top: 37%;
@@ -687,11 +698,13 @@ left: 25%;
   }
   .openbtn.active p {
     display: none;
-  }
 
+  }
+  .header__search.panelactive{
+    display: none;
+  }
   .header__logo.panelactive {
     background-color: transparent;
-    position: fixed;
   }
   /*========= ナビゲーションのためのCSS ===============*/
 /* TODO: 背景画像書き換え */
@@ -724,3 +737,68 @@ left: 25%;
   }
 
 /* || ANIMATIONS  */
+
+
+
+
+
+.box {
+  --box-width: 100rem;
+  --box-height: 50rem;
+  --frag-width: calc(var(--box-width) / var(--col));
+  --frag-height: calc(var(--box-height) / var(--row));
+  --img-url: url(../img/story_pc.webp);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: var(--box-width);
+  height: var(--box-height);
+  position: relative;
+}
+
+
+
+.box.hide::after {
+  opacity: 0;
+}
+.box.hide:hover::after {
+  opacity: 0;
+}
+.box:hover::after {
+  background-image: initial;
+  font-size: 1.8rem;
+}
+
+.fragment {
+  --x-offset: calc(var(--x) * var(--frag-width) * -1);
+  --y-offset: calc(var(--y) * var(--frag-height) * -1);
+  --rotateX: rotateX(0);
+  --rotateY: rotateY(0);
+  width: var(--frag-width);
+  height: var(--frag-height);
+  background: var(--img-url) var(--x-offset) var(--y-offset) / var(--box-width)
+    var(--box-height) no-repeat;
+  backface-visibility: hidden;
+  will-change: transform;
+  transform: var(--rotateX) var(--rotateY) scale(0.8);
+  animation: flip var(--duration) linear var(--delay) forwards;
+  opacity: 0;
+}
+@keyframes flip {
+  0% {
+    transform: var(--rotateX) var(--rotateY) scale(0.8);
+    opacity: 0;
+  }
+  15% {
+    transform: var(--rotateX) var(--rotateY) scale(0.8);
+    opacity: 0;
+  }
+  70% {
+    transform: rotateX(0) rotateY(0) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(0) rotateY(0) scale(1);
+    opacity: 1;
+  }
+}
