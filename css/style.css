@@ -179,17 +179,80 @@ margin-left: 10%;
   color: white;
 }
 
+
+#slider {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .mainvisual {
   width: 100%;
   padding-top: 100vh;
 }
 
-.mv-1 {
+.mainvisual__slide {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
 height: 100vh;
+opacity: 0;
 object-fit: cover;
+animation: change-img-anim 12s infinite;
+}
+.mainvisual__slide--1 {
+  animation: change-img-anim-first 12s infinite;
+  animation-delay: 0s;
+}
+.mainvisual__slide--2 {
+  animation-delay: 3s;
+}
+.mainvisual__slide--3 {
+  animation-delay: 6s;
+}
+.mainvisual__slide--4 {
+  animation-delay: 9s;
+}
+@keyframes change-img-anim-first {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  36% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes change-img-anim {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  36% {
+    opacity: 1;
+  }
+  45% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*　上に上がる動き　*/
@@ -493,7 +556,7 @@ flex-grow: 1;
 .story__inner {
   margin-top: 16%;
   margin-left: 7%;
-
+  
 }
 .story__content {
   margin-top: 4%;
@@ -502,6 +565,9 @@ flex-grow: 1;
   --min-size: 10;
   --max-size: 20;
   font-size: var(--clamp-size);
+}
+.story__content span {
+  display: block;
 }
 .story__buttonWrapper {
   --min-size: 20;
@@ -528,16 +594,29 @@ flex-grow: 1;
 .cuisine__flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 1vw 2%;
+  gap: 1vw 2vw;
   margin-top: 7%;
-  /* font-size: clamp(1rem, 2.2vw, 1.6rem); */
   --min-size: 10;
   --max-size: 16;
   font-size: var(--clamp-size);
 }
+
+/* .cuisine__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: 84vw;
+max-height: 64vw;
+  justify-content: space-between;
+  transition: .35s linear;
+} */
+
 .cuisine__visual {
   width: 49%;
   position: relative;
+  background-color: red;
+/* justify-items: stretch; */
+flex-grow: 1;
 }
 .cuisine__banner {
   position: absolute;
@@ -550,6 +629,23 @@ flex-grow: 1;
   line-height: 5rem;
   padding: 0 0.3em;
 }
+.cuisine__visual > img {
+width: 28vw;
+
+  object-fit: cover;
+  cursor: pointer;
+  filter: grayscale(80%);
+
+}
+.cuisine__visual > img:hover {
+  filter: grayscale(0);
+
+
+}
+/* .cuisine__grid:has(.cuisine_visual--ad:hover) {
+  grid-template-columns: 1.2fr 0.9fr 0.9fr;
+  grid-template-rows: 0.8fr 0.2fr;
+} */
 
 .special__wrapper {
   margin-top: 8vw;

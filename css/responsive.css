@@ -57,12 +57,18 @@
     --min-size_h: 81;
     --max-size_h: 95;
     height: var(--clamp-size_h);
-    height: calc();
     --min-size: 28;
     --max-size: 32;
     font-size: var(--clamp-size);
   }
-
+  .bgLRextend::before{
+    min-width: 352px;
+    width: calc( 0.0444 * 100vw + 267px);
+    min-height: 95px;
+    --min-size_h: 81;
+    --max-size_h: 95;
+    height: var(--clamp-size_h);
+  }
 
 
 

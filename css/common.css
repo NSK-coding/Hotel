@@ -414,12 +414,12 @@ transition-delay: .6s;
   --min-size_w: 80;
   --max-size_w: 300;
   width: var(--clamp-size_w);
-  width: clamp(80px, calc(0.5867 * 100vw - 140px), 300px);
+  /* width: clamp(80px, calc(0.5867 * 100vw - 140px), 300px); */
   max-height: 81px;
   --min-size_h: 25;
   --max-size_h: 81;
   height: var(--clamp-size_h);
-  height: clamp(25px, calc(0.149 * 100vw - 31px), 81px);
+  /* height: clamp(25px, calc(0.149 * 100vw - 31px), 81px); */
   --min-size: 12;
   --max-size: 30;
   font-size: var(--clamp-size);
@@ -737,6 +737,259 @@ left: 25%;
   }
 
 /* || ANIMATIONS  */
+
+
+
+
+
+/* TODO: 親にoverflow-x:hidden; */
+/* TODO:　インライン要素には.span{display:block;} */
+.fadeIn{
+  
+  animation-name:fadeInAnime;
+  animation-duration: 1s;
+  animation-delay: 2s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeInAnime{
+    from {
+      opacity: 0;
+    }
+  
+    to {
+      opacity: 1;
+    }
+  }
+
+
+.fadeLeft{
+  animation-name:fadeLeftAnime;
+  animation-duration: 3s;
+  animation-fill-mode:forwards;
+  opacity:0;
+  }
+  
+  @keyframes fadeLeftAnime{
+    from {
+      opacity: 0;
+    transform: translateX(-300px);
+    }
+  
+    to {
+      opacity: 1;
+    transform: translateX(0);
+    }
+  }
+
+  .fadeLeftUp{
+    transition: .7s ease-in-out ;
+    }
+    
+
+
+  .fadeRight{
+    animation-name:fadeRightAnime;
+    animation-duration:0.5s;
+    animation-fill-mode:forwards;
+    opacity:0;
+    }
+    
+    @keyframes fadeRightAnime{
+      from {
+        opacity: 0;
+      transform: translateX(100px);
+      }
+    
+      to {
+        opacity: 1;
+      transform: translateX(0);
+      }
+    }
+
+    .fadeRightUp{
+      transition: .7s ease-in-out ;
+    }
+    
+
+    .fadeUp {
+      animation-name:fadeUpAnime;
+      animation-duration:0.5s;
+      animation-fill-mode:forwards;
+      opacity: 0;
+      }
+      
+      @keyframes fadeUpAnime{
+        from {
+          opacity: 0;
+        transform: translateY(100px);
+        }
+      
+        to {
+          opacity: 1;
+        transform: translateY(0);
+        }
+      }
+
+      .simpleblur {
+        animation: blur 2s both ease-in;
+      }
+      
+      @keyframes blur {
+        from {
+          filter: blur(10px);
+        }
+        to {
+          filter: blur(0);
+        }
+      }
+
+      .shadowblur {
+        animation: shadowblur 3s both ease-in;
+      }
+      @keyframes shadowblur {
+        from {
+            color: transparent;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 1);
+        }
+        
+        to {
+            color: #fff;
+            text-shadow: 0;
+        }
+    }
+
+.expansion {
+  animation: expansion 2s;
+}
+@keyframes expansion {
+  from {
+    background-size: 0% 100%;
+  }
+  
+  to {
+    background-size: 83% 100%;
+  }
+
+}
+
+
+
+
+
+/*背景色が伸びて出現 共通*/
+.bgextend{
+  animation-name:bgextendAnimeBase;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+  position: relative;
+  overflow: hidden;/*　はみ出た色要素を隠す　*/
+  opacity:0;
+}
+
+@keyframes bgextendAnimeBase{
+  from {
+    opacity:0;
+  }
+
+  to {
+    opacity:1;  
+}
+}
+
+/*中の要素*/
+.bgappear{
+  animation-name:bgextendAnimeSecond;
+  animation-duration:1s;
+  animation-delay: 0.6s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond{
+  0% {
+  opacity: 0;
+  }
+  100% {
+  opacity: 1;
+}
+}
+
+/*--------- 左から --------*/
+.bgLRextend::before{
+  animation-name:bgLRextendAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    /* width: 100%; */
+    --min-size_w: 80;
+    --max-size_w: 300;
+    width: var(--clamp-size_w);
+    min-width: 352px;
+    width: calc( 0.0444 * 100vw + 267px);
+    /* width: clamp(80px, calc(0.5867 * 100vw - 140px), 300px); */
+    /* height: 100%; */
+    background-color: rgba(255, 255, 255, .36);/*伸びる背景色の設定*/
+}
+@keyframes bgLRextendAnime{
+  0% {
+    transform-origin:left;
+    transform:scaleX(0);
+  }
+  50% {
+    transform-origin:left;
+    transform:scaleX(1);
+  }
+  50.001% {
+    transform-origin:right;
+  }
+  100% {
+    transform-origin:right;
+    transform:scaleX(0);
+  }
+}
+
+/*--------- 右から --------*/
+.bgRLextend::before{
+  animation-name:bgRLextendAnime;
+  animation-duration:1s;
+  animation-fill-mode:forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-accent);/*伸びる背景色の設定*/
+}
+@keyframes bgRLextendAnime{
+  0% {
+    transform-origin:right;
+    transform:scaleX(0);
+  }
+  50% {
+    transform-origin:right;
+    transform:scaleX(1);
+  }
+  50.001% {
+    transform-origin:left;
+  }
+  100% {
+    transform-origin:left;
+    transform:scaleX(0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 

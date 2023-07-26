@@ -59,38 +59,44 @@ $(".tab a").on("click", function () {
   return false; //aタグを無効にする
 });
 
-// $(document).on("click", function (e) {
-//   if (!$(e.target).closest(".area").length) {
-//     $(".tab__wrapper").removeClass("is-active");
-//   }
-//   $(".tab li")
-//     .delay(600)
-//     .queue(function () {
-//       $(this).removeClass("active").dequeue();
-//     });
-//   //   $('.tab li').removeClass("active"); //タブ内のliについているactiveクラスを取り除き
-//   $(".area")
-//     .delay(600)
-//     .queue(function () {
-//       $(this).removeClass("is-active").dequeue();
-//     });
-//   //    $(".area").removeClass("is-active"); //もともとついているis-activeクラスを取り除き
-// });
+$(document).on("click", function (e) {
+  if (!$(e.target).closest(".area").length) {
 
-$(document).on('click touchend',   function(e) {
-  if ($(e.target).closest('.tab a').length) {
-  // 処理方法を記述;
-        //マウスカーソルが重なった時の処理
-        var idName = $(this).attr('href'); //タブ内のリンク名を取得
-        GethashID (idName);//設定したタブの読み込みと
-        return false;//aタグを無効にする
-  } else if(!$(e.target).closest('.area').length){
+    $(document).queue($(".tab__wrapper").removeClass("is-active"));
+    $(document).delay(600).queue($(".tab li").removeClass("active"));
+    $(document).queue($(".area").removeClass("active"));
 
-    $('.tab li').removeClass("active"); //タブ内のliについているactiveクラスを取り除き
-    $(".area").removeClass("is-active"); //もともとついているis-activeクラスを取り除き
-    $('.tab__wrapper').removeClass("is-active");
+  //   $(".tab__wrapper").removeClass("is-active");
+
+  // $(".tab li")
+  //   .delay(600)
+  //   .queue(function () {
+  //     $(this).removeClass("active").dequeue();
+  //   });
+  // //   $('.tab li').removeClass("active"); //タブ内のliについているactiveクラスを取り除き
+  // $(".area")
+  //   .delay(600)
+  //   .queue(function () {
+  //     $(this).removeClass("is-active").dequeue();
+  //   });
+  //    $(".area").removeClass("is-active"); //もともとついているis-activeクラスを取り除き
   }
-  });
+});
+
+// $(document).on('click touchend',   function(e) {
+//   if ($(e.target).closest('.tab a').length) {
+//   // 処理方法を記述;
+//         //マウスカーソルが重なった時の処理
+//         var idName = $(this).attr('href'); //タブ内のリンク名を取得
+//         GethashID (idName);//設定したタブの読み込みと
+//         return false;//aタグを無効にする
+//   } else if(!$(e.target).closest('.area').length){
+
+//     $('.tab li').removeClass("active"); //タブ内のliについているactiveクラスを取り除き
+//     $(".area").removeClass("is-active"); //もともとついているis-activeクラスを取り除き
+//     $('.tab__wrapper').removeClass("is-active");
+//   }
+//   });
 
 // $('.tab a').hover(
 //   function() {
@@ -132,13 +138,13 @@ function ScrollAnime() {
     if(scroll == beforePos) {
 		//IE11対策で処理を入れない
     } else if(0 > scroll - beforePos){
-		//ヘッダーが上から出現する
-		$('.main-start').removeClass('DownMove');	//.main-startにUpMoveというクラス名を除き
-		$('.main-start').addClass('UpMove');//.main-startにDownMoveのクラス名を追加
+
+		$('.main-start').removeClass('DownMove');	
+		$('.main-start').addClass('UpMove');
     }else {
-		//ヘッダーが上に消える
-        $('.main-start').removeClass('UpMove');//.main-startにDownMoveというクラス名を除き
-		$('.main-start').addClass('DownMove');//.main-startにUpMoveのクラス名を追加
+	
+    $('.main-start').removeClass('UpMove');
+		$('.main-start').addClass('DownMove');
     }
     
     beforePos = scroll;//現在のスクロール値を比較用のbeforePosに格納
@@ -156,11 +162,325 @@ $(window).on('load', function () {
 });
 
 
+//
+//   ANIME
+//
+
+function fadeAnime(){
+
+  // ふわっ
+  $('.fadeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top+500;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('fadeUp');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+      $(this).removeClass('fadeUp');// 画面外に出たらfadeUpというクラス名を外す
+    }
+  });
+
+
+  $('.fadeLeftTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top+500;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('fadeLeft');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+    $(this).removeClass('fadeLeft');// 画面外に出たらfadeUpというクラス名を外す
+    }
+  });
+
+  $('.fadeRightTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+500;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (scroll >= elemPos - windowHeight){
+      $(this).addClass('fadeRight');// 画面内に入ったらfadeUpというクラス名を追記
+      }else{
+      $(this).removeClass('fadeRight');// 画面外に出たらfadeUpというクラス名を外す
+      }
+  });
+
+  $('.fadeInTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top+500;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('fadeIn');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+    $(this).removeClass('fadeIn');// 画面外に出たらfadeUpというクラス名を外す
+    }
+});
+
+
+  $('.simpleblurTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top+500;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('simpleblur');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+    $(this).removeClass('simpleblur');// 画面外に出たらfadeUpというクラス名を外す
+    }
+
+
+
+
+});
+
+$('.fadeLeftUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+  var elemPos = $(this).offset().top+500;//要素より、50px上の
+  var scroll = $(window).scrollTop();
+  var windowHeight = $(window).height();
+  if (scroll >= elemPos - windowHeight){
+  $(this).addClass('fadeLeftUp');// 画面内に入ったらfadeUpというクラス名を追記
+  }else{
+  $(this).removeClass('fadeLeftUp');// 画面外に出たらfadeUpというクラス名を外す
+  }
+});
+
+$('.fadeRightUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+var elemPos = $(this).offset().top+500;//要素より、50px上の
+var scroll = $(window).scrollTop();
+var windowHeight = $(window).height();
+if (scroll >= elemPos - windowHeight){
+$(this).addClass('fadeRightUp');// 画面内に入ったらfadeUpというクラス名を追記
+}else{
+$(this).removeClass('fadeRightUp');// 画面外に出たらfadeUpというクラス名を外す
+}
+});
+
+}
+
+function delayScrollAnime() {
+  var time = 0.2;//遅延時間を増やす秒数の値
+  var value = time;
+  $('.delayScroll').each(function () {
+    var parent = this;          //親要素を取得
+    var elemPos = $(this).offset().top;//要素の位置まで来たら
+    var scroll = $(window).scrollTop();//スクロール値を取得
+    var windowHeight = $(window).height();//画面の高さを取得
+    var childs = $(this).children();  //子要素を取得
+    
+    if (scroll >= elemPos - windowHeight && !$(parent).hasClass("play")) {//指定領域内にスクロールが入ったらまた親要素にクラスplayがなければ
+      $(childs).each(function () {
+        
+        if (!$(this).hasClass("fadeUp")) {//アニメーションのクラス名が指定されているかどうかをチェック
+          
+          $(parent).addClass("play"); //親要素にクラス名playを追加
+          $(this).css("animation-delay", value + "s");//アニメーション遅延のCSS animation-delayを追加し
+          $(this).addClass("fadeUp");//アニメーションのクラス名を追加
+          value = value + time;//delay時間を増加させる
+          
+          //全ての処理を終わったらplayを外す
+          var index = $(childs).index(this);
+          if((childs.length-1) == index){
+            $(parent).removeClass("play");
+          }
+        }
+      })
+    }else {
+      $(childs).removeClass("fadeUp");//アニメーションのクラス名を削除
+      value = time;//delay初期値の数値に戻す
+    }
+  })
+}
 
 
 
 
 
+
+
+// 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function (){
+
+    delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+// 画面が読み込まれたらすぐに動かしたい場合の記述
+  $(window).on('load', function(){
+    delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+
+
+
+
+
+
+// 画面をスクロールをしたら動かしたい場合の記述
+  $(window).scroll(function (){
+    fadeAnime();/* アニメーション用の関数を呼ぶ*/
+  });// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+
+  function AnimeStory(){
+    $('.animeStoryTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+500;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+
+      if (scroll >= elemPos - windowHeight){
+
+        $(this).addClass('fadeLeft');
+        $('.story__title--blur').addClass('simpleblur');
+        $('.story__content--fadeIn').addClass('fadeIn');
+        $('.story__buttonWrapper').addClass('bgLRextend');
+        $('.story__button').addClass('bgappear');
+
+      }else{
+      $(this).removeClass('fadeLeft');// 画面外に出たらfadeUpというクラス名を外す
+      $('.story__title--blur').removeClass('simpleblur');
+      $('.story__content--fadeIn').removeClass('fadeIn');
+      $('.story__buttonWrapper').removeClass('bgLRextend');
+      $('.story__button').removeClass('bgappear');
+      }
+    });
+    
+  }
+
+
+
+
+
+  function AnimeEvent(){
+    $('.animeEventTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+100;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+
+      if (scroll >= elemPos - windowHeight){
+
+
+        $(document).queue($(this).addClass('expansion'));
+        $(document).queue($('.event__title').addClass('simpleblur'));
+        $(document).queue($('.event__image').addClass('fadeLeft'));
+        $(document).queue($('.event__container').addClass('fadeIn'));
+        $(document).queue($('.event__title--blur').addClass('simpleblur'));
+        $(document).queue($('.event__content--fadeIn').addClass('fadeIn'));
+        $(document).queue($('.event__buttonWrapper').addClass('bgLRextend'));
+        $(document).queue($('.event__button').addClass('bgappear')).dequeue();
+
+
+
+      }else{
+      $(this).removeClass('expansion');// 画面外に出たらfadeUpというクラス名を外す
+      $('.event__title').removeClass('simpleblur');
+      $('.event__title--blur').removeClass('simpleblur');
+      $('.event__container').removeClass('fadeIn');
+      $('.event__content--fadeIn').removeClass('fadeIn');
+      $('.event__buttonWrapper').removeClass('bgLRextend');
+      $('.event__button').removeClass('bgappear');
+      $('.event__image').removeClass('fadeLeft');
+      }
+
+    });
+    
+  }
+
+  function grida(){
+    $('.gridanimeTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+100;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+
+      if (scroll >= elemPos - windowHeight){
+
+
+        const gridAnimation = new GridAnimation(this);
+        const type = parseInt($(this).attr("data-i"));
+        gridAnimation.setType(type);
+        gridAnimation.trigger();
+      }
+    });
+    
+  }
+
+
+
+
+
+
+
+
+// 画面をスクロールをしたら動かしたい場合の記述
+$(window).scroll(function (){
+  AnimeStory();/* アニメーション用の関数を呼ぶ*/
+  AnimeEvent();
+  // grida();
+
+
+});// ここまで画面をスクロールをしたら動かしたい場合の記述
+
+//右下からアップ
+$(function() {
+  //画面をスクロールするとイベントが発動する
+  $(window).scroll(function() {
+    
+    //フェードインさせたい要素の位置をずらす
+    $('.fadeRightUp').css({
+      'opacity': '0',
+      'transform': 'translate(100px, 100px)'
+    });
+    
+    //スクロールバーの位置を取得
+    var scroll = $(window).scrollTop();
+
+    //ウィンドウの高さを取得
+    var windowHeight = $(window).height();
+
+    $('.fadeRightUp').each(function() {
+      //フェードインさせたい要素の縦位置を取得
+      var elemPos = $(this).offset().top;
+
+      //要素がウィンドウの中に入ってからさらに100pxスクロールしたら要素をフェードインする
+      if (scroll > elemPos - windowHeight + 100 && !$(parent).hasClass("play")) {
+        $(parent).addClass("play");
+        $(this).css({
+          'opacity': '1',
+          'transform': 'translate(0, 0)'
+        });
+        $(parent).removeClass("play");
+      }
+    });
+  });
+});
+
+// 左下からアップ
+$(function() {
+  //画面をスクロールするとイベントが発動する
+  $(window).scroll(function() {
+    
+    //フェードインさせたい要素の位置をずらす
+    $('.fadeLeftUp').css({
+      'opacity': '0',
+      'transform': 'translate(-100px, 100px)'
+    });
+    
+    //スクロールバーの位置を取得
+    var scroll = $(window).scrollTop();
+
+    //ウィンドウの高さを取得
+    var windowHeight = $(window).height();
+
+    $('.fadeLeftUp').each(function() {
+      //フェードインさせたい要素の縦位置を取得
+      var elemPos = $(this).offset().top;
+
+      //要素がウィンドウの中に入ってからさらに100pxスクロールしたら要素をフェードインする
+      if (scroll > elemPos - windowHeight + 100 && !$(parent).hasClass("play")) {
+        $(parent).addClass("play");
+        $(this).css({
+          'opacity': '1',
+          'transform': 'translate(0, 0)'
+        });
+        $(parent).removeClass("play");
+      }
+    });
+  });
+});
 
 
 
@@ -295,9 +615,62 @@ class GridAnimation {
   };
 }
 
-document.querySelectorAll(".box").forEach((box, index) => {
-  const gridAnimation = new GridAnimation(box);
-  const type = parseInt(box.getAttribute("data-i"));
-  gridAnimation.setType(type);
-  if (index === 0) gridAnimation.trigger();
+// document.querySelectorAll(".box").forEach((box, index) => {
+//   const gridAnimation = new GridAnimation(box);
+//   const type = parseInt(box.getAttribute("data-i"));
+//   gridAnimation.setType(type);
+//   if (index === 0) gridAnimation.trigger();
+// });
+
+document.querySelectorAll('.box').forEach(function(element) {
+    const gridAnimation = new GridAnimation(element);
+    const type = parseInt(element.getAttribute("data-i"));
+    gridAnimation.setType(type);
+    gridAnimation.trigger();
+  });
+
+
+
+
+
+
+
+  //画像と動画の設定
+var windowwidth = window.innerWidth || document.documentElement.clientWidth || 0;
+if (windowwidth > 768){
+  var responsiveImage = [//PC用の動画と画像
+    { src: './img/FV-1_pc.webp'},
+    { src: './img/FV-2_pc.webp'},
+    { src: './img/FV-3_pc.webp'},
+    { src: './img/FV-4_pc.webp'}
+  ];
+} else {
+        var responsiveImage = [//タブレットサイズ（768px）以下用の画像
+        { src: './img/FV-1_sp.webp'},
+        { src: './img/FV-2_sp.webp'},
+        { src: './img/FV-3_sp.webp'},
+        { src: './img/FV-4_sp.webp'}
+  ];
+}
+
+//Vegas全体の設定
+$('#slider').vegas({
+overlay: true,//画像の上に網線やドットのオーバーレイパターン画像を指定。
+transition: 'fade2',//切り替わりのアニメーション。http://vegas.jaysalvat.com/documentation/transitions/参照。fade、fade2、slideLeft、slideLeft2、slideRight、slideRight2、slideUp、slideUp2、slideDown、slideDown2、zoomIn、zoomIn2、zoomOut、zoomOut2、swirlLeft、swirlLeft2、swirlRight、swirlRight2、burnburn2、blurblur2、flash、flash2が設定可能。
+transitionDuration: 2000,//切り替わりのアニメーション時間をミリ秒単位で設定
+delay: 3000,//スライド間の遅延をミリ秒単位で。
+animationDuration: 20000,//スライドアニメーション時間をミリ秒単位で設定
+animation: 'random',//スライドアニメーションの種類。http://vegas.jaysalvat.com/documentation/transitions/参照。kenburns、kenburnsUp、kenburnsDown、kenburnsRight、kenburnsLeft、kenburnsUpLeft、kenburnsUpRight、kenburnsDownLeft、kenburnsDownRight、randomが設定可能。
+slides: responsiveImage,//画像と動画の設定を読む
+timer: false,
+});
+
+
+$(window).scroll(function() {
+  var scroll = $(window).scrollTop();//スクロール値を定義
+//header-imgの背景
+$('#slider').css({
+transform: 'scale('+(100 + scroll/10)/100+')',//スクロール値を代入してscale1から拡大.scroll/10の値を小さくすると拡大値が大きくなる
+top: -(scroll/50)  + "%",//スクロール値を代入してtopの位置をマイナスにずらす
+  });
 });

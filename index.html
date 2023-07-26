@@ -30,6 +30,7 @@
     <!-- css -->
     <link rel="stylesheet" href="css/flickity.min.css" media="screen" />
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.css">
     <link rel="stylesheet" href="css/common.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
@@ -108,15 +109,28 @@
         <!-- /.header__menu -->
       </div>
       <!-- /.header__container -->
-      <div id="mainvisual" class="mainvisual">
+      <div id="slider"></div>
+      <!-- <div id="mainvisual" class="mainvisual">
         <picture>
           <source srcset="img/FV-1_pc.webp" media="(min-width: 768px)">
-          <img src="img/FV-1_sp.webp" alt="ホテル外観" class="mv-1" />
+          <img src="img/FV-1_sp.webp" alt="ホテル外観写真" class="mainvisual__slide mainvisual__slide--1" />
         </picture>
-      </div>
+        <picture>
+          <source srcset="img/FV-2_pc.webp" media="(min-width: 768px)">
+          <img src="img/FV-2_sp.webp" alt="料理写真" class="mainvisual__slide mainvisual__slide--2" >
+        </picture>
+        <picture>
+          <source srcset="img/FV-3_pc.webp" media="(min-width: 768px)">
+          <img src="img/FV-3_sp.webp" alt="ロビー写真" class="mainvisual__slide mainvisual__slide--3" >
+        </picture>
+        <picture>
+          <source srcset="img/FV-4_pc.webp" media="(min-width: 768px)">
+          <img src="img/FV-4_sp.webp" alt="夜景写真" class="mainvisual__slide mainvisual__slide--4" >
+        </picture>
+      </div> -->
       <!-- /#mainvisual -->
 
-      <div class="main-start">
+      <div class="main-start DownMove">
         <div id="tab-selector" class="tab__wrapper">
           <ul class="tab">
             <li><a href="#stay" class="tab__page tab__page--stay">宿泊</a></li>
@@ -369,23 +383,23 @@
             Story<span class="section__subtitle">私たちができる5つのこと</span>
           </h2>
         </div>
-        <div class="box" data-i="1"></div>
+        <div class="box gridanimeTrigger" data-i="1"></div>
         <div class="story__image">
           <picture>
             <source srcset="img/story_pc.webp" media="(min-width: 1400px)">
             <img src="img/story_sp.webp" alt="客室" />
           </picture>
-          <div class="story__container">
+          <div class="story__container animeStoryTrigger">
             <div class="story__inner">
-              <h3 class="story__title content__title">
+              <h3 class="story__title content__title story__title--blur">
                 最高のロケーションとおもてなしで叶える<br />思い出のホテルステイ
               </h3>
               <div class="story__content">
-                <p>
+                <span class="story__content--fadeIn">
                   『お客様に最高の思い出を作ってほしい』<br />私たちはそんな願いを持って、お客様との<br class="br--sp">時間を大切にしています。<br />お客様にお約束する、５つのホスピタリティ<br class="br--sp">をのぞいてみませんか。
-                </p>
+                </span>
               </div>
-              <div class="story__buttonWrapper">
+              <div class="story__buttonWrapper bgextend">
                 <a href="#" class="story__button main-button main-button--gold borderleft borderleft--gold"
                   ><span>View more</span></a
                 >
@@ -401,9 +415,9 @@
             Cuisine<span class="section__subtitle">お食事</span>
           </h2>
         </div>
-        <ul class="cuisine__flex">
+        <ul class="cuisine__flex cuisine__grid delayScroll">
           <li class="cuisine__visual">
-            <img src="img/dining.webp" alt="オールデイダイニング" />
+            <img src="img/dining.webp" alt="オールデイダイニング" class="cuisine_visual--ad"/>
             <h4 class="cuisine__banner">10階　オールデイダイニング</h4>
           </li>
           <li class="cuisine__visual">
@@ -465,8 +479,8 @@
         <!-- /.special__wrapper -->
       </article>
       <article id="fitness">
-        <div class="fitness__flex">
-          <div class="fitness__container">
+        <div class="fitness__flex ">
+          <div class="fitness__container fadeRightUp">
             <div class="fitness__textBox">
               <div class="fitness__title">
                 <h2 class="section__title">
@@ -485,14 +499,14 @@
               >
             </div>
           </div>     <!-- /.fitness__container -->
-          <div class="fitness__gym">
+          <div class="fitness__gym fadeLeftUp">
             <picture>
               <source srcset="img/gym_pc.webp" media="(min-width: 768px)">
               <img src="img/gym_sp.webp" alt="ジム" />
             </picture>
           </div><!-- /.fitness__gym -->
         </div>
-          <div class="fitness__gallery">
+          <div class="fitness__gallery delayScroll">
             <div class="fitness__pic">
               <picture>
                 <source srcset="img/fitness-1_pc.webp" media="(min-width: 768px)">
@@ -514,7 +528,7 @@
           </div>
       </article>
       <article id="wedding">
-        <div class="wedding__wrapper">
+        <div class="wedding__wrapper fadeInTrigger">
           <picture>
             <source srcset="img/wedding_pc.webp" media="(min-width: 768px)">
             <img src="img/wedding_sp.webp" alt="ウェディング" />
@@ -526,7 +540,7 @@
               >
             </h2>
           </div>
-          <div class="wedding__chapel"><a href="#">
+          <div class="wedding__chapel fadeInTrigger"><a href="#">
             <picture>
               <source srcset="img/chapel_pc.webp" media="(min-width: 768px)">
               <img src="img/chapel_sp.webp" alt="挙式" />
@@ -537,7 +551,7 @@
         </div>
       </article>
       <article id="event">
-        <div class="event__wrapper">
+        <div class="event__wrapper animeEventTrigger">
           <div class="event__title">
             <h2 class="section__title">
               Event&Meeting<span class="section__subtitle">宴会場・会議室</span>
@@ -548,17 +562,17 @@
               <source srcset="img/event_pc.webp" media="(min-width: 768px)">
               <img src="img/event_sp.webp" alt="宴会場" />
             </picture>
-            <div class="event__container">
-              <h3 class="event__content-title content__title">
+            <div class="event__container ">
+              <h3 class="event__content-title content__title event__title--blur">
                 小規模の会議から大規模の宴会まで<br />幅広くご利用いただけます
               </h3>
-              <div class="event__content">
+              <div class="event__content event__content--fadeIn">
                 <p>
                   ご予定にあわせて、最適なご提案をいたします。
                   設備やお料理、ご宿泊の手配までお手伝いいたしますので、ぜひご相談ください。
                 </p>
               </div>
-              <div>
+              <div class="event__buttonWrapper bgextend">
                 <a href="#" class="event__button main-button main-button--gold borderleft borderleft--gold"
                   ><span>View more</span></a
                 >
@@ -712,6 +726,7 @@
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>  
     <!--自作のJS-->
     <script src="js/main.js"></script>
     <script src="js/flickity.pkgd.js"></script>
