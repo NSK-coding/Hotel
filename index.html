@@ -41,72 +41,79 @@
         <h1 class="header__logo">
           <img src="img/logo.png" alt="ゴールデンホテル沖縄" />
         </h1>
-        <div class="header__search">
-          <img src="img/Frame.svg" alt="検索ボタン" />
-          <p>空室・プラン検索</p>
-        </div>
-        <div class="header__menu">
-          <div class="openbtn">
-            <span></span><span></span><span></span>
-            <p>Menu</p>
+        <div class="header-set RightMove">
+          <div class="header__search">
+            <img src="img/Frame.svg" alt="検索ボタン" />
+            <p><span class="header__char--l">空室・プラン検索</span><span class="header__char--s">Search</span></p>
           </div>
-          <nav id="g-nav">
-            <nav class="menu__flex">
-              <div class="menu__mainbox">
-                <ul class="menu__left">
-                  <li><a href="#">Top</a></li>
-                  <li><a href="#topics">Topics</a></li>
-                  <li><a href="#story">Story</a></li>
-                  <li><a href="#cuisine">Cuisine</a>
-                    <ul class="menu__cuisinelist">
-                      <li><a href="#">オールデイダイニング</a></li>
-                      <li><a href="#">ロビーラウンジ</a></li>
-                      <li><a href="#">メインバー</a></li>
-                      <li><a href="#">中華料理</a></li>
-                      <li><a href="#">鉄板焼き</a></li>
-                      <li><a href="#">日本料理</a></li>
-                    </ul>
-                  </li>
-                </ul>   <!-- /.menu__left -->
-                <ul class="menu__right">
-                  <li><a href="#rooms">Rooms</a></li>
-                  <li><a href="#special">Special Floor</a></li>
-                  <li><a href="#fitness">Fitness</a></li>
-                  <li><a href="#wedding">Wedding</a></li>
-                  <li><a href="#event">Event&Meeting</a></li>
-                  <li><a href="#">Access</a></li>
-                  <li><a href="#">Contact</a></li>
-                </ul>
-                <!-- /.menu__right -->
-              </div>
-              <!-- /.menu__mainbox -->
-
-              <div class="menu__others">
-                <ul class="menu__button">
-                  <li><a href="" class="basic-button menu__reservationButton">宿泊予約・プラン検索</a></li>
-                  <li><a href="" class="basic-button menu__cancelButton">予約確認・キャンセル</a></li>
-                </ul>   <!-- /.menu__button -->
-                <div class="menu__lang">
-                  <ul class="menu__lang-ja">
-                    <li><a href="#">日本語</a></li>
-                    <li><a href="#">English</a></li>
+          <div class="header__menu">
+            <div class="openbtn">
+              <span></span><span></span><span></span>
+              <p>Menu</p>
+            </div>
+            <nav id="g-nav">
+              <nav class="menu__flex">
+                <div class="menu__mainbox">
+                  <ul class="menu__left">
+                    <li><a href="#">Top</a></li>
+                    <li><a href="#topics">Topics</a></li>
+                    <li><a href="#story">Story</a></li>
+                    <li><a href="#cuisine">Cuisine</a>
+                      <ul class="menu__cuisinelist">
+                        <li><a href="#">オールデイダイニング</a></li>
+                        <li><a href="#">ロビーラウンジ</a></li>
+                        <li><a href="#">メインバー</a></li>
+                        <li><a href="#">中華料理</a></li>
+                        <li><a href="#">鉄板焼き</a></li>
+                        <li><a href="#">日本料理</a></li>
+                      </ul>
+                    </li>
+                  </ul>   <!-- /.menu__left -->
+                  <ul class="menu__right">
+                    <li><a href="#rooms">Rooms</a></li>
+                    <li><a href="#special">Special Floor</a></li>
+                    <li><a href="#fitness">Fitness</a></li>
+                    <li><a href="#wedding">Wedding</a></li>
+                    <li><a href="#event">Event&Meeting</a></li>
+                    <li><a href="#">Access</a></li>
+                    <li><a href="#">Contact</a></li>
                   </ul>
-                  <ul class="menu__lang-ch">
-                    <li><a href="#">簡体語</a></li>
-                    <li><a href="#">한국어</a></li>
-                  </ul>
+                  <!-- /.menu__right -->
                 </div>
-              </div>
-              <!-- /.menu__others -->
-
-              
-
+                <!-- /.menu__mainbox -->
+  
+                <div class="menu__others">
+                  <ul class="menu__button">
+                    <li><a href="" class="basic-button menu__reservationButton">宿泊予約・プラン検索</a></li>
+                    <li><a href="" class="basic-button menu__cancelButton">予約確認・キャンセル</a></li>
+                  </ul>   <!-- /.menu__button -->
+                  <div class="menu__lang">
+                    <ul class="menu__lang-ja">
+                      <li><a href="#">日本語</a></li>
+                      <li><a href="#">English</a></li>
+                    </ul>
+                    <ul class="menu__lang-ch">
+                      <li><a href="#">簡体語</a></li>
+                      <li><a href="#">한국어</a></li>
+                    </ul>
+                  </div>
+                </div>
+                <!-- /.menu__others -->
+  
+                
+  
+              </nav>
+              <!-- /.menu__flex -->
             </nav>
-            <!-- /.menu__flex -->
-          </nav>
-          <!-- /#g-nav -->
+            <!-- /#g-nav -->
+          </div>  <!-- /.header__menu -->
+          <div class="header__lang">
+            <img src="img/ion_earth.svg" alt="言語選択">
+            <p>Language</p>
+          </div>
+
         </div>
-        <!-- /.header__menu -->
+
       </div>
       <!-- /.header__container -->
       <div id="slider"></div>
@@ -383,7 +390,7 @@
             Story<span class="section__subtitle">私たちができる5つのこと</span>
           </h2>
         </div>
-        <div class="box gridanimeTrigger" data-i="1"></div>
+        <!-- <div class="box gridanimeTrigger" data-i="1"></div> -->
         <div class="story__image">
           <picture>
             <source srcset="img/story_pc.webp" media="(min-width: 1400px)">

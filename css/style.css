@@ -14,7 +14,7 @@ position: relative;
   width: 18%;
 height: auto;
   background-color: rgba(255, 255, 255, 0.67);
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 999;
@@ -42,12 +42,21 @@ height: auto;
   margin-top: 10%;
 } 
 
+.header__lang {
+  display: none;
+}
+.header__char--s {
+  display: none;
+}
+
 .openbtn {
   background-color: var(--color-accent);
   position: fixed;
   top: 0;
   right: 0;
   z-index: 999;
+  width: 18%;
+  height: 18vw;
 }
 
 .openbtn p {
@@ -186,6 +195,7 @@ margin-left: 10%;
   position: absolute;
   top: 0;
   left: 0;
+  /* overflow-x:hidden */
 }
 
 .mainvisual {
@@ -543,6 +553,7 @@ flex-grow: 1;
   width: 93%;
   height: auto;
   margin-top: 7%;
+  overflow-x:hidden
 }
 .story__container {
   position: absolute;
@@ -594,7 +605,7 @@ flex-grow: 1;
 .cuisine__flex {
   display: flex;
   flex-wrap: wrap;
-  gap: 1vw 2vw;
+  gap: 1vw 2%;
   margin-top: 7%;
   --min-size: 10;
   --max-size: 16;
@@ -616,7 +627,7 @@ max-height: 64vw;
   position: relative;
   background-color: red;
 /* justify-items: stretch; */
-flex-grow: 1;
+/* flex-grow: 1; */
 }
 .cuisine__banner {
   position: absolute;
@@ -630,7 +641,7 @@ flex-grow: 1;
   padding: 0 0.3em;
 }
 .cuisine__visual > img {
-width: 28vw;
+/* width: 28vw; */
 
   object-fit: cover;
   cursor: pointer;
@@ -655,6 +666,7 @@ width: 28vw;
   background-size: 83% 100%;
   background-repeat: no-repeat;
   position: relative;
+  overflow-x:hidden
 }
 .special__wrapper::before {
   content: "";
@@ -714,7 +726,7 @@ margin-left: auto;
 .fitness__flex {
   display: flex;
   flex-direction: column;
-
+  overflow-x:hidden
 }
 .fitness__container {
   margin-top: 8%;
@@ -759,6 +771,7 @@ bottom: -10%;
   position: relative;
   margin-top: 23vw;
   width: 100%;
+
 }
 .wedding__title {
   position: absolute;
@@ -775,6 +788,7 @@ bottom: -10%;
   bottom: 0;
   right: 0;
   box-shadow: -4px -4px 5px 0px rgba(255, 255, 255, 0.7);
+  transform-origin: bottom right;
   transition: scale 0.5s;
 }
 .wedding__chapel:hover {
@@ -789,6 +803,7 @@ bottom: -10%;
   background-size: 83%;
   background-repeat: no-repeat;
   position: relative;
+  overflow-x:hidden
 }
 .event__wrapper::before {
   content: "";

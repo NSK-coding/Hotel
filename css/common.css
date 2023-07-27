@@ -635,8 +635,7 @@ transition-delay: .6s;
 追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
 
     cursor: pointer;
-    width: 18%;
-    height: 18vw;
+
 
   }
 
@@ -701,6 +700,9 @@ left: 25%;
 
   }
   .header__search.panelactive{
+    display: none;
+  }
+  .header__lang.panelactive{
     display: none;
   }
   .header__logo.panelactive {

@@ -9,6 +9,7 @@ $(".openbtn").click(function () {
   $("#g-nav").toggleClass("panelactive"); //ナビゲーションにpanelactiveクラスを付与
   $(".header__logo").toggleClass("panelactive");
   $(".header__search").toggleClass("panelactive");
+  $(".header__lang").toggleClass("panelactive");
 });
 
 $("#g-nav a").click(function () {
@@ -17,6 +18,7 @@ $("#g-nav a").click(function () {
   $("#g-nav").removeClass("panelactive"); //ナビゲーションのpanelactiveクラスも除去
   $(".header__logo").removeClass("panelactive");
   $(".header__search").removeClass("panelactive");
+  $(".header__lang").removeClass("panelactive");
 });
 
 //
@@ -141,10 +143,18 @@ function ScrollAnime() {
 
 		$('.main-start').removeClass('DownMove');	
 		$('.main-start').addClass('UpMove');
+
+    $('.header-set').removeClass('RightMove');	
+		$('.header-set').addClass('LeftMove');
+
     }else {
 	
     $('.main-start').removeClass('UpMove');
 		$('.main-start').addClass('DownMove');
+
+		$('.header-set').removeClass('LeftMove');
+    $('.header-set').addClass('RightMove');	
+
     }
     
     beforePos = scroll;//現在のスクロール値を比較用のbeforePosに格納
@@ -297,13 +307,13 @@ function delayScrollAnime() {
 // 画面をスクロールをしたら動かしたい場合の記述
   $(window).scroll(function (){
 
-    delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
-  });// ここまで画面をスクロールをしたら動かしたい場合の記述
+    // delayScrollAnime();
+  });
 
 // 画面が読み込まれたらすぐに動かしたい場合の記述
-  $(window).on('load', function(){
-    delayScrollAnime();/* アニメーション用の関数を呼ぶ*/
-  });// ここまで画面が読み込まれたらすぐに動かしたい場合の記述
+  // $(window).on('load', function(){
+  //   delayScrollAnime();
+  // });
 
 
 
@@ -312,7 +322,7 @@ function delayScrollAnime() {
 
 // 画面をスクロールをしたら動かしたい場合の記述
   $(window).scroll(function (){
-    fadeAnime();/* アニメーション用の関数を呼ぶ*/
+    // fadeAnime();
   });// ここまで画面をスクロールをしたら動かしたい場合の記述
 
 
@@ -407,80 +417,80 @@ function delayScrollAnime() {
 
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function (){
-  AnimeStory();/* アニメーション用の関数を呼ぶ*/
-  AnimeEvent();
+  // AnimeStory();
+  // AnimeEvent();
   // grida();
 
 
 });// ここまで画面をスクロールをしたら動かしたい場合の記述
 
 //右下からアップ
-$(function() {
-  //画面をスクロールするとイベントが発動する
-  $(window).scroll(function() {
+// $(function() {
+//   //画面をスクロールするとイベントが発動する
+//   $(window).scroll(function() {
     
-    //フェードインさせたい要素の位置をずらす
-    $('.fadeRightUp').css({
-      'opacity': '0',
-      'transform': 'translate(100px, 100px)'
-    });
+//     //フェードインさせたい要素の位置をずらす
+//     $('.fadeRightUp').css({
+//       'opacity': '0',
+//       'transform': 'translate(100px, 100px)'
+//     });
     
-    //スクロールバーの位置を取得
-    var scroll = $(window).scrollTop();
+//     //スクロールバーの位置を取得
+//     var scroll = $(window).scrollTop();
 
-    //ウィンドウの高さを取得
-    var windowHeight = $(window).height();
+//     //ウィンドウの高さを取得
+//     var windowHeight = $(window).height();
 
-    $('.fadeRightUp').each(function() {
-      //フェードインさせたい要素の縦位置を取得
-      var elemPos = $(this).offset().top;
+//     $('.fadeRightUp').each(function() {
+//       //フェードインさせたい要素の縦位置を取得
+//       var elemPos = $(this).offset().top;
 
-      //要素がウィンドウの中に入ってからさらに100pxスクロールしたら要素をフェードインする
-      if (scroll > elemPos - windowHeight + 100 && !$(parent).hasClass("play")) {
-        $(parent).addClass("play");
-        $(this).css({
-          'opacity': '1',
-          'transform': 'translate(0, 0)'
-        });
-        $(parent).removeClass("play");
-      }
-    });
-  });
-});
+//       //要素がウィンドウの中に入ってからさらに100pxスクロールしたら要素をフェードインする
+//       if (scroll > elemPos - windowHeight + 100 && !$(parent).hasClass("play")) {
+//         $(parent).addClass("play");
+//         $(this).css({
+//           'opacity': '1',
+//           'transform': 'translate(0, 0)'
+//         });
+//         $(parent).removeClass("play");
+//       }
+//     });
+//   });
+// });
 
-// 左下からアップ
-$(function() {
-  //画面をスクロールするとイベントが発動する
-  $(window).scroll(function() {
+// // 左下からアップ
+// $(function() {
+//   //画面をスクロールするとイベントが発動する
+//   $(window).scroll(function() {
     
-    //フェードインさせたい要素の位置をずらす
-    $('.fadeLeftUp').css({
-      'opacity': '0',
-      'transform': 'translate(-100px, 100px)'
-    });
+//     //フェードインさせたい要素の位置をずらす
+//     $('.fadeLeftUp').css({
+//       'opacity': '0',
+//       'transform': 'translate(-100px, 100px)'
+//     });
     
-    //スクロールバーの位置を取得
-    var scroll = $(window).scrollTop();
+//     //スクロールバーの位置を取得
+//     var scroll = $(window).scrollTop();
 
-    //ウィンドウの高さを取得
-    var windowHeight = $(window).height();
+//     //ウィンドウの高さを取得
+//     var windowHeight = $(window).height();
 
-    $('.fadeLeftUp').each(function() {
-      //フェードインさせたい要素の縦位置を取得
-      var elemPos = $(this).offset().top;
+//     $('.fadeLeftUp').each(function() {
+//       //フェードインさせたい要素の縦位置を取得
+//       var elemPos = $(this).offset().top;
 
-      //要素がウィンドウの中に入ってからさらに100pxスクロールしたら要素をフェードインする
-      if (scroll > elemPos - windowHeight + 100 && !$(parent).hasClass("play")) {
-        $(parent).addClass("play");
-        $(this).css({
-          'opacity': '1',
-          'transform': 'translate(0, 0)'
-        });
-        $(parent).removeClass("play");
-      }
-    });
-  });
-});
+//       //要素がウィンドウの中に入ってからさらに100pxスクロールしたら要素をフェードインする
+//       if (scroll > elemPos - windowHeight + 100 && !$(parent).hasClass("play")) {
+//         $(parent).addClass("play");
+//         $(this).css({
+//           'opacity': '1',
+//           'transform': 'translate(0, 0)'
+//         });
+//         $(parent).removeClass("play");
+//       }
+//     });
+//   });
+// });
 
 
 
@@ -666,11 +676,11 @@ timer: false,
 });
 
 
-$(window).scroll(function() {
-  var scroll = $(window).scrollTop();//スクロール値を定義
-//header-imgの背景
-$('#slider').css({
-transform: 'scale('+(100 + scroll/10)/100+')',//スクロール値を代入してscale1から拡大.scroll/10の値を小さくすると拡大値が大きくなる
-top: -(scroll/50)  + "%",//スクロール値を代入してtopの位置をマイナスにずらす
-  });
-});
+// $(window).scroll(function() {
+//   var scroll = $(window).scrollTop();//スクロール値を定義
+// //header-imgの背景
+// $('#slider').css({
+// transform: 'scale('+(100 + scroll/10)/100+')',//スクロール値を代入してscale1から拡大.scroll/10の値を小さくすると拡大値が大きくなる
+// top: -(scroll/50)  + "%",//スクロール値を代入してtopの位置をマイナスにずらす
+//   });
+// });
