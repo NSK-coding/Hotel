@@ -425,27 +425,45 @@
         </div>
         <ul class="cuisine__flex cuisine__grid delayScroll">
           <li class="cuisine__visual">
-            <img src="img/dining.webp" alt="オールデイダイニング" class="cuisine_visual--ad"/>
+            <picture>
+              <source srcset="img/dining_sp.webp" media="(min-width: 768px)">
+              <img src="img/dining.webp" alt="オールデイダイニング" class="cuisine_visual--ad"/>
+            </picture>
             <h3 class="cuisine__banner">10階　オールデイダイニング</h3>
           </li>
           <li class="cuisine__visual">
-            <img src="img/lounge.webp" alt="ロビーラウンジ" />
+            <picture>
+              <source srcset="img/lounge_sp.webp" media="(min-width: 768px)">
+              <img src="img/lounge.webp" alt="ロビーラウンジ" />
+            </picture>
             <h3 class="cuisine__banner">10階　ロビーラウンジ</h3>
           </li>
           <li class="cuisine__visual">
-            <img src="img/bar.webp" alt="メインバー" />
+            <picture>
+              <source srcset="img/bar_sp.webp" media="(min-width: 768px)">
+              <img src="img/bar.webp" alt="メインバー" />
+            </picture>
             <h3 class="cuisine__banner">10階　メインバー</h3>
           </li>
           <li class="cuisine__visual">
-            <img src="img/chinese_food.webp" alt="中華料理" />
+            <picture>
+              <source srcset="img/chinese_food_sp.webp" media="(min-width: 768px)">
+              <img src="img/chinese_food.webp" alt="中華料理" />
+            </picture>
             <h3 class="cuisine__banner">12階　中華料理</h3>
           </li>
           <li class="cuisine__visual">
-            <img src="img/teppan.webp" alt="鉄板焼" />
+            <picture>
+              <source srcset="img/teppan_sp.webp" media="(min-width: 768px)">
+              <img src="img/teppan.webp" alt="鉄板焼" />
+            </picture>
             <h3 class="cuisine__banner">12階　鉄板焼</h3>
           </li>
           <li class="cuisine__visual">
-            <img src="img/Japanese_food.webp" alt="日本料理" />
+            <picture>
+              <source srcset="img/Japanese_food_sp.webp" media="(min-width: 768px)">
+              <img src="img/Japanese_food.webp" alt="日本料理" />
+            </picture>
             <h3 class="cuisine__banner">12階　日本料理</h3>
           </li>
         </ul>
@@ -607,7 +625,10 @@
           >
             <li class="topics__card card">
               <figure class="card__img-wrapper">
-                <img src="img/firework.webp" alt="花火大会" class="card__img" />
+                <picture>
+                  <source srcset="img/firework_sp.webp" media="(min-width: 768px)">
+                  <img src="img/firework.webp" alt="花火大会" class="card__img" />
+                </picture>
               </figure>
               <div class="card__body">
                 <time datetime="2023-07-01" class="card__date">2023/7/1</time>
@@ -621,7 +642,10 @@
             </li>
             <li class="topics__card card">
               <figure class="card__img-wrapper">
-                <img src="img/food.webp" alt="夏期メニュー" class="card__img" />
+                <picture>
+                  <source srcset="img/food_sp.webp" media="(min-width: 768px)">
+                  <img src="img/food.webp" alt="夏期メニュー" class="card__img" />
+                </picture>
               </figure>
               <div class="card__body">
                 <time datetime="2023-06-20" class="card__date">2023/6/20</time>
@@ -675,9 +699,9 @@
         <!-- /.topics__wrapper -->
       </article>
 
-      <section id="scroll">
+      <div id="scroll">
         <div><a href="#header" class="scroll"></a></div>
-      </section>
+      </div>
       <footer id="area-2">
         <ul class="footer__caption">
           <li class="footer__info">ホテル情報</li>
