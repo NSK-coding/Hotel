@@ -793,7 +793,7 @@ left: 25%;
 
   .fadeRight{
     animation-name:fadeRightAnime;
-    animation-duration:0.5s;
+    animation-duration: 1.5s;
     animation-fill-mode:forwards;
     opacity:0;
     }
@@ -868,15 +868,18 @@ left: 25%;
     }
 
 .expansion {
-  animation: expansion 2s;
+  animation: expansion 2s ease-in;
+  animation-fill-mode:forwards;
 }
 @keyframes expansion {
   from {
     background-size: 0% 100%;
+    opacity: 0;
   }
   
   to {
     background-size: 86% 100%;
+    opacity: 1;
   }
 
 }

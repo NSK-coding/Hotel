@@ -412,6 +412,12 @@ right: 0;
     --max-viewport: 1400;
     padding-top: var(--fluid-size_mt);
   }
+  .special__box {
+    --box-width: 159.2rem;
+    --box-height: 59rem;
+    --img-url: url(../img/Special_floor-pc.webp);
+
+  }
   .special__image {
     --min-size_w: 657;
     --max-size_w: 1162;
@@ -536,6 +542,12 @@ right: 0;
   --min-viewport: 750;
   --max-viewport: 1400;
   padding-top: var(--fluid-size_mt);
+}
+.event__box {
+  --box-width: 159.2rem;
+  --box-height: 59rem;
+  --img-url: url(../img/event_pc.webp);
+
 }
 .event__image {
   --min-size_w: 657;
@@ -723,7 +735,7 @@ width: var(--fluid-size_w);
   .restaurant__calendar,
   .ticket__calendar,
   .stay__calendar {
-    /* padding: 1.5em 0 1.1em 1.9em; */
+    padding: 1.5em 0 1.1em 1.9em;
     width: 27.5vw;
     height: 7.65vw;
   }
@@ -1123,7 +1135,7 @@ margin-left: 4vw;
   .restaurant__calendar,
   .ticket__calendar,
   .stay__calendar {
-    /* padding: 1.5em 0 1.1em 1.9em; */
+    padding: 1.5em 0 1.1em 1.9em;
     width: 15vw;
     height: 4.48vw;
   }

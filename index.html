@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
   <body>
-    <header class="header">
+    <header id="header" class="header">
       <div class="header__container">
         <h1 class="header__logo">
           <img src="img/logo.png" alt="ゴールデンホテル沖縄" />
@@ -154,7 +154,7 @@
           </ul>
 
 
-          <section id="stay" class="area">
+          <div id="stay" class="area">
             <ul class="gnavi__list-1">
               <li class="gnavi__items stay__checkin">
                 <label for="stay-today">チェックイン日</label>
@@ -222,8 +222,8 @@
                 <a class="search-button">この条件で検索</a>
               </li>
             </ul>
-          </section>
-          <section id="ticket" class="area">
+          </div>
+          <div id="ticket" class="area">
             <ul class="gnavi__list-2">
               <li class="gnavi__items ticket__departure">
                 <label for="ticket__departure">出発空港</label>
@@ -295,8 +295,8 @@
                 <a class="search-button">この条件で検索</a>
               </li>
             </ul>
-          </section>
-          <section id="restaurant" class="area">
+          </div>
+          <div id="restaurant" class="area">
             <ul class="gnavi__list-3">
               <li class="gnavi__items restaurant__date">
                 <label for="restaurant-today">レストランご利用日</label>
@@ -372,7 +372,7 @@
                 <a class="search-button">この条件で検索</a>
               </li>
             </ul>
-          </section>
+          </div>
         </div>
         <!-- /.tab__wrapper -->
       </div>
@@ -426,57 +426,58 @@
         <ul class="cuisine__flex cuisine__grid delayScroll">
           <li class="cuisine__visual">
             <img src="img/dining.webp" alt="オールデイダイニング" class="cuisine_visual--ad"/>
-            <h4 class="cuisine__banner">10階　オールデイダイニング</h4>
+            <h3 class="cuisine__banner">10階　オールデイダイニング</h3>
           </li>
           <li class="cuisine__visual">
             <img src="img/lounge.webp" alt="ロビーラウンジ" />
-            <h4 class="cuisine__banner">10階　ロビーラウンジ</h4>
+            <h3 class="cuisine__banner">10階　ロビーラウンジ</h3>
           </li>
           <li class="cuisine__visual">
             <img src="img/bar.webp" alt="メインバー" />
-            <h4 class="cuisine__banner">10階　メインバー</h4>
+            <h3 class="cuisine__banner">10階　メインバー</h3>
           </li>
           <li class="cuisine__visual">
             <img src="img/chinese_food.webp" alt="中華料理" />
-            <h4 class="cuisine__banner">12階　中華料理</h4>
+            <h3 class="cuisine__banner">12階　中華料理</h3>
           </li>
           <li class="cuisine__visual">
             <img src="img/teppan.webp" alt="鉄板焼" />
-            <h4 class="cuisine__banner">12階　鉄板焼</h4>
+            <h3 class="cuisine__banner">12階　鉄板焼</h3>
           </li>
           <li class="cuisine__visual">
             <img src="img/Japanese_food.webp" alt="日本料理" />
-            <h4 class="cuisine__banner">12階　日本料理</h4>
+            <h3 class="cuisine__banner">12階　日本料理</h3>
           </li>
         </ul>
       </article>
       <article id="special">
-        <div class="special__wrapper">
+        <div class="special__wrapper animeSpecialTrigger">
           <div class="special__title">
-            <h2 class="section__title">
+            <h2 class="section__title special__title--blur">
               Special Floor<span class="section__subtitle"
                 >ワンランク上のご宿泊を</span
               >
             </h2>
           </div>
           <div class="special__image">
-            <picture>
+            <div class="special__box gridanimeTrigger" data-i="10"></div>
+            <!-- <picture>
               <source srcset="img/Special_floor-pc.webp" media="(min-width: 768px)">
               <img src="img/Special_floor_sp.webp" alt="スペシャルフロア" />
-            </picture>
+            </picture> -->
 
-            <div class="special__container">
-              <h3 class="special__content-title content__title">
+            <div class="special__container special__container--fadeRight">
+              <h3 class="special__content-title content__title special__content-title--blur">
                 当館自慢のロケーションで<br />ワンランク上の非日常をご体感ください
               </h3>
               <div class="special__content">
-                <p>
+                <p class="special__content--fadeIn">
                   スペシャルフロアではお食事のご予約から、お出かけのお手伝いまでコンシェルジュがサポートいたします。
                   また海側の絶景を楽しめるお部屋を確約しております。
                 </p>
               </div>
               <div>
-                <a href="#" class="special__button main-button main-button--gold borderleft borderleft--gold"
+                <a href="#" class="special__button main-button main-button--gold borderleft borderleft--gold special__button--blur"
                   ><span>View more</span></a
                 >
               </div>
@@ -561,27 +562,29 @@
       <article id="event">
         <div class="event__wrapper animeEventTrigger">
           <div class="event__title">
-            <h2 class="section__title">
+            <h2 class="section__title event__title--blur">
               Event&Meeting<span class="section__subtitle">宴会場・会議室</span>
             </h2>
           </div>
           <div class="event__image">
-            <picture>
+            <div class="event__box gridanimeTrigger" data-i="12"></div>
+            <!-- <div class="event__box gridanimeTrigger_e" data-i="1"></div> -->
+            <!-- <picture>
               <source srcset="img/event_pc.webp" media="(min-width: 768px)">
               <img src="img/event_sp.webp" alt="宴会場" />
-            </picture>
-            <div class="event__container ">
-              <h3 class="event__content-title content__title event__title--blur">
+            </picture> -->
+            <div class="event__container event__container--fadeLeft">
+              <h3 class="event__content-title content__title event__content-title--blur">
                 小規模の会議から大規模の宴会まで<br />幅広くご利用いただけます
               </h3>
-              <div class="event__content event__content--fadeIn">
-                <p>
+              <div class="event__content ">
+                <p class="event__content--fadeIn">
                   ご予定にあわせて、最適なご提案をいたします。
                   設備やお料理、ご宿泊の手配までお手伝いいたしますので、ぜひご相談ください。
                 </p>
               </div>
-              <div class="event__buttonWrapper bgextend">
-                <a href="#" class="event__button main-button main-button--gold borderleft borderleft--gold"
+              <div class="event__buttonWrapper">
+                <a href="#" class="event__button main-button main-button--gold borderleft borderleft--gold event__button--blur"
                   ><span>View more</span></a
                 >
               </div>
@@ -673,7 +676,7 @@
       </article>
 
       <section id="scroll">
-        <div><a href="#" class="scroll"></a></div>
+        <div><a href="#header" class="scroll"></a></div>
       </section>
       <footer id="area-2">
         <ul class="footer__caption">
@@ -683,10 +686,10 @@
           <li class="footer__info">ご利用規則・宿泊約款</li>
         </ul>
         <ul class="footer__sns">
-          <li><a href="" class="footer__facebook"></a></li>
-          <li><a href="" class="footer__instagram"></a></li>
-          <li><a href="" class="footer__twitter"></a></li>
-          <li><a href="" class="footer__youtube"></a></li>
+          <li><a class="footer__facebook"></a></li>
+          <li><a class="footer__instagram"></a></li>
+          <li><a class="footer__twitter"></a></li>
+          <li><a class="footer__youtube"></a></li>
         </ul>
         <div class="footer__last">
           <div class="footer__logo">

@@ -352,44 +352,67 @@ function delayScrollAnime() {
     
   }
 
-
-
-
-
-  function AnimeEvent(){
-    $('.animeEventTrigger').each(function(){ //fadeUpTriggerというクラス名が
-      var elemPos = $(this).offset().top+100;//要素より、50px上の
+  function AnimeSpecial(){
+    $('.animeSpecialTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+500;//要素より、50px上の
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
 
       if (scroll >= elemPos - windowHeight){
 
-
-        $(document).queue($(this).addClass('expansion'));
-        $(document).queue($('.event__title').addClass('simpleblur'));
-        $(document).queue($('.event__image').addClass('fadeLeft'));
-        $(document).queue($('.event__container').addClass('fadeLeft'));
-        $(document).queue($('.event__title--blur').addClass('simpleblur'));
-        $(document).queue($('.event__content--fadeIn').addClass('fadeIn'));
-        // $(document).queue($('.event__buttonWrapper').addClass('bgLRextend'));
-        $(document).queue($('.event__button').addClass('simpleblur')).dequeue();
-
-
+        $(this).addClass('expansion');
+        $('.special__title--blur').addClass('simpleblur');
+        $('.special__container--fadeRight').addClass('fadeRight');
+        $('.special__content-title--blur').addClass('simpleblur');
+        $('.special__content--fadeIn').addClass('fadeIn');
+        // $('.story__buttonWrapper').addClass('simpleblur');
+        $('.special__button--blur').addClass('simpleblur');
 
       }else{
       $(this).removeClass('expansion');// 画面外に出たらfadeUpというクラス名を外す
-      $('.event__title').removeClass('simpleblur');
-      $('.event__title--blur').removeClass('simpleblur');
-      $('.event__container').removeClass('fadeIn');
-      $('.event__content--fadeIn').removeClass('fadeIn');
-      // $('.event__buttonWrapper').removeClass('bgLRextend');
-      $('.event__button').removeClass('simpleblur');
-      $('.event__image').removeClass('fadeLeft');
+      $('.special__title--blur').removeClass('simpleblur');
+      $('.special__container--fadeRight').removeClass('fadeRight');
+      $('.special__content-title--blur').removeClass('simpleblur');
+      $('.special__content--fadeIn').removeClass('fadeIn');
+      // $('.story__buttonWrapper').removeClass('simpleblur');
+      $('.special__button').removeClass('simpleblur');
+      $('.special__box').removeClass('gridhide');
       }
-
     });
     
   }
+
+  function AnimeEvent(){
+    $('.animeEventTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+500;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+
+      if (scroll >= elemPos - windowHeight){
+
+        $(this).addClass('expansion');
+        $('.event__title--blur').addClass('simpleblur');
+        $('.event__container--fadeLeft').addClass('fadeLeft');
+        $('.event__content-title--blur').addClass('simpleblur');
+        $('.event__content--fadeIn').addClass('fadeIn');
+        // $('.story__buttonWrapper').addClass('simpleblur');
+        $('.event__button--blur').addClass('simpleblur');
+
+      }else{
+      $(this).removeClass('expansion');// 画面外に出たらfadeUpというクラス名を外す
+      $('.event__title--blur').removeClass('simpleblur');
+      $('.event__container--fadeLeft').removeClass('fadeLeft');
+      $('.event__content-title--blur').removeClass('simpleblur');
+      $('.event__content--fadeIn').removeClass('fadeIn');
+      // $('.story__buttonWrapper').removeClass('simpleblur');
+      $('.event__button').removeClass('simpleblur');
+      $('.event__box').removeClass('gridhide');
+      }
+    });
+    
+  }
+
+
 
   function grida(){
     $('.gridanimeTrigger').each(function(){ //fadeUpTriggerというクラス名が
@@ -403,18 +426,30 @@ function delayScrollAnime() {
         if (!$(this).hasClass("gridhide")) {
           gridAnimation.trigger();
           $(this).addClass('gridhide');
-
-
         } else {
           // $(this).removeClass('gridhide');
         }
-
-
       }
     });
-    
   }
-
+  function grid_e(){
+    $('.gridanimeTrigger_e').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+100;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+      const gridAnimation_e = new GridAnimation(this);
+      const type = parseInt($(this).attr("data-i"));
+      gridAnimation_e.setType(type);
+      if (scroll >= elemPos - windowHeight){
+        if (!$(this).hasClass("gridhide")) {
+          gridAnimation_e.trigger();
+          $(this).addClass('gridhide');
+        } else {
+          // $(this).removeClass('gridhide');
+        }
+      }
+    });
+  }
 
 
 
@@ -425,9 +460,10 @@ function delayScrollAnime() {
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function (){
   AnimeStory();
+  AnimeSpecial();
   AnimeEvent();
   grida();
-
+  // grid_e();
 
 });// ここまで画面をスクロールをしたら動かしたい場合の記述
 
