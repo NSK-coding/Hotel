@@ -723,7 +723,9 @@ width: var(--fluid-size_w);
   .restaurant__calendar,
   .ticket__calendar,
   .stay__calendar {
-    padding: 1.5em 0 1.1em 1.9em;
+    /* padding: 1.5em 0 1.1em 1.9em; */
+    width: 27.5vw;
+    height: 7.65vw;
   }
   .stay__duration select {
     flex-grow: initial;
@@ -1121,7 +1123,9 @@ margin-left: 4vw;
   .restaurant__calendar,
   .ticket__calendar,
   .stay__calendar {
-    padding: 1.5em 0 1.1em 1.9em;
+    /* padding: 1.5em 0 1.1em 1.9em; */
+    width: 15vw;
+    height: 4.48vw;
   }
   .stay__duration select {
     flex-grow: initial;

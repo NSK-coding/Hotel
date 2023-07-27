@@ -447,7 +447,7 @@ transform: translateY(-75%);
   width: 38.5vw;
   height: 12.8vw;
   color: white;
-  padding: 1.5em 0 1.5em 1.9em;
+  padding: 1.5em 0.1em 1.5em 1.9em;
   background-color: var(--color-accent);
   display: block;
   flex-grow: 1;
