@@ -354,20 +354,14 @@ right: 0;
     margin-top: var(--fluid-size_mt);
   }
 
-  .cuisine__wrapper {
-    margin-top: 6%;
-  }
+
   .cuisine__flex {
-    gap: 10px 10px;
-    margin-top: 4%;
-    /* font-size: clamp(2.2rem, 1.25vw, 2.4rem); */
+
     --min-size: 22;
     --max-size: 24;
     font-size: var(--clamp-size);
   }
-  .cuisine__visual {
-    width: 32%;
-  }
+
   .cuisine__restaurant {
     position: absolute;
     left: 0;
@@ -378,6 +372,56 @@ right: 0;
     line-height: 8rem;
     padding: 0 0.5em;
   }
+
+  .cuisine__wrapper {
+    width: 100%;
+    margin-top: 9%;
+  }
+  .cuisine__grid {
+
+
+  grid-template-columns: 29vw 29vw 29vw;
+  grid-template-rows: 22vw 22vw;
+  gap: 1vw 1vw;
+  margin: 0 auto;
+  max-width: 91vw;
+  }
+  .cuisine__img {
+    /* width: 28vw; */
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      cursor: pointer;
+      filter: grayscale(80%);
+    
+    }
+    .cuisine__grid:has(.cuisine__img--ad:hover) {
+      grid-template-columns: 39vw 24vw 24vw;
+      grid-template-rows: 33vw 11vw;
+    }
+    .cuisine__grid:has(.cuisine__img--br:hover) {
+      grid-template-columns: 24vw 24vw 39vw;
+      grid-template-rows: 33vw 11vw;
+    }
+    .cuisine__grid:has(.cuisine__img--tp:hover) {
+      grid-template-columns: 24vw 39vw 24vw;
+      grid-template-rows: 11vw 33vw;
+    }
+    .cuisine__grid:has(.cuisine__img--lb:hover) {
+      grid-template-columns: 24vw 39vw 24vw;
+      grid-template-rows: 33vw 11vw;
+    }
+    .cuisine__grid:has(.cuisine__img--ch:hover) {
+      grid-template-columns: 39vw 24vw 24vw;
+      grid-template-rows: 11vw 33vw;
+    }
+    .cuisine__grid:has(.cuisine__img--jp:hover) {
+      grid-template-columns: 24vw 24vw 39vw;
+      grid-template-rows: 11vw 33vw;
+    }
+
+
+
 
   .special__wrapper {
     margin-top: 8vw;
@@ -949,6 +993,12 @@ margin-left: 4vw;
     --max-viewport: 1920;
     margin-top: var(--fluid-size_mt);
   }
+
+
+
+
+
+
 
   .special__wrapper {
     margin-top: 7%;

@@ -641,36 +641,76 @@ flex-grow: 1;
 }
 .cuisine__wrapper {
   width: 100%;
-  padding: 0 6vw;
   margin-top: 9%;
 }
 .cuisine__title {
 
 }
 .cuisine__flex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1vw 2%;
-  margin-top: 7%;
+  /* display: flex;
+  flex-wrap: wrap; */
   --min-size: 10;
   --max-size: 16;
   font-size: var(--clamp-size);
 }
 
-/* .cuisine__grid {
+.cuisine__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  max-width: 84vw;
-max-height: 64vw;
-  justify-content: space-between;
-  transition: .35s linear;
-} */
+  grid-template-columns: 43vw 43vw;
+  grid-template-rows: 32vw 32vw 32vw;
+  gap: 2vw 2vw;
+  margin: 0 auto;
+  max-width: 87vw;
 
-.cuisine__visual {
-  width: 49%;
+  /* justify-content: space-between; */
+  transition: .35s linear;
+  overflow-x:hidden
+}
+.cuisine__grid:has(.cuisine__img--ad:hover) {
+  grid-template-columns: 64vw 22vw;
+  grid-template-rows: 48vw 24vw 24vw;
+}
+.cuisine__grid:has(.cuisine__img--br:hover) {
+  grid-template-columns: 64vw 22vw;
+  grid-template-rows: 24vw 48vw 24vw;
+}
+.cuisine__grid:has(.cuisine__img--tp:hover) {
+  grid-template-columns: 64vw 22vw;
+  grid-template-rows: 24vw 24vw 48vw;
+}
+.cuisine__grid:has(.cuisine__img--lb:hover) {
+  grid-template-columns: 22vw 64vw;
+  grid-template-rows: 48vw 24vw 24vw;
+}
+.cuisine__grid:has(.cuisine__img--ch:hover) {
+  grid-template-columns: 22vw 64vw;
+  grid-template-rows: 24vw 48vw 24vw;
+}
+.cuisine__grid:has(.cuisine__img--jp:hover) {
+  grid-template-columns: 22vw 64vw;
+  grid-template-rows: 24vw 24vw 48vw;
+}
+.cuisine__img--ad {
   position: relative;
-  background-color: red;
+}
+.cuisine__img--ad::before  {
+  content: "10階　オールデイダイニング";
+  position: absolute;
+  left: 0;
+ top: 0;
+  background-color: rgba(255, 255, 255, 0.65);
+  min-width: 82%;
+  width: 10vw;
+  height: 5rem;
+  text-align: center;
+  line-height: 5rem;
+  padding: 0 0.3em;
+  color: red;
+}
+.cuisine__visual {
+  /* width: 49%; */
+  position: relative;
+  /* background-color: red; */
 /* justify-items: stretch; */
 /* flex-grow: 1; */
 }
@@ -684,24 +724,23 @@ max-height: 64vw;
   text-align: center;
   line-height: 5rem;
   padding: 0 0.3em;
+  /* opacity: 0; */
+  animation-delay: 1s;
 }
-.cuisine__visual > img {
+.cuisine__img {
 /* width: 28vw; */
-
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   cursor: pointer;
   filter: grayscale(80%);
 
 }
-.cuisine__visual > img:hover {
+.cuisine__img:hover {
   filter: grayscale(0);
 
-
 }
-/* .cuisine__grid:has(.cuisine_visual--ad:hover) {
-  grid-template-columns: 1.2fr 0.9fr 0.9fr;
-  grid-template-rows: 0.8fr 0.2fr;
-} */
+
 
 .special__wrapper {
   margin-top: 8vw;
