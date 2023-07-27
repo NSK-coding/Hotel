@@ -806,7 +806,8 @@ margin-left: auto;
 .fitness__flex {
   display: flex;
   flex-direction: column;
-  overflow-x:hidden
+  overflow-x:hidden;
+
 }
 .fitness__container {
   margin-top: 8%;
@@ -825,6 +826,12 @@ margin-left: auto;
 .fitness__gym {
   width: 100%;
   margin-top: 6%;
+}
+.fitness__container--rightUp {
+  opacity: 0;
+}
+.fitness__gym--leftUp {
+  opacity: 0;
 }
 .fitness__gallery {
   display: flex;

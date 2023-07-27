@@ -439,9 +439,29 @@ function delayScrollAnime() {
       $('.wedding__chapel--closeUp').removeClass('closeUp');
       $('.wedding__title--blur').removeClass('simpleblur');
       }
+    });  
+  }
+
+  function AnimeFitness(){
+    $('.animeFitnessTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+500;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
+
+      if (scroll >= elemPos - windowHeight){
+
+        $(this).addClass('fadeRightUp');
+        $('.fitness__gym--leftUp').addClass('fadeLeftUp');
+
+      }else{
+      $(this).removeClass('fadeRightUp');// 画面外に出たらfadeUpというクラス名を外す
+      $('.fitness__gym--leftUp').removeClass('fadeLeftUp');
+
+      }
     });
     
   }
+
 
   function grida(){
     $('.gridanimeTrigger').each(function(){ //fadeUpTriggerというクラス名が
@@ -490,6 +510,7 @@ function delayScrollAnime() {
 $(window).scroll(function (){
   AnimeStory();
   AnimeSpecial();
+  AnimeFitness();
   AnimeWedding();
   AnimeEvent();
   grida();

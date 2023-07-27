@@ -810,10 +810,41 @@ left: 25%;
       }
     }
 
-    .fadeRightUp{
-      transition: .7s ease-in-out ;
+    .fadeLeftUp{
+      animation-name:fadeLeftUpAnime;
+      animation-duration: 1.5s;
+      animation-fill-mode:forwards;
+      opacity:0;
     }
+    @keyframes fadeLeftUpAnime{
+      from {
+        opacity: 0;
+      transform: translate(-100px, 100px);
+      }
     
+      to {
+        opacity: 1;
+      transform: translate(0, 0);
+      }
+    }
+
+    .fadeRightUp{
+      animation-name:fadeRightUpAnime;
+      animation-duration: 1.5s;
+      animation-fill-mode:forwards;
+      opacity:0;
+    }
+    @keyframes fadeRightUpAnime{
+      from {
+        opacity: 0;
+      transform: translate(100px, 100px);
+      }
+    
+      to {
+        opacity: 1;
+      transform: translate(0, 0);
+      }
+    }
 
     .fadeUp {
       animation-name:fadeUpAnime;
@@ -876,20 +907,7 @@ left: 25%;
         }
       }
 
-      .shadowblur {
-        animation: shadowblur 3s both ease-in;
-      }
-      @keyframes shadowblur {
-        from {
-            color: transparent;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 1);
-        }
-        
-        to {
-            color: #fff;
-            text-shadow: 0;
-        }
-    }
+
 
 .expansion {
   animation: expansion 2s ease-in;
