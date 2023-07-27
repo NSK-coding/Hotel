@@ -190,6 +190,17 @@ function fadeAnime(){
     }
   });
 
+  $('.closeUpTrigger').each(function(){ //fadeUpTriggerというクラス名が
+    var elemPos = $(this).offset().top+500;//要素より、50px上の
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight){
+    $(this).addClass('closeUp');// 画面内に入ったらfadeUpというクラス名を追記
+    }else{
+      $(this).removeClass('closeUp');// 画面外に出たらfadeUpというクラス名を外す
+    }
+  });
+
 
   $('.fadeLeftTrigger').each(function(){ //fadeUpTriggerというクラス名が
     var elemPos = $(this).offset().top+500;//要素より、50px上の
@@ -307,7 +318,7 @@ function delayScrollAnime() {
 // 画面をスクロールをしたら動かしたい場合の記述
   $(window).scroll(function (){
 
-    // delayScrollAnime();
+    delayScrollAnime();
   });
 
 // 画面が読み込まれたらすぐに動かしたい場合の記述
@@ -412,7 +423,25 @@ function delayScrollAnime() {
     
   }
 
+  function AnimeWedding(){
+    $('.animeWeddingTrigger').each(function(){ //fadeUpTriggerというクラス名が
+      var elemPos = $(this).offset().top+500;//要素より、50px上の
+      var scroll = $(window).scrollTop();
+      var windowHeight = $(window).height();
 
+      if (scroll >= elemPos - windowHeight){
+
+        $(this).addClass('closeUp');
+        $('.wedding__chapel--closeUp').addClass('closeUp');
+        $('.wedding__title--blur').addClass('simpleblur');
+      }else{
+      $(this).removeClass('closeUp');// 画面外に出たらfadeUpというクラス名を外す
+      $('.wedding__chapel--closeUp').removeClass('closeUp');
+      $('.wedding__title--blur').removeClass('simpleblur');
+      }
+    });
+    
+  }
 
   function grida(){
     $('.gridanimeTrigger').each(function(){ //fadeUpTriggerというクラス名が
@@ -461,6 +490,7 @@ function delayScrollAnime() {
 $(window).scroll(function (){
   AnimeStory();
   AnimeSpecial();
+  AnimeWedding();
   AnimeEvent();
   grida();
   // grid_e();

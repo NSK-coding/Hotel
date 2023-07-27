@@ -628,7 +628,7 @@ transition-delay: .6s;
   /*==================================================
 　5-2-4 MENUがCLOSEに
 ===================================*/
-
+/* TODO: スクロールバーを外す */
   /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
   .openbtn {
     /*ボタン内側の基点となるためrelativeを指定。
@@ -833,6 +833,30 @@ left: 25%;
         transform: translateY(0);
         }
       }
+
+      .closeUp {
+        animation-name:closeUpAnime;
+        animation-duration: 2s;
+        animation-timing-function: ease-in;
+        animation-fill-mode:forwards;
+        opacity: 0;
+        }
+        
+        @keyframes closeUpAnime{
+          from {
+            opacity: 0;
+            filter: blur(10px);
+          
+          }
+        
+          to {
+            opacity: 1;
+            filter: blur(0);
+          
+
+          }
+        }
+
 
       .simpleblur {
  

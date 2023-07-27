@@ -862,6 +862,10 @@ bottom: -10%;
   color: white;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
 }
+.wedding__image {
+  opacity: 0;
+
+}
 .wedding__chapel {
   position: absolute;
   width: 67%;
@@ -876,7 +880,14 @@ bottom: -10%;
   /* scale: 1.1; */
   transform: scale(1.1);
 }
-
+.wedding__chapel--closeUp {
+  opacity: 0;
+  /* animation-delay: 4s; */
+}
+.wedding__title--blur {
+  opacity: 0;
+  animation-delay: 2s;
+}
 .event__wrapper {
   margin-top: 10vw;
   width: 100%;
