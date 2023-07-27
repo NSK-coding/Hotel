@@ -445,6 +445,7 @@ transform: translateY(-75%);
 .ticket__calendar,
 .stay__calendar {
   width: 38.5vw;
+  height: 12.8vw;
   color: white;
   padding: 1.5em 0 1.5em 1.9em;
   background-color: var(--color-accent);
