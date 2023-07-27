@@ -713,6 +713,7 @@ flex-grow: 1;
   /* background-color: red; */
 /* justify-items: stretch; */
 /* flex-grow: 1; */
+  overflow-x: hidden;
 }
 .cuisine__banner {
   position: absolute;
@@ -724,7 +725,7 @@ flex-grow: 1;
   text-align: center;
   line-height: 5rem;
   padding: 0 0.3em;
-  /* opacity: 0; */
+  opacity: 1;
   animation-delay: 1s;
 }
 .cuisine__img {
@@ -736,11 +737,14 @@ flex-grow: 1;
   filter: grayscale(80%);
 
 }
-.cuisine__img:hover {
+.cuisine__visual:hover {
   filter: grayscale(0);
 
 }
-
+.cuisine__visual:hover > .cuisine__banner {
+  animation: fadeLeftAnime 1s ease-in;
+  animation-fill-mode:forwards;
+}
 
 .special__wrapper {
   margin-top: 8vw;

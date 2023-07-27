@@ -361,7 +361,11 @@ right: 0;
     --max-size: 24;
     font-size: var(--clamp-size);
   }
-
+  .cuisine__banner {
+    bottom: 0.5vw;
+    height: 3em;
+    line-height: 3em;
+  }
   .cuisine__restaurant {
     position: absolute;
     left: 0;
