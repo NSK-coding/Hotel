@@ -313,6 +313,15 @@ right: 0;
   }
 
 
+  .story__box {
+    --box-width: 159.2rem;
+    --box-height: 59rem;
+    --img-url: url(../img/story_pc.webp);
+
+  }
+
+
+
 
 
 
@@ -496,6 +505,7 @@ right: 0;
   width: 64%;
   bottom: -5%;
   left: 57%;
+  transform-origin: center;
 }
 
 .event__wrapper {

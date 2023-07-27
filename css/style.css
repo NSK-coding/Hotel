@@ -540,14 +540,20 @@ flex-grow: 1;
 }
 
 
-
-
+.gridanimeTrigger {
+  opacity: 0;
+}
+.gridhide {
+  opacity: 1;
+}
 
 
 .story__title {
   text-align: left;
   margin-top: 7%;
+
 }
+
 .story__image {
   position: relative;
   width: 93%;
@@ -555,6 +561,22 @@ flex-grow: 1;
   margin-top: 7%;
   overflow-x:hidden
 }
+.story__box {
+  --box-width: 93vw;
+  --box-height: 78.5vw;
+  --frag-width: calc(var(--box-width) / var(--col));
+  --frag-height: calc(var(--box-height) / var(--row));
+  --img-url: url(../img/story_sp.webp);
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: var(--box-width);
+  height: var(--box-height);
+  position: relative;
+  object-fit: cover;
+}
+
+
 .story__container {
   position: absolute;
   top: 0;
@@ -563,12 +585,18 @@ flex-grow: 1;
   color: white;
   width: 93%;
   height: 100%;
+
+}
+.animeStoryTrigger {
+  opacity: 0;
+  animation-delay: 4s;
 }
 .story__inner {
   margin-top: 16%;
   margin-left: 7%;
   
 }
+
 .story__content {
   margin-top: 4%;
   width: 100%;
@@ -577,6 +605,15 @@ flex-grow: 1;
   --max-size: 20;
   font-size: var(--clamp-size);
 }
+.story__title--blur {
+  opacity: 0;
+  animation-delay: 6s;
+}
+
+.story__content--fadeIn {
+  animation-delay: 6.5s;
+  opacity: 0;
+}
 .story__content span {
   display: block;
 }
@@ -584,12 +621,14 @@ flex-grow: 1;
   --min-size: 20;
   --max-size: 66;
   margin-top: var(--fluid-size);
+
 }
 .story__button {
   margin-left: 0;
   color: white;
   max-width: 300px;
-
+  opacity: 0;
+  animation-delay: 6s;
 }
 .story__button::hover {
   color: var(--color-base);
@@ -792,7 +831,6 @@ bottom: -10%;
   transition: scale 0.5s;
 }
 .wedding__chapel:hover {
-
   scale: 1.1;
 }
 .event__wrapper {

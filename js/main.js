@@ -337,15 +337,16 @@ function delayScrollAnime() {
         $(this).addClass('fadeLeft');
         $('.story__title--blur').addClass('simpleblur');
         $('.story__content--fadeIn').addClass('fadeIn');
-        $('.story__buttonWrapper').addClass('bgLRextend');
-        $('.story__button').addClass('bgappear');
+        // $('.story__buttonWrapper').addClass('simpleblur');
+        $('.story__button').addClass('simpleblur');
 
       }else{
       $(this).removeClass('fadeLeft');// 画面外に出たらfadeUpというクラス名を外す
       $('.story__title--blur').removeClass('simpleblur');
       $('.story__content--fadeIn').removeClass('fadeIn');
-      $('.story__buttonWrapper').removeClass('bgLRextend');
-      $('.story__button').removeClass('bgappear');
+      // $('.story__buttonWrapper').removeClass('simpleblur');
+      $('.story__button').removeClass('simpleblur');
+      $('.story__box').removeClass('gridhide');
       }
     });
     
@@ -367,11 +368,11 @@ function delayScrollAnime() {
         $(document).queue($(this).addClass('expansion'));
         $(document).queue($('.event__title').addClass('simpleblur'));
         $(document).queue($('.event__image').addClass('fadeLeft'));
-        $(document).queue($('.event__container').addClass('fadeIn'));
+        $(document).queue($('.event__container').addClass('fadeLeft'));
         $(document).queue($('.event__title--blur').addClass('simpleblur'));
         $(document).queue($('.event__content--fadeIn').addClass('fadeIn'));
-        $(document).queue($('.event__buttonWrapper').addClass('bgLRextend'));
-        $(document).queue($('.event__button').addClass('bgappear')).dequeue();
+        // $(document).queue($('.event__buttonWrapper').addClass('bgLRextend'));
+        $(document).queue($('.event__button').addClass('simpleblur')).dequeue();
 
 
 
@@ -381,8 +382,8 @@ function delayScrollAnime() {
       $('.event__title--blur').removeClass('simpleblur');
       $('.event__container').removeClass('fadeIn');
       $('.event__content--fadeIn').removeClass('fadeIn');
-      $('.event__buttonWrapper').removeClass('bgLRextend');
-      $('.event__button').removeClass('bgappear');
+      // $('.event__buttonWrapper').removeClass('bgLRextend');
+      $('.event__button').removeClass('simpleblur');
       $('.event__image').removeClass('fadeLeft');
       }
 
@@ -395,14 +396,20 @@ function delayScrollAnime() {
       var elemPos = $(this).offset().top+100;//要素より、50px上の
       var scroll = $(window).scrollTop();
       var windowHeight = $(window).height();
-
+      const gridAnimation = new GridAnimation(this);
+      const type = parseInt($(this).attr("data-i"));
+      gridAnimation.setType(type);
       if (scroll >= elemPos - windowHeight){
+        if (!$(this).hasClass("gridhide")) {
+          gridAnimation.trigger();
+          $(this).addClass('gridhide');
 
 
-        const gridAnimation = new GridAnimation(this);
-        const type = parseInt($(this).attr("data-i"));
-        gridAnimation.setType(type);
-        gridAnimation.trigger();
+        } else {
+          // $(this).removeClass('gridhide');
+        }
+
+
       }
     });
     
@@ -417,9 +424,9 @@ function delayScrollAnime() {
 
 // 画面をスクロールをしたら動かしたい場合の記述
 $(window).scroll(function (){
-  // AnimeStory();
-  // AnimeEvent();
-  // grida();
+  AnimeStory();
+  AnimeEvent();
+  grida();
 
 
 });// ここまで画面をスクロールをしたら動かしたい場合の記述

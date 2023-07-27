@@ -750,9 +750,8 @@ left: 25%;
   
   animation-name:fadeInAnime;
   animation-duration: 1s;
-  animation-delay: 2s;
-  animation-fill-mode:forwards;
-  opacity:0;
+
+  animation-fill-mode: forwards;
   }
   
   @keyframes fadeInAnime{
@@ -768,8 +767,9 @@ left: 25%;
 
 .fadeLeft{
   animation-name:fadeLeftAnime;
-  animation-duration: 3s;
+  animation-duration: 2s;
   animation-fill-mode:forwards;
+
   opacity:0;
   }
   
@@ -835,15 +835,20 @@ left: 25%;
       }
 
       .simpleblur {
-        animation: blur 2s both ease-in;
+ 
+        animation: blur 1s ease-out;
+
+        animation-fill-mode:forwards;
       }
       
       @keyframes blur {
         from {
           filter: blur(10px);
+          opacity: 0;
         }
         to {
           filter: blur(0);
+          opacity: 1;
         }
       }
 
@@ -871,7 +876,7 @@ left: 25%;
   }
   
   to {
-    background-size: 83% 100%;
+    background-size: 86% 100%;
   }
 
 }
