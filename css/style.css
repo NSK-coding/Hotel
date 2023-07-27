@@ -444,7 +444,7 @@ transform: translateY(-75%);
 .restaurant__calendar,
 .ticket__calendar,
 .stay__calendar {
-  width: 100%;
+  width: 38.5vw;
   color: white;
   padding: 1.5em 0 1.5em 1.9em;
   background-color: var(--color-accent);
