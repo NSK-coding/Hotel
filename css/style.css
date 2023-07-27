@@ -448,6 +448,7 @@ transform: translateY(-75%);
   color: white;
   padding: 1.5em 0 1.5em 1.9em;
   background-color: var(--color-accent);
+  flex-grow: 1;
 }
 .checkbox__container {
   width: 100%;
