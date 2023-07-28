@@ -189,12 +189,14 @@ background-position: 0 -0.15em;
 
 /* || Calendar Styles */
 input[type="date"] {
-  position: relative;
-
+  /* position: relative; */
+position: absolute;
+top: 30%;
+left: 20%;
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
-  top: 50%;
+  /* top: 50%; */
   /* left: 20%; */
   /* right: 0; */
   /* bottom: 0; */
@@ -204,18 +206,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
   cursor: pointer;
 }
 input[type="date"]::after {
-  content: '';
-  background-image: url(../img/calendar.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: 0 0;
-  width: 1.8em;
-  height: 1.8em;
-  position: absolute;
-  top: 46%;
-  right: 5vw;
-  transform: translateY(-50%);
-  pointer-events: none;
+
 }
 
 
