@@ -194,10 +194,10 @@ input[type="date"] {
 }
 input[type="date"]::-webkit-calendar-picker-indicator {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 50%;
+  /* left: 20%; */
+  /* right: 0; */
+  /* bottom: 0; */
   width: auto;
   height: auto;
   background: transparent;
@@ -209,8 +209,8 @@ input[type="date"]::after {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 0 0;
-  width: 2em;
-  height: 2em;
+  width: 1.8em;
+  height: 1.8em;
   position: absolute;
   top: 46%;
   right: 5vw;
@@ -280,7 +280,6 @@ input[type="checkbox"]:checked::after {
 /* || Dropdown Styles */
 .dropdown {
 width: 100%;
-/* height: 60px; */
 color: white;
   background-color: var(--color-accent);
   display: inline-block;
@@ -331,9 +330,10 @@ pointer-events: none;
 .search-button {
   position: relative;
   display: inline-block;
-  padding: 0.8em 3em 1.4em;
+  padding: 0.8em 1em 1.4em;
+  text-align: center;
   /* width: 346px; */
-  border-radius: 12px;
+  border-radius: 1em;
   color: white;
   background-color: var(--color-base);
   border: 1px solid #ccc;
@@ -359,36 +359,7 @@ pointer-events: none;
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.5);
   border-color: transparent;
 }
-/* FIXME: 後で */
-/* ボタン共通設定 */
-.btn04 {
-  /*線の基点とするためrelativeを指定*/
-position: relative;
-  /*ボタンの形状*/
-display:inline-block;
-  padding: 10px 30px;
 
-color:#333;
-border:1px solid #ccc;
-  text-decoration: none;
-  outline: none;
-  /*はみ出す背景色を隠す*/
-overflow: hidden;
-}
-
-/*hoverした際のボタンの形状*/
-.btn04:hover {
-color:#ccc;
-border-color: transparent;
-  /*色の変化を遅らせる*/
-transition-delay: .6s;
-}
-
-/*線の設定*/
-.btn04 span{
-  display: block;
-  z-index: 2;
-}
 
 .main-button {
   /*線の基点とするためrelativeを指定*/
@@ -745,7 +716,7 @@ left: 25%;
 
 
 /* TODO: 親にoverflow-x:hidden; */
-/* TODO:　インライン要素には.span{display:block;} */
+/* TODO:　インライン要素には.span{display:block;}でないとアニメーションがかからない */
 .fadeIn{
   
   animation-name:fadeInAnime;

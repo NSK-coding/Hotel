@@ -391,11 +391,11 @@ transform: translateY(-75%);
 .gnavi__list-3 {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   width: 86%;
   /* height: 10vw; */
   margin: 0 auto;
-  gap: 1em 5%;
+  gap: 1em 2%;
   /* font-size: clamp(1rem, 2.5vw, 1.8rem); */
   --min-size: 10;
   --max-size: 18;
@@ -413,35 +413,6 @@ transform: translateY(-75%);
   opacity: 0.7;
 }
 
-.stay__checkin {
-  width: 44%;
-}
-.stay__notdecided {
-  width: 15%;
-}
-.stay__duration {
-  width: 31%;
-}
-.stay__duration select {
-  flex-grow: 1;
-}
-.stay__adults {
-  width: 30%;
-}
-.stay__children {
-  width: 30%;
-}
-.stay__rooms {
-  width: 30%;
-}
-.tab__search {
-  margin-top: 1%;
-  /* font-size: clamp(1rem, 3vw, 2.2rem); */
-  --min-size: 10;
-  --max-size: 22;
-  font-size: var(--clamp-size);
-}
-/* TODO: heightをcalcで設定 */
 .restaurant__calendar,
 .ticket__calendar,
 .stay__calendar {
@@ -455,37 +426,66 @@ transform: translateY(-75%);
   flex-grow: 1;
 }
 .checkbox__container {
-  width: 100%;
+  width: 12.8vw;
+  height: 12.8vw;
   background-color: var(--color-accent);
   flex-grow: 1;
   position: relative;
 }
+.stay__checkbox {
+  width: 12.8vw;
+  height: 12.8vw;
+}
 .dropdown {
-  padding: 1.5em 1em;
+  padding: 1.5em 1em 1.5em 1.5em;
+  height: 12.8vw;
+}
+.ticket__departure--dropdwon {
+  width: 38.5vw;
+  padding-left: 1em;
+}
+.restaurant__site--dropdown {
+  width: 43vw;
+  padding-left: 1em;
+}
+.restaurant__time--dropdown {
+  width: 30vw;
+  padding-left: 1em;
+}
+.restaurant__children--dropdown,
+.restaurant__adults--dropdown {
+  width: 26vw;
+}
+.ticket__children--dropdwon,
+.ticket__adults--dropdown,
+.ticket__duration--dropdown,
+.stay__rooms--dropdown,
+.stay__children--dropdown,
+.stay__adults--dropdown,
+.stay__duration--dropdown {
+  width: 27.5vw;
 }
 
-.ticket__checkin,
-.ticket__departure {
-  width: 45%;
+
+
+
+/* TODO: heightをcalcで設定 */
+
+.search-button {
+  height: 12.8vw;
+  width: 41vw;
 }
-.ticket__departure select {
-  flex-grow: 1;
+.tab__search {
+  margin-top: 1%;
+  /* font-size: clamp(1rem, 3vw, 2.2rem); */
+  --min-size: 10;
+  --max-size: 22;
+  font-size: var(--clamp-size);
 }
-.ticket__children,
-.ticket__adults,
-.ticket__duration {
-  width: 30%;
-}
-.restaurant__date {
-  width: 45%;
-  position: relative;
-}
-.restaurant__site {
-  width: 50%;
-}
-.restaurant__site select {
-flex-grow: 1;
-}
+
+
+
+
 .restaurant__children,
 .restaurant__adults {
   width: 28%;
@@ -556,7 +556,7 @@ flex-grow: 1;
 
 .story__title {
   text-align: left;
-  margin-top: 7%;
+  margin-top: 6%;
 
 }
 
@@ -811,9 +811,8 @@ right: 0;
   animation-delay: 3s;
 
 }
-/* TODO: 文字装飾 */
 .special__content-title {
-  margin-top: 9%;
+  margin-top: 19%;
   text-align: right;
 }
 .special__content-title--blur {
@@ -826,6 +825,9 @@ right: 0;
   --min-size: 10;
   --max-size: 20;
   font-size: var(--clamp-size);
+}
+.special__content--pc-br {
+  display: none;
 }
 .special__content--fadeIn {
   opacity: 0;
@@ -1005,7 +1007,6 @@ bottom: -10%;
   animation-delay: 3s;
 
 }
-/* TODO: 文字装飾 */
 .event__content-title {
   margin-top: 18%;
   text-align: left;
