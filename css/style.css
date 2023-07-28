@@ -705,7 +705,7 @@ transform: translateY(-75%);
 .cuisine__img--ad {
   position: relative;
 }
-.cuisine__img--ad::before  {
+/* .cuisine__img--ad::before  {
   content: "10階　オールデイダイニング";
   position: absolute;
   left: 0;
@@ -718,7 +718,7 @@ transform: translateY(-75%);
   line-height: 5rem;
   padding: 0 0.3em;
   color: red;
-}
+} */
 .cuisine__visual {
   /* width: 49%; */
   position: relative;
@@ -737,7 +737,7 @@ transform: translateY(-75%);
   text-align: center;
   line-height: 5rem;
   padding: 0 0.3em;
-  opacity: 1;
+  opacity: 0;
   animation-delay: 1s;
 }
 .cuisine__img {
@@ -749,12 +749,12 @@ transform: translateY(-75%);
   filter: grayscale(80%);
 
 }
-.cuisine__visual:hover {
+.cuisine__img:hover {
   filter: grayscale(0);
 
 }
 .cuisine__visual:hover > .cuisine__banner {
-  animation: fadeLeftAnime 1s ease-in;
+  animation: fadeLeftAnime 0.6s ease-in;
   animation-fill-mode:forwards;
 }
 
