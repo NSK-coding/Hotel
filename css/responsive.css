@@ -528,13 +528,16 @@ right: 0;
   }
   .special__button {
     --min-size_mt: 100;
-    --max-size_mt: 45;
+    --max-size_mt: 25;
     --min-viewport: 750;
     --max-viewport: 1400;
     margin-top: var(--fluid-size_mt);
 
   }
-
+  .special__content--pc-br {
+    display: none;
+  }
+  
   .fitness__description {
     /* font-size: clamp(1rem, 3vw, 2.2rem); */
     --min-size: 22;
@@ -1028,12 +1031,15 @@ margin-left: 4vw;
     margin-top: 6%;
   }
   .special__button {
-    --min-size_mt: 18;
-    --max-size_mt: 124;
+    --min-size_mt: 48;
+    --max-size_mt: 84;
     --min-viewport: 1400;
     --max-viewport: 1920;
     margin-top: var(--fluid-size_mt);
     
+  }
+  .special__content--pc-br {
+    /* display: block; */
   }
 
   .event__wrapper {
@@ -1092,9 +1098,12 @@ margin-left: 4vw;
 
 
 
-
 }
-
+@media screen and (min-width: 1700px) {
+  .special__content--pc-br {
+    display: block;
+  }
+}
 @media screen and (min-width: 1920px) {
 
   .header__char--s {
@@ -1179,7 +1188,9 @@ margin-left: 4vw;
     margin-right: initial;
   }
 
-
+  .special__button {
+    margin-top: 84px;
+  }
 
 
 

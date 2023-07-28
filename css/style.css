@@ -861,6 +861,16 @@ margin-left: auto;
   opacity: 0;
   animation-delay: 5s;
 }
+
+/* .special__wrapper {opacity: 1;}
+.special__title {opacity: 1;}
+.special__title--blur {opacity: 1;}
+.special__container--fadeRight {opacity: 1;}
+.special__content-title--blur {opacity: 1;}
+.special__content--fadeIn {opacity: 1;}
+.special__button--blur {opacity: 1;} */
+
+
 #fitness {
   position: relative;
 }
