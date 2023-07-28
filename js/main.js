@@ -454,14 +454,18 @@ function delayScrollAnime() {
       var windowHeight = $(window).height();
 
       if (scroll >= elemPos - windowHeight){
-
         $(this).addClass('fadeRightUp');
         $('.fitness__gym--leftUp').addClass('fadeLeftUp');
+        $('.fitness__pic--pool').addClass('fadeUp');
+        $('.fitness__pic--bath').addClass('fadeUp');
+        $('.fitness__pic--sauna').addClass('fadeUp');
 
       }else{
       $(this).removeClass('fadeRightUp');// 画面外に出たらfadeUpというクラス名を外す
       $('.fitness__gym--leftUp').removeClass('fadeLeftUp');
-
+      $('.fitness__pic--pool').removeClass('fadeUp');
+      $('.fitness__pic--bath').removeClass('fadeUp');
+      $('.fitness__pic--sauna').removeClass('fadeUp');
       }
     });
     
@@ -793,7 +797,7 @@ $.scrollify({
   interstitialSection : "#header, #footer",//ヘッダーフッターを認識し、1ページスクロールさせず表示されるように設定
   easing: "swing", // 他にもlinearやeaseOutExpoといったjQueryのeasing指定可能
   scrollSpeed: 300, // スクロール時の速度
-  
+  // standardScrollElements: '.topics', 
   // //以下、ページネーション設定
   // before:function(i,panels) {
   // var ref = panels[i].attr("data-section-name");
