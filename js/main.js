@@ -10,6 +10,8 @@ $(".openbtn").click(function () {
   $(".header__logo").toggleClass("panelactive");
   $(".header__search").toggleClass("panelactive");
   $(".header__lang").toggleClass("panelactive");
+  $(".main-start").toggleClass("panelactive");
+  
 });
 
 $("#g-nav a").click(function () {
@@ -19,6 +21,7 @@ $("#g-nav a").click(function () {
   $(".header__logo").removeClass("panelactive");
   $(".header__search").removeClass("panelactive");
   $(".header__lang").removeClass("panelactive");
+  $(".main-start").removeClass("panelactive");
 });
 
 //
@@ -490,29 +493,6 @@ function delayScrollAnime() {
       }
     });
   }
-  function grid_e(){
-    $('.gridanimeTrigger_e').each(function(){ //fadeUpTriggerというクラス名が
-      var elemPos = $(this).offset().top+100;//要素より、50px上の
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      const gridAnimation_e = new GridAnimation(this);
-      const type = parseInt($(this).attr("data-i"));
-      gridAnimation_e.setType(type);
-      if (scroll >= elemPos - windowHeight){
-        if (!$(this).hasClass("gridhide")) {
-          gridAnimation_e.trigger();
-          $(this).addClass('gridhide');
-        } else {
-          // $(this).removeClass('gridhide');
-        }
-      }
-    });
-  }
-
-
-
-
-
 
 
 // 画面をスクロールをしたら動かしたい場合の記述
@@ -526,84 +506,6 @@ $(window).scroll(function (){
   // grid_e();
 
 });// ここまで画面をスクロールをしたら動かしたい場合の記述
-
-//右下からアップ
-// $(function() {
-//   //画面をスクロールするとイベントが発動する
-//   $(window).scroll(function() {
-    
-//     //フェードインさせたい要素の位置をずらす
-//     $('.fadeRightUp').css({
-//       'opacity': '0',
-//       'transform': 'translate(100px, 100px)'
-//     });
-    
-//     //スクロールバーの位置を取得
-//     var scroll = $(window).scrollTop();
-
-//     //ウィンドウの高さを取得
-//     var windowHeight = $(window).height();
-
-//     $('.fadeRightUp').each(function() {
-//       //フェードインさせたい要素の縦位置を取得
-//       var elemPos = $(this).offset().top;
-
-//       //要素がウィンドウの中に入ってからさらに100pxスクロールしたら要素をフェードインする
-//       if (scroll > elemPos - windowHeight + 100 && !$(parent).hasClass("play")) {
-//         $(parent).addClass("play");
-//         $(this).css({
-//           'opacity': '1',
-//           'transform': 'translate(0, 0)'
-//         });
-//         $(parent).removeClass("play");
-//       }
-//     });
-//   });
-// });
-
-// // 左下からアップ
-// $(function() {
-//   //画面をスクロールするとイベントが発動する
-//   $(window).scroll(function() {
-    
-//     //フェードインさせたい要素の位置をずらす
-//     $('.fadeLeftUp').css({
-//       'opacity': '0',
-//       'transform': 'translate(-100px, 100px)'
-//     });
-    
-//     //スクロールバーの位置を取得
-//     var scroll = $(window).scrollTop();
-
-//     //ウィンドウの高さを取得
-//     var windowHeight = $(window).height();
-
-//     $('.fadeLeftUp').each(function() {
-//       //フェードインさせたい要素の縦位置を取得
-//       var elemPos = $(this).offset().top;
-
-//       //要素がウィンドウの中に入ってからさらに100pxスクロールしたら要素をフェードインする
-//       if (scroll > elemPos - windowHeight + 100 && !$(parent).hasClass("play")) {
-//         $(parent).addClass("play");
-//         $(this).css({
-//           'opacity': '1',
-//           'transform': 'translate(0, 0)'
-//         });
-//         $(parent).removeClass("play");
-//       }
-//     });
-//   });
-// });
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -728,12 +630,7 @@ class GridAnimation {
   };
 }
 
-// document.querySelectorAll(".box").forEach((box, index) => {
-//   const gridAnimation = new GridAnimation(box);
-//   const type = parseInt(box.getAttribute("data-i"));
-//   gridAnimation.setType(type);
-//   if (index === 0) gridAnimation.trigger();
-// });
+
 
 document.querySelectorAll('.box').forEach(function(element) {
     const gridAnimation = new GridAnimation(element);
@@ -765,13 +662,12 @@ if (windowwidth > 768){
         { src: './img/FV-4_sp.webp'}
   ];
 }
-
 //Vegas全体の設定
 $('#slider').vegas({
 overlay: true,//画像の上に網線やドットのオーバーレイパターン画像を指定。
 transition: 'fade2',//切り替わりのアニメーション。http://vegas.jaysalvat.com/documentation/transitions/参照。fade、fade2、slideLeft、slideLeft2、slideRight、slideRight2、slideUp、slideUp2、slideDown、slideDown2、zoomIn、zoomIn2、zoomOut、zoomOut2、swirlLeft、swirlLeft2、swirlRight、swirlRight2、burnburn2、blurblur2、flash、flash2が設定可能。
-transitionDuration: 2000,//切り替わりのアニメーション時間をミリ秒単位で設定
-delay: 3000,//スライド間の遅延をミリ秒単位で。
+transitionDuration: 5000,//切り替わりのアニメーション時間をミリ秒単位で設定
+delay: 5000,//スライド間の遅延をミリ秒単位で。
 animationDuration: 20000,//スライドアニメーション時間をミリ秒単位で設定
 animation: 'random',//スライドアニメーションの種類。http://vegas.jaysalvat.com/documentation/transitions/参照。kenburns、kenburnsUp、kenburnsDown、kenburnsRight、kenburnsLeft、kenburnsUpLeft、kenburnsUpRight、kenburnsDownLeft、kenburnsDownRight、randomが設定可能。
 slides: responsiveImage,//画像と動画の設定を読む
@@ -779,14 +675,7 @@ timer: false,
 });
 
 
-// $(window).scroll(function() {
-//   var scroll = $(window).scrollTop();//スクロール値を定義
-// //header-imgの背景
-// $('#slider').css({
-// transform: 'scale('+(100 + scroll/10)/100+')',//スクロール値を代入してscale1から拡大.scroll/10の値を小さくすると拡大値が大きくなる
-// top: -(scroll/50)  + "%",//スクロール値を代入してtopの位置をマイナスにずらす
-//   });
-// });
+
 
 
 
@@ -798,26 +687,5 @@ $.scrollify({
   easing: "swing", // 他にもlinearやeaseOutExpoといったjQueryのeasing指定可能
   scrollSpeed: 300, // スクロール時の速度
   // standardScrollElements: '.topics', 
-  // //以下、ページネーション設定
-  // before:function(i,panels) {
-  // var ref = panels[i].attr("data-section-name");
-  // $(".pagination .active").removeClass("active");
-  // $(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");
-  // },
-  // afterRender:function() {
-  // var pagination = "<ul class=\"pagination\">";
-  // var activeClass = "";
-  // $(".box").each(function(i) {//1ページスクロールさせたいエリアクラス名を指定
-  // activeClass = "";
-  // if(i===$.scrollify.currentIndex()) {
-  // activeClass = "active";
-  // }
-  // pagination += "<li><a class=\"" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"><span class=\"hover-text\">" + $(this).attr("data-section-name").charAt(0).toUpperCase() + $(this).attr("data-section-name").slice(1) + "</span></a></li>";
-  // });
-  // pagination += "</ul>";
-  
-  // $("#box1").append(pagination);//はじめのエリアにページネーションを表示
-  // $(".pagination a").on("click",$.scrollify.move);
-  // }
   
   });

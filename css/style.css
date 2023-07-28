@@ -70,7 +70,7 @@ text-align: center;
 }
 
 #g-nav {
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .menu__flex {
@@ -128,7 +128,7 @@ text-align: center;
   font-size: var(--clamp-size);
 }
 .menu__cuisinelist li {
-margin-left: 10%;
+margin-left: 6%;
 }
 .menu__lang li:before,
 .menu__cuisinelist li::before {
@@ -142,15 +142,12 @@ margin-left: 10%;
    border-radius: 100%;
   background-color: white;
 }
-/* TODO: タブ移動でフォーカス tabindex */
-.menu__others {
 
-}
 .menu__button {
   display: flex;
   justify-content: space-between;
   gap: 0 5vw;
-  margin-top: 10%;
+  margin-top: 6%;
   --min-size: 10;
   --max-size: 24;
   font-size: var(--clamp-size);
@@ -900,11 +897,11 @@ margin-left: auto;
 }
 .fitness__container--rightUp {
   opacity: 0;
-  animation-delay: 1s;
+  animation-delay: 1.5s;
 }
 .fitness__gym--leftUp {
   opacity: 0;
-  animation-delay: 1.5s;
+  animation-delay: 1s;
 }
 .fitness__gallery {
   display: flex;

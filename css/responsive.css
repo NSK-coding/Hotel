@@ -35,6 +35,18 @@
   } 
 }
 
+@media screen and (max-width: 767px) {
+  .expansion {
+    animation: fadeInAnime 0.5s ease-in;
+    animation-fill-mode:forwards;
+  }
+
+}
+
+
+
+
+
 
 @media screen and (min-width: 768px) {
 
@@ -201,7 +213,9 @@ right: 0;
     background-size: cover;
     background-repeat: no-repeat;
   }
-
+  .menu__logo {
+    width: 14%;
+  }
   .menu__left > li,
   .menu__right li {
     --min-size_h: 90;
