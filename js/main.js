@@ -134,11 +134,14 @@ var beforePos = 0;//スクロールの値の比較用の設定
 
 //スクロール途中でヘッダーが消え、上にスクロールすると復活する設定を関数にまとめる
 function ScrollAnime() {
-    var elemTop = $('#area-2').offset().top;//#area-2の位置まできたら
+    var elemTop = $('#header').offset().top;//#area-2の位置まできたら
 	var scroll = $(window).scrollTop();
     //ヘッダーの出し入れをする
     if(scroll == beforePos) {
 		//IE11対策で処理を入れない
+  } else if (scroll == elemTop){
+    $('.main-start').removeClass('UpMove');
+    $('.main-start').addClass('DownMove');
     } else if(0 > scroll - beforePos){
 
 		$('.main-start').removeClass('DownMove');	
@@ -146,6 +149,7 @@ function ScrollAnime() {
 
     $('.header-set').removeClass('RightMove');	
 		$('.header-set').addClass('LeftMove');
+
 
     }else {
 	
@@ -344,15 +348,16 @@ function delayScrollAnime() {
       var windowHeight = $(window).height();
 
       if (scroll >= elemPos - windowHeight){
-
-        $(this).addClass('fadeLeft');
+        $(this).addClass('simpleblur');
+        $('.story__container').addClass('fadeLeft');
         $('.story__title--blur').addClass('simpleblur');
         $('.story__content--fadeIn').addClass('fadeIn');
         // $('.story__buttonWrapper').addClass('simpleblur');
         $('.story__button').addClass('simpleblur');
 
       }else{
-      $(this).removeClass('fadeLeft');// 画面外に出たらfadeUpというクラス名を外す
+        $(this).removeClass('simpleblur');
+      $('.story__container').removeClass('fadeLeft');// 画面外に出たらfadeUpというクラス名を外す
       $('.story__title--blur').removeClass('simpleblur');
       $('.story__content--fadeIn').removeClass('fadeIn');
       // $('.story__buttonWrapper').removeClass('simpleblur');
@@ -778,3 +783,37 @@ timer: false,
 // top: -(scroll/50)  + "%",//スクロール値を代入してtopの位置をマイナスにずらす
 //   });
 // });
+
+
+
+
+$.scrollify({
+  section : ".page",//1ページスクロールさせたいエリアクラス名
+  scrollbars:"false",//スクロールバー表示・非表示設定
+  interstitialSection : "#header, #footer",//ヘッダーフッターを認識し、1ページスクロールさせず表示されるように設定
+  easing: "swing", // 他にもlinearやeaseOutExpoといったjQueryのeasing指定可能
+  scrollSpeed: 300, // スクロール時の速度
+  
+  // //以下、ページネーション設定
+  // before:function(i,panels) {
+  // var ref = panels[i].attr("data-section-name");
+  // $(".pagination .active").removeClass("active");
+  // $(".pagination").find("a[href=\"#" + ref + "\"]").addClass("active");
+  // },
+  // afterRender:function() {
+  // var pagination = "<ul class=\"pagination\">";
+  // var activeClass = "";
+  // $(".box").each(function(i) {//1ページスクロールさせたいエリアクラス名を指定
+  // activeClass = "";
+  // if(i===$.scrollify.currentIndex()) {
+  // activeClass = "active";
+  // }
+  // pagination += "<li><a class=\"" + activeClass + "\" href=\"#" + $(this).attr("data-section-name") + "\"><span class=\"hover-text\">" + $(this).attr("data-section-name").charAt(0).toUpperCase() + $(this).attr("data-section-name").slice(1) + "</span></a></li>";
+  // });
+  // pagination += "</ul>";
+  
+  // $("#box1").append(pagination);//はじめのエリアにページネーションを表示
+  // $(".pagination a").on("click",$.scrollify.move);
+  // }
+  
+  });

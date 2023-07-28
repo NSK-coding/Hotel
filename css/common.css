@@ -704,6 +704,12 @@ left: 25%;
 
 /* || ANIMATIONS  */
 
+.gridanimeTrigger {
+  opacity: 0;
+}
+.gridhide {
+  opacity: 1;
+}
 
 
 
@@ -1071,3 +1077,8 @@ left: 25%;
     opacity: 1;
   }
 }
+
+
+
+
+

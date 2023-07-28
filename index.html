@@ -60,12 +60,12 @@
                     <li><a href="#story">Story</a></li>
                     <li><a href="#cuisine">Cuisine</a>
                       <ul class="menu__cuisinelist">
-                        <li><a href="#">オールデイダイニング</a></li>
-                        <li><a href="#">ロビーラウンジ</a></li>
-                        <li><a href="#">メインバー</a></li>
-                        <li><a href="#">中華料理</a></li>
-                        <li><a href="#">鉄板焼き</a></li>
-                        <li><a href="#">日本料理</a></li>
+                        <li><a >オールデイダイニング</a></li>
+                        <li><a >ロビーラウンジ</a></li>
+                        <li><a >メインバー</a></li>
+                        <li><a >中華料理</a></li>
+                        <li><a >鉄板焼き</a></li>
+                        <li><a >日本料理</a></li>
                       </ul>
                     </li>
                   </ul>   <!-- /.menu__left -->
@@ -75,8 +75,8 @@
                     <li><a href="#fitness">Fitness</a></li>
                     <li><a href="#wedding">Wedding</a></li>
                     <li><a href="#event">Event&Meeting</a></li>
-                    <li><a href="#">Access</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a >Access</a></li>
+                    <li><a >Contact</a></li>
                   </ul>
                   <!-- /.menu__right -->
                 </div>
@@ -84,17 +84,17 @@
   
                 <div class="menu__others">
                   <ul class="menu__button">
-                    <li><a href="" class="basic-button menu__reservationButton">宿泊予約・プラン検索</a></li>
-                    <li><a href="" class="basic-button menu__cancelButton">予約確認・キャンセル</a></li>
+                    <li><a class="basic-button menu__reservationButton">宿泊予約・プラン検索</a></li>
+                    <li><a class="basic-button menu__cancelButton">予約確認・キャンセル</a></li>
                   </ul>   <!-- /.menu__button -->
                   <div class="menu__lang">
                     <ul class="menu__lang-ja">
-                      <li><a href="#">日本語</a></li>
-                      <li><a href="#">English</a></li>
+                      <li><a >日本語</a></li>
+                      <li><a >English</a></li>
                     </ul>
                     <ul class="menu__lang-ch">
-                      <li><a href="#">簡体語</a></li>
-                      <li><a href="#">한국어</a></li>
+                      <li><a >簡体語</a></li>
+                      <li><a >한국어</a></li>
                     </ul>
                   </div>
                 </div>
@@ -391,8 +391,8 @@
 
 
 
-      <article id="story">
-        <div class="story__title">
+      <article id="story" class="page" data-section-name="Story">
+        <div class="story__title animeStoryTrigger">
           <h2 class="section__title">
             Story<span class="section__subtitle">私たちができる5つのこと</span>
           </h2>
@@ -404,7 +404,7 @@
             <source srcset="img/story_pc.webp" media="(min-width: 1400px)">
             <img src="img/story_sp.webp" alt="客室" />
           </picture> -->
-          <div class="story__container animeStoryTrigger">
+          <div class="story__container ">
             <div class="story__inner">
               <h3 class="story__title content__title story__title--blur">
                 最高のロケーションとおもてなしで叶える<br />思い出のホテルステイ
@@ -415,7 +415,7 @@
                 </span>
               </div>
               <div class="story__buttonWrapper bgextend">
-                <a href="#" class="story__button main-button main-button--gold borderleft borderleft--gold"
+                <a  class="story__button main-button main-button--gold borderleft borderleft--gold"
                   ><span>View more</span></a
                 >
               </div>
@@ -424,10 +424,10 @@
         </div>
         <!-- /.story__image -->
       </article>
-      <article id="cuisine" class="cuisine__wrapper">
+      <article id="cuisine" class="cuisine__wrapper page" data-section-name="Cuisine">
         <div class="cuisine__title">
-          <h2 class="section__title">
-            Cuisine<span class="section__subtitle">お食事</span>
+          <h2 class="section__title cuisine__section-title">
+            Cuisine<span class="section__subtitle cuisine__section-subtitle">お食事</span>
           </h2>
         </div>
         <ul class="cuisine__flex cuisine__grid delayScroll">
@@ -475,7 +475,7 @@
           </li>
         </ul>
       </article>
-      <article id="special">
+      <article id="special" class="page" data-section-name="Special Floor">
         <div class="special__wrapper animeSpecialTrigger">
           <div class="special__title">
             <h2 class="section__title special__title--blur">
@@ -502,7 +502,7 @@
                 </p>
               </div>
               <div>
-                <a href="#" class="special__button main-button main-button--gold borderleft borderleft--gold special__button--blur"
+                <a  class="special__button main-button main-button--gold borderleft borderleft--gold special__button--blur"
                   ><span>View more</span></a
                 >
               </div>
@@ -512,7 +512,7 @@
         </div>
         <!-- /.special__wrapper -->
       </article>
-      <article id="fitness">
+      <article id="fitness" class="page" data-section-name="Fitness">
         <div class="fitness__flex ">
           <div class="fitness__container fitness__container--rightUp animeFitnessTrigger">
             <div class="fitness__textBox">
@@ -528,19 +528,19 @@
               </div>
             </div>
             <div class="fitness__buttonBox">
-              <a href="#" class="fitness__button main-button borderleft"
+              <a  class="fitness__button main-button borderleft"
                 ><span>View more</span></a
               >
             </div>
           </div>     <!-- /.fitness__container -->
-          <div class="fitness__gym ">
+          <div class="fitness__gym  delayScroll">
             <picture>
               <source srcset="img/gym_pc.webp" media="(min-width: 768px)">
               <img src="img/gym_sp.webp" alt="ジム" class="fitness__gym--leftUp"/>
             </picture>
           </div><!-- /.fitness__gym -->
         </div>
-          <div class="fitness__gallery delayScroll">
+          <div class="fitness__gallery ">
             <div class="fitness__pic">
               <picture>
                 <source srcset="img/fitness-1_pc.webp" media="(min-width: 768px)">
@@ -561,7 +561,7 @@
             </div>
           </div>
       </article>
-      <article id="wedding">
+      <article id="wedding" class="page" data-section-name="Wedding">
         <div class="wedding__wrapper closeUpTrigger">
           <picture>
             <source srcset="img/wedding_pc.webp" media="(min-width: 768px)">
@@ -574,7 +574,7 @@
               >
             </h2>
           </div>
-          <div class="wedding__chapel "><a href="#">
+          <div class="wedding__chapel "><a >
             <picture>
               <source srcset="img/chapel_pc.webp" media="(min-width: 768px)">
               <img src="img/chapel_sp.webp" alt="挙式" class="wedding__chapel--closeUp"/>
@@ -584,7 +584,7 @@
           </div>
         </div>
       </article>
-      <article id="event">
+      <article id="event" class="page" data-section-name="Events&Meeting">
         <div class="event__wrapper animeEventTrigger">
           <div class="event__title">
             <h2 class="section__title event__title--blur">
@@ -609,7 +609,7 @@
                 </p>
               </div>
               <div class="event__buttonWrapper">
-                <a href="#" class="event__button main-button main-button--gold borderleft borderleft--gold event__button--blur"
+                <a  class="event__button main-button main-button--gold borderleft borderleft--gold event__button--blur"
                   ><span>View more</span></a
                 >
               </div>
@@ -620,7 +620,7 @@
         <!-- /.event__wrapper -->
       </article>
 
-      <article id="topics">
+      <article id="topics" class="page" data-section-name="Topics">
         <div class="topics__wrapper">
           <h2 class="topics__title section__title">
             Topics<span class="section__subtitle">お知らせ・イベント情報</span>
@@ -698,18 +698,17 @@
             </li>
           </ul>
           <div class="topics__grid--3">
-            <a href="#" class="topics__button main-button main-button--gold borderleft borderleft--gold"
+            <a  class="topics__button main-button main-button--gold borderleft borderleft--gold"
               ><span>View more</span></a
             >
           </div>
         </div>
         <!-- /.topics__wrapper -->
       </article>
-
-      <div id="scroll">
-        <div><a href="#header" class="scroll"></a></div>
-      </div>
-      <footer id="area-2">
+      <footer>
+        <div id="scroll">
+          <div><a href="#header" class="scroll" aria-label="Top page"></a></div>
+        </div>
         <ul class="footer__caption">
           <li class="footer__info">ホテル情報</li>
           <li class="footer__info">お問い合わせ</li>
@@ -754,12 +753,6 @@
         yyyy + "-" + mm + "-" + dd;
       document.getElementById("restaurant-today").value =
         yyyy + "-" + mm + "-" + dd;
-
-
-
-
-
-
     </script>
 
     <!-- jQuery -->
@@ -769,6 +762,7 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollify/1.0.21/jquery.scrollify.min.js"></script>
     <!--自作のJS-->
     <script src="js/main.js"></script>
     <script src="js/flickity.pkgd.js"></script>
