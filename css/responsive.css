@@ -1208,7 +1208,9 @@ margin-left: 4vw;
   .fitness__gallery {
     gap: 0 10px;
   left: 13%;
-  bottom: -33%;
+  bottom: 2%;
+  /* bottom: -33%; */
+  /* bottom: 28%; */
   }
   .fitness__pic {
     width: 28%;
