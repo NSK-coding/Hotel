@@ -100,10 +100,6 @@
   .header__container {
     overflow: hidden;
   }
-  .header-set {
-    /* pointer-events: none; */
-    /* opacity: 0; */
-  }
   .header-set.LeftMove{
     pointer-events: all;
     animation: LeftAnime 0.5s forwards;
@@ -748,10 +744,6 @@ width: var(--fluid-size_w);
     width: 30vw;
     height: 96px;
   }
-  input[type="date"] {
-    
-  }
-
   .checkbox__container {
     width: 96px;
     height: 96px;
@@ -812,10 +804,6 @@ width: var(--fluid-size_w);
     /* padding: 0.4em 2em 0.8em; */
     width: 30vw;
     height: 96px;
-  }
-  .search-button::before {
-    /* width: 2vw;
-    height: 2vw; */
   }
 
   .stay__rooms {
@@ -948,13 +936,7 @@ margin-left: 4vw;
     filter: none;
   }
 
-  .flickity-viewport {
-    /* left: -20vw; */
-  }
-  .flickity-slider {
-    /* left: 20vw; */
-    /* background-color: red; */
-  }
+ 
   .flickity-page-dots {
     --min-size_mt: 28;
     --max-size_mt: 28;
@@ -1051,9 +1033,6 @@ margin-left: 4vw;
     --max-viewport: 1920;
     margin-top: var(--fluid-size_mt);
     
-  }
-  .special__content--pc-br {
-    /* display: block; */
   }
 
   .event__wrapper {
