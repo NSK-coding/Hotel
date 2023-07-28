@@ -592,7 +592,7 @@ pointer-events: none;
   /*==================================================
 　5-2-4 MENUがCLOSEに
 ===================================*/
-/* TODO: スクロールバーを外す */
+
   /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
   .openbtn {
     /*ボタン内側の基点となるためrelativeを指定。
@@ -677,7 +677,7 @@ left: 25%;
   }
 
   /*========= ナビゲーションのためのCSS ===============*/
-/* TODO: 背景画像書き換え */
+
   #g-nav {
     /* display: none; */
     /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
@@ -727,8 +727,8 @@ left: 25%;
 
 
 
-/* TODO: 親にoverflow-x:hidden; */
-/* TODO:　インライン要素には.span{display:block;}でないとアニメーションがかからない */
+/*  親にoverflow-x:hidden; */
+/*  インライン要素には.span{display:block;}でないとアニメーションがかからない */
 .fadeIn{
   
   animation-name:fadeInAnime;
