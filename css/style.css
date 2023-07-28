@@ -418,6 +418,7 @@ transform: translateY(-75%);
   position: relative;
   width: 38.5vw;
   height: 12.8vw;
+  /* pointer-events: none; */
 }
 .calendar-container::after {
   content: '';
@@ -444,13 +445,11 @@ transform: translateY(-75%);
   /* padding: 1.56vw 0.1vw 1.56vw 1.98vw; */
 
   display: block;
-  flex-grow: 1;
 }
 .checkbox__container {
   width: 12.8vw;
   height: 12.8vw;
   background-color: var(--color-accent);
-  flex-grow: 1;
   position: relative;
 }
 .stay__checkbox {
@@ -484,7 +483,7 @@ transform: translateY(-75%);
 .stay__children--dropdown,
 .stay__adults--dropdown,
 .stay__duration--dropdown {
-  width: 27.5vw;
+  width: 26vw;
 }
 
 
@@ -506,14 +505,6 @@ transform: translateY(-75%);
 
 
 
-
-.restaurant__children,
-.restaurant__adults {
-  width: 28%;
-}
-.restaurant__time {
-  width: 34%;
-}
 
 .topics__wrapper {
   width: 100%;
