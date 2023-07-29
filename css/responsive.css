@@ -1186,10 +1186,11 @@ margin-left: 4vw;
   .fitness__gallery {
     gap: 0 10px;
   left: 13%;
-  top: 81%;
-  /* bottom: 2%; */
-  /* bottom: -33%; */
-  /* bottom: 28%; */
+  --min-size_mt: 586;
+  --max-size_mt: 749;
+  --min-viewport: 1920;
+  --max-viewport: 2560;
+  top: var(--fluid-size_mt);
   }
   .fitness__pic {
     width: 28%;
