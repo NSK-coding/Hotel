@@ -899,7 +899,9 @@ margin-left: auto;
   justify-content: center;
   gap: 0 2%;
   position: absolute;
-  top: 90%;
+  --min-size_mt: 473;
+  --max-size_mt: 955;
+  top: var(--fluid-size_mt);
 }
 .fitness__pic {
   width: 28%;
