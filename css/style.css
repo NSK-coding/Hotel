@@ -891,6 +891,9 @@ margin-left: auto;
   opacity: 0;
   animation-delay: 1s;
 }
+.fitness__imageWrapper {
+  position: relative;
+}
 .fitness__gallery {
   display: flex;
   justify-content: center;
