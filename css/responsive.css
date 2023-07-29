@@ -777,11 +777,11 @@ width: var(--fluid-size_w);
   }
 
   .ticket__departure--dropdwon {
-    width: 30vw;
+    width: 29vw;
     padding-left: 1em;
   }
   .restaurant__site--dropdown {
-    width: 30vw;
+    width: 29vw;
     padding-left: 1em;
   }
   .restaurant__time--dropdown {
