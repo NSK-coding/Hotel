@@ -203,7 +203,7 @@ function delayScrollAnime() {
   var value = time;
   $(".delayScroll").each(function () {
     var parent = this;
-    var elemPos = $(this).offset().top;
+    var elemPos = $(this).offset().top+500;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     var childs = $(this).children();
@@ -230,7 +230,7 @@ function delayScrollAnime() {
 }
 
 $(window).scroll(function () {
-  delayScrollAnime();
+  delayScrollAnime();  // for Cuisine section
 });
 
 
@@ -347,6 +347,24 @@ function AnimeFitness() {
   });
 }
 
+function AnimeCuisine() {
+  $(".animeCuisineTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("simpleblur");
+      // $(".wedding__chapel--closeUp").addClass("closeUp");
+      // $(".wedding__title--blur").addClass("simpleblur");
+    } else {
+      $(this).removeClass("simpleblur");
+      // $(".wedding__chapel--closeUp").removeClass("closeUp");
+      // $(".wedding__title--blur").removeClass("simpleblur");
+    }
+  });
+}
+
 function grida() {
   $(".gridanimeTrigger").each(function () {
     var elemPos = $(this).offset().top + 300;
@@ -367,6 +385,7 @@ function grida() {
 
 $(window).scroll(function () {
   AnimeStory();
+  AnimeCuisine();
   AnimeSpecial();
   AnimeFitness();
   AnimeWedding();

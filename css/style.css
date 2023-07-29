@@ -753,6 +753,13 @@ transform: translateY(-75%);
   animation-fill-mode:forwards;
 }
 
+.cuisine__visual,
+.animeCuisineTrigger {
+  opacity: 0;
+}
+
+
+
 .special__wrapper {
   margin-top: 8vw;
   width: 100%;
