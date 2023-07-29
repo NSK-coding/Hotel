@@ -790,7 +790,7 @@ width: var(--fluid-size_w);
   }
   .restaurant__children--dropdown,
   .restaurant__adults--dropdown {
-    width: 26vw;
+    width: 22vw;
   }
   .tab__search {
     margin-top: 1.3em;
