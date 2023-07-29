@@ -8,6 +8,7 @@ $(".openbtn").click(function () {
   $(".header__search").toggleClass("panelactive");
   $(".header__lang").toggleClass("panelactive");
   $(".main-start").toggleClass("panelactive");
+  $(".body").toggleClass("panelactive");
 });
 
 $("#g-nav a").click(function () {
@@ -17,6 +18,7 @@ $("#g-nav a").click(function () {
   $(".header__search").removeClass("panelactive");
   $(".header__lang").removeClass("panelactive");
   $(".main-start").removeClass("panelactive");
+  $(".body").removeClass("panelactive");
 });
 
 //
@@ -234,10 +236,10 @@ $(window).scroll(function () {
 
 function AnimeStory() {
   $(".animeStoryTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top + 400;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-
+    
     if (scroll >= elemPos - windowHeight) {
       $(this).addClass("simpleblur");
       $(".story__container").addClass("fadeLeft");
@@ -347,7 +349,7 @@ function AnimeFitness() {
 
 function grida() {
   $(".gridanimeTrigger").each(function () {
-    var elemPos = $(this).offset().top + 100;
+    var elemPos = $(this).offset().top + 300;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     const gridAnimation = new GridAnimation(this);
@@ -558,3 +560,20 @@ $("#slider").vegas({
 //       $(window).scrollTop(currentScrl);
 //   }
 // });
+
+
+
+!(function () {
+  const viewport = document.querySelector('meta[name="viewport"]');
+  function switchViewport() {
+    const value =
+      window.outerWidth > 320
+        ? 'width=device-width,initial-scale=1'
+        : 'width=320';
+    if (viewport.getAttribute('content') !== value) {
+      viewport.setAttribute('content', value);
+    }
+  }
+  addEventListener('resize', switchViewport, false);
+  switchViewport();
+})();

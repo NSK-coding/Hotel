@@ -655,11 +655,20 @@ left: 25%;
     display: none;
   }
 
+
+  .body.panelactive {
+    height: 100%;
+    overflow: hidden;
+  }
+
+
   /*========= ナビゲーションのためのCSS ===============*/
 
   #g-nav {
     position: fixed;
     z-index: 99;
+
+    overscroll-behavior: none;
 
     top: 0;
     left: 0;

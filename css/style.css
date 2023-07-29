@@ -70,7 +70,8 @@ text-align: center;
 }
 
 #g-nav {
-  /* overflow-y: scroll; */
+  height: 100%;
+  overflow: scroll;
 }
 
 .menu__flex {
@@ -553,7 +554,7 @@ transform: translateY(-75%);
 
 .story__title {
   text-align: left;
-  margin-top: 12%;
+  margin-top: 8%;
 
 }
 .story__image {
