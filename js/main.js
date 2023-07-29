@@ -546,7 +546,7 @@ if (windowwidth > 768) {
   ];
 }
 $("#slider").vegas({
-  overlay: true,
+  overlay: false,
   transition: "fade2",
   transitionDuration: 5000,
   delay: 5000,

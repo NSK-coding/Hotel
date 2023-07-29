@@ -1065,7 +1065,13 @@ margin-left: 4vw;
 .fitness__description {
   width: 100%;
 }
-
+.fitness__gallery {
+  --min-size_mt: 1050;
+  --max-size_mt: 1363;
+  --min-viewport: 1400;
+  --max-viewport: 1920;
+  top: var(--fluid-size_mt);
+}
 
 
 }
