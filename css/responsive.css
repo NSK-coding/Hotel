@@ -555,6 +555,12 @@ right: 0;
     font-size: var(--clamp-size);
     text-align: center;
   }
+  .fitness__gallery {
+    --min-size_mt: 830;
+    --max-size_mt: 1290;
+    --min-viewport: 750;
+    --max-viewport: 1400;
+    top: var(--fluid-size_mt);
 
 .wedding__wrapper {
   margin-top: 20vw;
