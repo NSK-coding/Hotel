@@ -711,22 +711,11 @@ width: var(--fluid-size_w);
   width: 15%;
 }
 
-
-
-
-
-
-
-
-
-
-
 }
 @media screen and (min-width: 900px) {
   .br--sp {
     display: none;
   }
-
 }
 
 @media screen and (min-width: 1000px) {
@@ -813,22 +802,10 @@ width: var(--fluid-size_w);
     margin-right: auto;
   }
 
-
-
-
-
 }
 
 
 @media screen and (min-width: 1200px) {
-
-
-
-
-
-
-
-
 
   .menu__flex {
     flex-direction: row;
@@ -954,10 +931,6 @@ margin-left: 4vw;
     height: 1vw;
   }
 
-
-
-
-
   .story__image {
     margin-top: 3%;
     width: 83%;
@@ -980,12 +953,6 @@ margin-left: 4vw;
     --max-viewport: 1920;
     margin-top: var(--fluid-size_mt);
   }
-
-
-
-
-
-
 
   .special__wrapper {
     margin-top: 7%;
@@ -1185,11 +1152,6 @@ margin-left: 4vw;
     margin-top: 84px;
   }
 
-
-
-
-
-
   .fitness__flex {
     flex-direction: row-reverse;
   }
@@ -1212,7 +1174,8 @@ margin-left: 4vw;
   .fitness__gallery {
     gap: 0 10px;
   left: 13%;
-  bottom: 2%;
+  top: 61%;
+  /* bottom: 2%; */
   /* bottom: -33%; */
   /* bottom: 28%; */
   }

@@ -383,7 +383,6 @@ transform: translateY(-75%);
 
 }
 
-/* TODO: フッターからヘッダー */
 .gnavi__list-1,
 .gnavi__list-2,
 .gnavi__list-3 {
@@ -485,10 +484,6 @@ transform: translateY(-75%);
 }
 
 
-
-
-/* TODO: heightをcalcで設定 */
-
 .search-button {
   height: 12.8vw;
   width: 41vw;
@@ -500,9 +495,6 @@ transform: translateY(-75%);
   --max-size: 22;
   font-size: var(--clamp-size);
 }
-
-
-
 
 .topics__wrapper {
   width: 100%;
@@ -556,14 +548,11 @@ transform: translateY(-75%);
 }
 
 
-
-
 .story__title {
   text-align: left;
   margin-top: 12%;
 
 }
-
 .story__image {
   position: relative;
   width: 93%;
@@ -585,8 +574,6 @@ transform: translateY(-75%);
   position: relative;
   object-fit: cover;
 }
-
-
 .story__container {
   position: absolute;
   top: 0;
@@ -607,7 +594,6 @@ transform: translateY(-75%);
   margin-left: 7%;
   
 }
-
 .story__content {
   margin-top: 4%;
   width: 100%;
@@ -620,7 +606,6 @@ transform: translateY(-75%);
   opacity: 0;
   animation-delay: 6s;
 }
-
 .story__content--fadeIn {
   animation-delay: 6.5s;
   opacity: 0;
@@ -632,7 +617,6 @@ transform: translateY(-75%);
   --min-size: 20;
   --max-size: 66;
   margin-top: var(--fluid-size);
-
 }
 .story__button {
   margin-left: 0;
@@ -741,6 +725,12 @@ transform: translateY(-75%);
   opacity: 0;
   animation-delay: 1s;
 }
+.cuisine__banner--ch,
+.cuisine__banner--tp,
+.cuisine__banner--jp {
+  bottom: auto;
+  top: 6%;
+}
 .cuisine__img {
 /* width: 28vw; */
   width: 100%;
@@ -834,7 +824,6 @@ right: 0;
 }
 .special__content {
   margin-top: 9%;
-  /* font-size: clamp(1rem, 2.7vw, 2rem); */
   --min-size: 10;
   --max-size: 20;
   font-size: var(--clamp-size);
@@ -886,7 +875,6 @@ margin-left: auto;
 .fitness__description {
   width: 70%;
   margin: 6% auto 0;
-  /* font-size: clamp(1rem, 3vw, 2.2rem); */
   --min-size: 10;
   --max-size: 22;
   font-size: var(--clamp-size);
@@ -903,12 +891,15 @@ margin-left: auto;
   opacity: 0;
   animation-delay: 1s;
 }
+.fitness__imageWrapper {
+  position: relative;
+}
 .fitness__gallery {
   display: flex;
   justify-content: center;
   gap: 0 2%;
-position: absolute;
-bottom: 10%;
+  position: absolute;
+  top: 127vw;
 }
 .fitness__pic {
   width: 28%;

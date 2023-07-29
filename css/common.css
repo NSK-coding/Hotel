@@ -141,10 +141,7 @@ background-position: 0 -0.15em;
 
 }
 
-
-
 /*liにactiveクラスがついた時の形状*/
-
 .tab li.active::after{
   position: absolute;
   bottom: -3px;
@@ -157,8 +154,8 @@ background-position: 0 -0.15em;
 
 /*エリアの表示非表示と形状*/
 .area {
-  display: none;/*はじめは非表示*/
-  opacity: 0;/*透過0*/
+  display: none;
+  opacity: 0;
   background: #fff;
   padding-top: 1em;
   padding-bottom: 12vw;
@@ -167,13 +164,8 @@ background-position: 0 -0.15em;
 
 /*areaにis-activeというクラスがついた時の形状*/
 .area.is-active {
-    display: block;/*表示*/
+    display: block;
     opacity: 1;
-
-
-    /*animation-name: displayAnime;ふわっと表示させるためのアニメーション */
-    /* animation-duration: 2s;
-    animation-fill-mode: forwards;*/
 }
 
 @keyframes displayAnime{
@@ -233,7 +225,7 @@ input[type="checkbox"]  {
 
 input[type="checkbox"] {
   cursor: pointer;
-  padding-left: 4vw;/*label手前にチェックボックス用の余白を開ける*/
+  padding-left: 4vw;
   vertical-align: middle;
   /* position: relative; */
 }
@@ -253,7 +245,7 @@ input[type="checkbox"]::before {
   top: 50%;
 }
 input[type="checkbox"]::after {
-  opacity: 0;/*チェック前は非表示*/
+  opacity: 0;
   background-image: url(../img/check.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -265,7 +257,7 @@ input[type="checkbox"]::after {
 }
 
 input[type="checkbox"]:checked::after {
-  opacity: 1;/*チェック後表示*/
+  opacity: 1;
 }
 
 
@@ -332,7 +324,7 @@ pointer-events: none;
   border: 1px solid #ccc;
   outline: none;
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.5);
-  /*アニメーションの設定*/
+
   transition: all .3s;
 }
 .search-button::before {
@@ -355,15 +347,12 @@ pointer-events: none;
 
 
 .main-button {
-  /*線の基点とするためrelativeを指定*/
   position: relative;
-  /*ボタンの形状*/
   display: inline-block;
 
   border: 1px solid white;
   text-decoration: none;
   outline: none;
-  /*はみ出す背景色を隠す*/
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -393,7 +382,7 @@ pointer-events: none;
 .main-button:hover {
   color: white;
   border-color: transparent;
-  /*色の変化を遅らせる*/
+
   transition-delay: 0.6s;
 }
 .main-button--gold:hover {
@@ -426,9 +415,8 @@ pointer-events: none;
   z-index: 2;
   width: 0;
   height: 1px;
-  /*線の形状*/
   background: var(--color-accent);
-  /*アニメーションの設定*/
+ 
   transition: all 0.3s;
 }
 .borderleft--gold span:before,
@@ -483,7 +471,6 @@ pointer-events: none;
 /*hoverをすると背景が伸びる*/
 .borderleft:hover::before {
   width: 100%;
-  /*0.4秒遅れてアニメーション*/
   transition-delay: 0.4s;
 }
 
@@ -518,14 +505,12 @@ pointer-events: none;
 }
 .card__date {
   color: black;
-  /* font-size: clamp(1.4rem, 2.7vw, 2rem); */
   --min-size: 14;
   --max-size: 20;
   font-size: var(--clamp-size);
 }
 .card__title {
   margin-bottom: 5px;
-  /* font-size: clamp(1.4rem, 2.5vw, 1.8rem); */
   --min-size: 14;
   --max-size: 18;
   font-size: var(--clamp-size);
@@ -533,7 +518,6 @@ pointer-events: none;
 }
 .card__text {
   color: black;
-  /* font-size: clamp(1rem, 2vw, 1.4rem); */
   --min-size: 10;
   --max-size: 14;
   font-size: var(--clamp-size);
@@ -543,12 +527,14 @@ pointer-events: none;
 .card {
       /* dim unselected */
       opacity: 0.7;
-      -webkit-transform: scale(0.85);
-              transform: scale(0.85);
+      /* -webkit-transform: scale(0.85);
+              transform: scale(0.85); */
       -webkit-filter: blur(5px);
               filter: blur(5px);
-      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
-              transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+      -webkit-transition: opacity 0.3s;
+              transition: opacity 0.3s;
+      /* -webkit-transition: opacity 0.3s, -webkit-transform 0.3s, transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+              transition: opacity 0.3s, transform 0.3s, filter 0.3s; */
 }
 /* brighten selected  */
 .card.is-selected {
@@ -593,20 +579,15 @@ pointer-events: none;
 　5-2-4 MENUがCLOSEに
 ===================================*/
 
-  /*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
   .openbtn {
-    /*ボタン内側の基点となるためrelativeを指定。
-追従するナビゲーションの場合はfixed＋top、rightといった位置をセットで指定*/
-
-    cursor: pointer;
-
+   cursor: pointer;
 
   }
 
   /*ボタン内側*/
   .openbtn span {
     display: inline-block;
-    transition: all 0.4s; /*アニメーションの設定*/
+    transition: all 0.4s; 
     position: absolute;
     left: 25%;
     height: 2%;
@@ -655,9 +636,6 @@ left: 25%;
 
   .openbtn.active span:nth-of-type(3)::after {
     content: ""; /*3つ目の要素のafterにClose表示を指定*/
-    /* transform: translateY(0) rotate(-45deg);
-    top: 5px;
-    left: 4px; */
   }
   .openbtn.active p {
     display: none;
@@ -679,12 +657,9 @@ left: 25%;
   /*========= ナビゲーションのためのCSS ===============*/
 
   #g-nav {
-    /* display: none; */
-    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
     position: fixed;
     z-index: 99;
-    /*ナビのスタート位置と形状*/
-    /* top: -120%; */
+
     top: 0;
     left: 0;
     opacity: 0;
@@ -921,7 +896,7 @@ left: 25%;
   animation-duration:1s;
   animation-fill-mode:forwards;
   position: relative;
-  overflow: hidden;/*　はみ出た色要素を隠す　*/
+  overflow: hidden;
   opacity:0;
 }
 
@@ -968,7 +943,7 @@ left: 25%;
     width: calc( 0.0444 * 100vw + 267px);
     /* width: clamp(80px, calc(0.5867 * 100vw - 140px), 300px); */
     /* height: 100%; */
-    background-color: rgba(255, 255, 255, .36);/*伸びる背景色の設定*/
+    background-color: rgba(255, 255, 255, .36);
 }
 @keyframes bgLRextendAnime{
   0% {
@@ -997,7 +972,7 @@ left: 25%;
     position: absolute;
     width: 100%;
     height: 100%;
-    background-color: var(--color-accent);/*伸びる背景色の設定*/
+    background-color: var(--color-accent);
 }
 @keyframes bgRLextendAnime{
   0% {
@@ -1017,21 +992,6 @@ left: 25%;
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .box {
   --box-width: 100rem;
   --box-height: 50rem;
@@ -1045,9 +1005,6 @@ left: 25%;
   height: var(--box-height);
   position: relative;
 }
-
-
-
 .box.hide::after {
   opacity: 0;
 }
