@@ -656,7 +656,7 @@ transform: translateY(-75%);
   grid-template-columns: 43vw 43vw;
   grid-template-rows: 32vw 32vw 32vw;
   gap: 2vw 2vw;
-  margin: 0 auto;
+  margin: 2% auto;
   max-width: 87vw;
 
   /* justify-content: space-between; */

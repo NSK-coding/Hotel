@@ -1,4 +1,6 @@
-
+//
+// MENU
+//
 $(".openbtn").click(function () {
   $(this).toggleClass("active");
   $("#g-nav").toggleClass("panelactive");
@@ -17,7 +19,9 @@ $("#g-nav a").click(function () {
   $(".main-start").removeClass("panelactive");
 });
 
-
+//
+// TAB
+//
 function GethashID(hashIDName) {
   if (hashIDName) {
     $(".tab li")
@@ -44,335 +48,313 @@ $(".tab a").on("click", function () {
 
 $(document).on("click", function (e) {
   if (!$(e.target).closest(".area").length) {
-
     $(document).queue($(".tab__wrapper").removeClass("is-active"));
     $(document).delay(600).queue($(".tab li").removeClass("active"));
     $(document).queue($(".area").removeClass("active"));
   }
 });
 
-
-
-
-
-
-
-
-
+//
+// TAB 2
+//
 var beforePos = 0;
 function ScrollAnime() {
-    var elemTop = $('#header').offset().top;
-	var scroll = $(window).scrollTop();
-    if(scroll == beforePos) {
-  } else if (scroll == elemTop){
-    $('.main-start').removeClass('UpMove');
-    $('.main-start').addClass('DownMove');
-    } else if(0 > scroll - beforePos){
+  var elemTop = $("#header").offset().top;
+  var scroll = $(window).scrollTop();
+  if (scroll == beforePos) {
+  } else if (scroll == elemTop) {
+    $(".main-start").removeClass("UpMove");
+    $(".main-start").addClass("DownMove");
+  } else if (0 > scroll - beforePos) {
+    $(".main-start").removeClass("DownMove");
+    $(".main-start").addClass("UpMove");
 
-		$('.main-start').removeClass('DownMove');	
-		$('.main-start').addClass('UpMove');
+    $(".header-set").removeClass("RightMove");
+    $(".header-set").addClass("LeftMove");
+  } else {
+    $(".main-start").removeClass("UpMove");
+    $(".main-start").addClass("DownMove");
 
-    $('.header-set').removeClass('RightMove');	
-		$('.header-set').addClass('LeftMove');
+    $(".header-set").removeClass("LeftMove");
+    $(".header-set").addClass("RightMove");
+  }
 
-    }else {
-	
-    $('.main-start').removeClass('UpMove');
-		$('.main-start').addClass('DownMove');
-
-		$('.header-set').removeClass('LeftMove');
-    $('.header-set').addClass('RightMove');	
-
-    }
-    
-    beforePos = scroll;
+  beforePos = scroll;
 }
-
 
 $(window).scroll(function () {
-	ScrollAnime();
+  ScrollAnime();
 });
 
-$(window).on('load', function () {
-	ScrollAnime();
+$(window).on("load", function () {
+  ScrollAnime();
 });
 
-
-
-function fadeAnime(){
-  $('.fadeUpTrigger').each(function(){
-    var elemPos = $(this).offset().top+500;
+//
+//   ANIMATIONS
+//
+function fadeAnime() {
+  $(".fadeUpTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight){
-    $(this).addClass('fadeUp');
-    }else{
-      $(this).removeClass('fadeUp');
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("fadeUp");
+    } else {
+      $(this).removeClass("fadeUp");
     }
   });
 
-  $('.closeUpTrigger').each(function(){
-    var elemPos = $(this).offset().top+500;
+  $(".closeUpTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight){
-    $(this).addClass('closeUp');
-    }else{
-      $(this).removeClass('closeUp');
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("closeUp");
+    } else {
+      $(this).removeClass("closeUp");
     }
   });
 
-  $('.fadeLeftTrigger').each(function(){
-    var elemPos = $(this).offset().top+500;
+  $(".fadeLeftTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight){
-    $(this).addClass('fadeLeft');
-    }else{
-    $(this).removeClass('fadeLeft');
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("fadeLeft");
+    } else {
+      $(this).removeClass("fadeLeft");
     }
   });
 
-  $('.fadeRightTrigger').each(function(){
-      var elemPos = $(this).offset().top+500;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      if (scroll >= elemPos - windowHeight){
-      $(this).addClass('fadeRight');
-      }else{
-      $(this).removeClass('fadeRight');
-      }
+  $(".fadeRightTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("fadeRight");
+    } else {
+      $(this).removeClass("fadeRight");
+    }
   });
 
-  $('.fadeInTrigger').each(function(){
-    var elemPos = $(this).offset().top+500;
+  $(".fadeInTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight){
-    $(this).addClass('fadeIn');
-    }else{
-    $(this).removeClass('fadeIn');
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("fadeIn");
+    } else {
+      $(this).removeClass("fadeIn");
     }
-});
+  });
 
-  $('.simpleblurTrigger').each(function(){
-    var elemPos = $(this).offset().top+500;
+  $(".simpleblurTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight){
-    $(this).addClass('simpleblur');
-    }else{
-    $(this).removeClass('simpleblur');
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("simpleblur");
+    } else {
+      $(this).removeClass("simpleblur");
     }
-});
+  });
 
-$('.fadeLeftUpTrigger').each(function(){
-  var elemPos = $(this).offset().top+500;
-  var scroll = $(window).scrollTop();
-  var windowHeight = $(window).height();
-  if (scroll >= elemPos - windowHeight){
-  $(this).addClass('fadeLeftUp');
-  }else{
-  $(this).removeClass('fadeLeftUp');
-  }
-});
+  $(".fadeLeftUpTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("fadeLeftUp");
+    } else {
+      $(this).removeClass("fadeLeftUp");
+    }
+  });
 
-$('.fadeRightUpTrigger').each(function(){
-var elemPos = $(this).offset().top+500;
-var scroll = $(window).scrollTop();
-var windowHeight = $(window).height();
-if (scroll >= elemPos - windowHeight){
-$(this).addClass('fadeRightUp');
-}else{
-$(this).removeClass('fadeRightUp');
+  $(".fadeRightUpTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("fadeRightUp");
+    } else {
+      $(this).removeClass("fadeRightUp");
+    }
+  });
 }
-});
 
-}
+$(window).scroll(function () {
+  // fadeAnime();
+});
 
 function delayScrollAnime() {
   var time = 0.2;
   var value = time;
-  $('.delayScroll').each(function () {
+  $(".delayScroll").each(function () {
     var parent = this;
     var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     var childs = $(this).children();
-    
+
     if (scroll >= elemPos - windowHeight && !$(parent).hasClass("play")) {
       $(childs).each(function () {
-        
         if (!$(this).hasClass("fadeUp")) {
-          
           $(parent).addClass("play");
           $(this).css("animation-delay", value + "s");
           $(this).addClass("fadeUp");
           value = value + time;
-          
+
           var index = $(childs).index(this);
-          if((childs.length-1) == index){
+          if (childs.length - 1 == index) {
             $(parent).removeClass("play");
           }
         }
-      })
-    }else {
+      });
+    } else {
       $(childs).removeClass("fadeUp");
       value = time;
     }
-  })
+  });
 }
 
-  $(window).scroll(function (){
-    delayScrollAnime();
+$(window).scroll(function () {
+  delayScrollAnime();
+});
+
+
+function AnimeStory() {
+  $(".animeStoryTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("simpleblur");
+      $(".story__container").addClass("fadeLeft");
+      $(".story__title--blur").addClass("simpleblur");
+      $(".story__content--fadeIn").addClass("fadeIn");
+      $(".story__button").addClass("simpleblur");
+    } else {
+      $(this).removeClass("simpleblur");
+      $(".story__container").removeClass("fadeLeft");
+      $(".story__title--blur").removeClass("simpleblur");
+      $(".story__content--fadeIn").removeClass("fadeIn");
+      $(".story__button").removeClass("simpleblur");
+      $(".story__box").removeClass("gridhide");
+    }
   });
+}
 
-  $(window).scroll(function (){
+function AnimeSpecial() {
+  $(".animeSpecialTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("expansion");
+      $(".special__title--blur").addClass("simpleblur");
+      $(".special__container--fadeRight").addClass("fadeRight");
+      $(".special__content-title--blur").addClass("simpleblur");
+      $(".special__content--fadeIn").addClass("fadeIn");
+      $(".special__button--blur").addClass("simpleblur");
+    } else {
+      $(this).removeClass("expansion");
+      $(".special__title--blur").removeClass("simpleblur");
+      $(".special__container--fadeRight").removeClass("fadeRight");
+      $(".special__content-title--blur").removeClass("simpleblur");
+      $(".special__content--fadeIn").removeClass("fadeIn");
+      $(".special__button").removeClass("simpleblur");
+      $(".special__box").removeClass("gridhide");
+    }
   });
+}
 
-  function AnimeStory(){
-    $('.animeStoryTrigger').each(function(){
-      var elemPos = $(this).offset().top+500;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
+function AnimeEvent() {
+  $(".animeEventTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
 
-      if (scroll >= elemPos - windowHeight){
-        $(this).addClass('simpleblur');
-        $('.story__container').addClass('fadeLeft');
-        $('.story__title--blur').addClass('simpleblur');
-        $('.story__content--fadeIn').addClass('fadeIn');
-        $('.story__button').addClass('simpleblur');
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("expansion");
+      $(".event__title--blur").addClass("simpleblur");
+      $(".event__container--fadeLeft").addClass("fadeLeft");
+      $(".event__content-title--blur").addClass("simpleblur");
+      $(".event__content--fadeIn").addClass("fadeIn");
+      $(".event__button--blur").addClass("simpleblur");
+    } else {
+      $(this).removeClass("expansion");
+      $(".event__title--blur").removeClass("simpleblur");
+      $(".event__container--fadeLeft").removeClass("fadeLeft");
+      $(".event__content-title--blur").removeClass("simpleblur");
+      $(".event__content--fadeIn").removeClass("fadeIn");
+      $(".event__button").removeClass("simpleblur");
+      $(".event__box").removeClass("gridhide");
+    }
+  });
+}
 
-      }else{
-        $(this).removeClass('simpleblur');
-      $('.story__container').removeClass('fadeLeft');
-      $('.story__title--blur').removeClass('simpleblur');
-      $('.story__content--fadeIn').removeClass('fadeIn');
-      $('.story__button').removeClass('simpleblur');
-      $('.story__box').removeClass('gridhide');
+function AnimeWedding() {
+  $(".animeWeddingTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("closeUp");
+      $(".wedding__chapel--closeUp").addClass("closeUp");
+      $(".wedding__title--blur").addClass("simpleblur");
+    } else {
+      $(this).removeClass("closeUp");
+      $(".wedding__chapel--closeUp").removeClass("closeUp");
+      $(".wedding__title--blur").removeClass("simpleblur");
+    }
+  });
+}
+
+function AnimeFitness() {
+  $(".animeFitnessTrigger").each(function () {
+    var elemPos = $(this).offset().top + 500;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+
+    if (scroll >= elemPos - windowHeight) {
+      $(this).addClass("fadeRightUp");
+      $(".fitness__gym--leftUp").addClass("fadeLeftUp");
+      $(".fitness__pic--pool").addClass("fadeUp");
+      $(".fitness__pic--bath").addClass("fadeUp");
+      $(".fitness__pic--sauna").addClass("fadeUp");
+    } else {
+      $(this).removeClass("fadeRightUp");
+      $(".fitness__gym--leftUp").removeClass("fadeLeftUp");
+      $(".fitness__pic--pool").removeClass("fadeUp");
+      $(".fitness__pic--bath").removeClass("fadeUp");
+      $(".fitness__pic--sauna").removeClass("fadeUp");
+    }
+  });
+}
+
+function grida() {
+  $(".gridanimeTrigger").each(function () {
+    var elemPos = $(this).offset().top + 100;
+    var scroll = $(window).scrollTop();
+    var windowHeight = $(window).height();
+    const gridAnimation = new GridAnimation(this);
+    const type = parseInt($(this).attr("data-i"));
+    gridAnimation.setType(type);
+    if (scroll >= elemPos - windowHeight) {
+      if (!$(this).hasClass("gridhide")) {
+        gridAnimation.trigger();
+        $(this).addClass("gridhide");
+      } else {
       }
-    });  
-  }
+    }
+  });
+}
 
-  function AnimeSpecial(){
-    $('.animeSpecialTrigger').each(function(){
-      var elemPos = $(this).offset().top+500;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-
-      if (scroll >= elemPos - windowHeight){
-
-        $(this).addClass('expansion');
-        $('.special__title--blur').addClass('simpleblur');
-        $('.special__container--fadeRight').addClass('fadeRight');
-        $('.special__content-title--blur').addClass('simpleblur');
-        $('.special__content--fadeIn').addClass('fadeIn');
-        $('.special__button--blur').addClass('simpleblur');
-
-      }else{
-      $(this).removeClass('expansion');
-      $('.special__title--blur').removeClass('simpleblur');
-      $('.special__container--fadeRight').removeClass('fadeRight');
-      $('.special__content-title--blur').removeClass('simpleblur');
-      $('.special__content--fadeIn').removeClass('fadeIn');
-      $('.special__button').removeClass('simpleblur');
-      $('.special__box').removeClass('gridhide');
-      }
-    });
-    
-  }
-
-  function AnimeEvent(){
-    $('.animeEventTrigger').each(function(){
-      var elemPos = $(this).offset().top+500;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-
-      if (scroll >= elemPos - windowHeight){
-
-        $(this).addClass('expansion');
-        $('.event__title--blur').addClass('simpleblur');
-        $('.event__container--fadeLeft').addClass('fadeLeft');
-        $('.event__content-title--blur').addClass('simpleblur');
-        $('.event__content--fadeIn').addClass('fadeIn');
-        $('.event__button--blur').addClass('simpleblur');
-
-      }else{
-      $(this).removeClass('expansion');
-      $('.event__title--blur').removeClass('simpleblur');
-      $('.event__container--fadeLeft').removeClass('fadeLeft');
-      $('.event__content-title--blur').removeClass('simpleblur');
-      $('.event__content--fadeIn').removeClass('fadeIn');
-      $('.event__button').removeClass('simpleblur');
-      $('.event__box').removeClass('gridhide');
-      }
-    });
-    
-  }
-
-  function AnimeWedding(){
-    $('.animeWeddingTrigger').each(function(){
-      var elemPos = $(this).offset().top+500;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-
-      if (scroll >= elemPos - windowHeight){
-
-        $(this).addClass('closeUp');
-        $('.wedding__chapel--closeUp').addClass('closeUp');
-        $('.wedding__title--blur').addClass('simpleblur');
-      }else{
-      $(this).removeClass('closeUp');
-      $('.wedding__chapel--closeUp').removeClass('closeUp');
-      $('.wedding__title--blur').removeClass('simpleblur');
-      }
-    });  
-  }
-
-  function AnimeFitness(){
-    $('.animeFitnessTrigger').each(function(){
-      var elemPos = $(this).offset().top+500;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-
-      if (scroll >= elemPos - windowHeight){
-        $(this).addClass('fadeRightUp');
-        $('.fitness__gym--leftUp').addClass('fadeLeftUp');
-        $('.fitness__pic--pool').addClass('fadeUp');
-        $('.fitness__pic--bath').addClass('fadeUp');
-        $('.fitness__pic--sauna').addClass('fadeUp');
-
-      }else{
-      $(this).removeClass('fadeRightUp');
-      $('.fitness__gym--leftUp').removeClass('fadeLeftUp');
-      $('.fitness__pic--pool').removeClass('fadeUp');
-      $('.fitness__pic--bath').removeClass('fadeUp');
-      $('.fitness__pic--sauna').removeClass('fadeUp');
-      }
-    });  
-  }
-
-
-  function grida(){
-    $('.gridanimeTrigger').each(function(){
-      var elemPos = $(this).offset().top+100;
-      var scroll = $(window).scrollTop();
-      var windowHeight = $(window).height();
-      const gridAnimation = new GridAnimation(this);
-      const type = parseInt($(this).attr("data-i"));
-      gridAnimation.setType(type);
-      if (scroll >= elemPos - windowHeight){
-        if (!$(this).hasClass("gridhide")) {
-          gridAnimation.trigger();
-          $(this).addClass('gridhide');
-        } else {
-        }
-      }
-    });
-  }
-
-
-$(window).scroll(function (){
+$(window).scroll(function () {
   AnimeStory();
   AnimeSpecial();
   AnimeFitness();
@@ -381,6 +363,9 @@ $(window).scroll(function (){
   grida();
 });
 
+//
+//  GRIDANIMAION
+//
 class GridAnimation {
   constructor(el, row = 13, col = 18) {
     this.element = el;
@@ -500,45 +485,56 @@ class GridAnimation {
   };
 }
 
-document.querySelectorAll('.box').forEach(function(element) {
-    const gridAnimation = new GridAnimation(element);
-    const type = parseInt(element.getAttribute("data-i"));
-    gridAnimation.setType(type);
-    gridAnimation.trigger();
-  });
-
-var windowwidth = window.innerWidth || document.documentElement.clientWidth || 0;
-if (windowwidth > 768){
-  var responsiveImage = [
-    { src: './img/FV-1_pc.webp'},
-    { src: './img/FV-2_pc.webp'},
-    { src: './img/FV-3_pc.webp'},
-    { src: './img/FV-4_pc.webp'}
-  ];
-} else {
-        var responsiveImage = [
-        { src: './img/FV-1_sp.webp'},
-        { src: './img/FV-2_sp.webp'},
-        { src: './img/FV-3_sp.webp'},
-        { src: './img/FV-4_sp.webp'}
-  ];
-}
-$('#slider').vegas({
-overlay: true,
-transition: 'fade2',
-transitionDuration: 5000,
-delay: 5000,
-animationDuration: 20000,
-animation: 'random',
-slides: responsiveImage,
-timer: false,
+document.querySelectorAll(".box").forEach(function (element) {
+  const gridAnimation = new GridAnimation(element);
+  const type = parseInt(element.getAttribute("data-i"));
+  gridAnimation.setType(type);
+  gridAnimation.trigger();
 });
 
+
+//
+//  SLIDER
+//  VRGAS
+//  http://vegas.jaysalvat.com/documentation/transitions/
+//
+var windowwidth =
+  window.innerWidth || document.documentElement.clientWidth || 0;
+if (windowwidth > 768) {
+  var responsiveImage = [
+    { src: "./img/FV-1_pc.webp" },
+    { src: "./img/FV-2_pc.webp" },
+    { src: "./img/FV-3_pc.webp" },
+    { src: "./img/FV-4_pc.webp" },
+  ];
+} else {
+  var responsiveImage = [
+    { src: "./img/FV-1_sp.webp" },
+    { src: "./img/FV-2_sp.webp" },
+    { src: "./img/FV-3_sp.webp" },
+    { src: "./img/FV-4_sp.webp" },
+  ];
+}
+$("#slider").vegas({
+  overlay: true,
+  transition: "fade2",
+  transitionDuration: 5000,
+  delay: 5000,
+  animationDuration: 20000,
+  animation: "random",
+  slides: responsiveImage,
+  timer: false,
+});
+
+
+//
+//  PEGINATION
+//  
+//
 $.scrollify({
-  section : ".page",
-  scrollbars:"false",
-  interstitialSection : "#header, #footer",
+  section: ".page",
+  scrollbars: "false",
+  interstitialSection: "#header, #footer",
   easing: "swing",
   scrollSpeed: 300,
-  
-  });
+});
