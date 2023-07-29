@@ -555,9 +555,15 @@ right: 0;
     font-size: var(--clamp-size);
     text-align: center;
   }
-
+  .fitness__gallery {
+    --min-size_mt: 830;
+    --max-size_mt: 1290;
+    --min-viewport: 750;
+    --max-viewport: 1400;
+    top: var(--fluid-size_mt);
+  }
 .wedding__wrapper {
-  margin-top: 20vw;
+  margin-top: 33vw;
   width: 73%;
   margin-left: 6%;
 }
@@ -719,6 +725,8 @@ width: var(--fluid-size_w);
 }
 
 @media screen and (min-width: 1000px) {
+
+
 
   .tab__wrapper.is-active {
     transform: translateY(-60%);
@@ -1055,8 +1063,13 @@ margin-left: 4vw;
 .fitness__description {
   width: 100%;
 }
-
-
+.fitness__gallery {
+  --min-size_mt: 1053;
+  --max-size_mt: 1358;
+  --min-viewport: 1400;
+  --max-viewport: 1920;
+  top: var(--fluid-size_mt);
+}
 
 }
 @media screen and (min-width: 1700px) {
@@ -1174,10 +1187,11 @@ margin-left: 4vw;
   .fitness__gallery {
     gap: 0 10px;
   left: 13%;
-  top: 61%;
-  /* bottom: 2%; */
-  /* bottom: -33%; */
-  /* bottom: 28%; */
+  --min-size_mt: 586;
+  --max-size_mt: 749;
+  --min-viewport: 1920;
+  --max-viewport: 2560;
+  top: var(--fluid-size_mt);
   }
   .fitness__pic {
     width: 28%;
@@ -1185,4 +1199,7 @@ margin-left: 4vw;
   .fitness__button {
     margin-top: 8%;
   }
+
+
+
 }

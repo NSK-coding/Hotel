@@ -77,6 +77,7 @@ li {
   --intercept_mt: calc(var(--min-size_mt) - var(--slope_mt) * var(--min-viewport));
   --fluid-size_mt: calc(var(--slope_mt) * 100vw + var(--intercept_mt) * 1px);
   --clamp-size_mt: clamp(var(--min-size_mt) * 1px, var(--fluid-size_mt), var(--max-size_mt) * 1px);
+
 }
 
 

@@ -60,18 +60,27 @@ $(document).on("click", function (e) {
 var beforePos = 0;
 function ScrollAnime() {
   var elemTop = $("#header").offset().top;
+  var elemFooter = $("#topics").offset().top;
   var scroll = $(window).scrollTop();
   if (scroll == beforePos) {
+
   } else if (scroll == elemTop) {
+    //  headerに戻ると下げる
     $(".main-start").removeClass("UpMove");
     $(".main-start").addClass("DownMove");
+  } else if(scroll >= elemFooter){
+    // $(".main-start").addClass("UpMove");
+    // $(".main-start").removeClass("DownMove");
+    // $(".tab__wrapper").addClass("AsFooter");
   } else if (0 > scroll - beforePos) {
+    // 上にスクロールすると上げる
     $(".main-start").removeClass("DownMove");
     $(".main-start").addClass("UpMove");
 
     $(".header-set").removeClass("RightMove");
     $(".header-set").addClass("LeftMove");
   } else {
+    // default
     $(".main-start").removeClass("UpMove");
     $(".main-start").addClass("DownMove");
 
@@ -298,7 +307,7 @@ function AnimeEvent() {
 
 function AnimeWedding() {
   $(".animeWeddingTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top + 200;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
 
@@ -531,10 +540,21 @@ $("#slider").vegas({
 //  PEGINATION
 //  
 //
-$.scrollify({
-  section: ".page",
-  scrollbars: "false",
-  interstitialSection: "#header, #footer",
-  easing: "swing",
-  scrollSpeed: 300,
-});
+// var current;
+// $.scrollify({
+//   section: ".page",
+//   scrollbars: "false",
+//   interstitialSection: "#header, #footer",
+//   easing: "swing",
+//   scrollSpeed: 300,
+//   setHeights:false,
+//   before:function(i,box){
+//       current = i;
+//   },
+// });
+// $(window).on('resize',function(){
+//   if(current){
+//       var currentScrl = $('.page').eq(current).offset().top;
+//       $(window).scrollTop(currentScrl);
+//   }
+// });
