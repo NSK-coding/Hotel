@@ -809,7 +809,9 @@ width: var(--fluid-size_w);
   .ticket__children {
     margin-right: auto;
   }
-
+  .restaurant__children {
+    margin-right: auto;
+  }
 }
 
 
