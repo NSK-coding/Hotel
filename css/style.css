@@ -799,7 +799,7 @@ right: 0;
   --box-height: 78.5vw;
   --frag-width: calc(var(--box-width) / var(--col));
   --frag-height: calc(var(--box-height) / var(--row));
-  --img-url: url(../img/special_floor_sp.webp);
+  --img-url: url(../img/Special_floor_sp.webp);
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
