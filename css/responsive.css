@@ -1061,7 +1061,13 @@ margin-left: 4vw;
 .fitness__description {
   width: 100%;
 }
-
+.fitness__gallery {
+  --min-size_mt: 1053;
+  --max-size_mt: 1358;
+  --min-viewport: 1400;
+  --max-viewport: 1920;
+  top: var(--fluid-size_mt);
+}
 
 
 }
@@ -1180,7 +1186,7 @@ margin-left: 4vw;
   .fitness__gallery {
     gap: 0 10px;
   left: 13%;
-  top: 61%;
+  top: 81%;
   /* bottom: 2%; */
   /* bottom: -33%; */
   /* bottom: 28%; */
