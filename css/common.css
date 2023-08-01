@@ -731,6 +731,24 @@ left: 25%;
       opacity: 1;
     }
   }
+  .fadeIn2{
+      animation-name:fadeIn2Anime;
+    animation-duration: 1s;
+      animation-fill-mode: forwards;
+    }
+    
+    @keyframes fadeIn2Anime{
+      from {
+        background-color: white;
+      }
+    
+      to {
+        background-color: transparent;
+      }
+    }
+  
+
+
 
 
 .fadeLeft{

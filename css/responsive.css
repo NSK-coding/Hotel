@@ -34,6 +34,29 @@
     margin-top: 5%;
   } 
 }
+@media screen and (max-width: 767px) {
+  .tab__wrapper {
+    margin-top: 15%;
+    position: static;
+    transition: none;
+  }
+  .tab__wrapper.is-active {
+    transform: none;
+  }
+  .main-start.UpMove{
+    pointer-events: all;
+    animation: none;
+  }
+  .main-start.DownMove{
+    pointer-events: all;
+    animation: none;
+  }
+
+
+
+
+
+}
 
 
 

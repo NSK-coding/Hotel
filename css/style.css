@@ -770,6 +770,7 @@ transform: translateY(-75%);
   position: relative;
   overflow-x:hidden;
   opacity: 0;
+  /* background-color: white; */
 }
 .special__wrapper::before {
   content: "";

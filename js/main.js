@@ -42,12 +42,14 @@ function GethashID(hashIDName) {
   }
 }
 
+// タブをクリックしたときの挙動
 $(".tab a").on("click", function () {
   var idName = $(this).attr("href");
   GethashID(idName);
   return false;
 });
 
+// 範囲外をクリックしたときの挙動
 $(document).on("click", function (e) {
   if (!$(e.target).closest(".area").length) {
     $(document).queue($(".tab__wrapper").removeClass("is-active"));
@@ -71,6 +73,7 @@ function ScrollAnime() {
     $(".main-start").removeClass("UpMove");
     $(".main-start").addClass("DownMove");
   } else if(scroll >= elemFooter){
+    GethashID('#stay');
     // $(".main-start").addClass("UpMove");
     // $(".main-start").removeClass("DownMove");
     // $(".tab__wrapper").addClass("AsFooter");
