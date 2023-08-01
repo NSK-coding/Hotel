@@ -73,7 +73,7 @@ function ScrollAnime() {
     $(".main-start").removeClass("UpMove");
     $(".main-start").addClass("DownMove");
   } else if(scroll >= elemFooter){
-    GethashID('#stay');
+    // GethashID('#stay');
     // $(".main-start").addClass("UpMove");
     // $(".main-start").removeClass("DownMove");
     // $(".tab__wrapper").addClass("AsFooter");
@@ -102,6 +102,12 @@ $(window).scroll(function () {
 
 $(window).on("load", function () {
   ScrollAnime();
+    if (window.matchMedia("(max-width: 767px)").matches) {
+      GethashID('#stay');
+
+    } else {
+      $(".main-start").addClass("DownMove");
+    }
 });
 
 //
