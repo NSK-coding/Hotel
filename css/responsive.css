@@ -51,8 +51,9 @@
     pointer-events: all;
     animation: none;
   }
-
-
+.area {
+  padding-bottom: 0;
+}
 
 
 
@@ -416,7 +417,7 @@ right: 0;
       height: 100%;
       object-fit: cover;
       cursor: pointer;
-      filter: grayscale(80%);
+      /* filter: grayscale(80%); */
     
     }
     .cuisine__grid:has(.cuisine__img--ad:hover) {
