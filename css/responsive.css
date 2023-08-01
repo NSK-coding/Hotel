@@ -142,11 +142,11 @@ right: 0;
 }
 .header__search p {
   /* font-size: clamp(1.4rem, 1.9vw, 1.6rem); */
-  --min-size: 12;
+  /* --min-size: 12;
   --max-size: 16;
   --min-viewport: 1200;
   --max-viewport: 1920;
-  font-size: var(--clamp-size);
+  font-size: var(--clamp-size); */
 }
 .header__logo {
   position: absolute;
