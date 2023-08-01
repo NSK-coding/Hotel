@@ -64,7 +64,7 @@ $(document).on("click", function (e) {
 var beforePos = 0;
 function ScrollAnime() {
   var elemTop = $("#header").offset().top;
-  var elemFooter = $("#topics").offset().top;
+  var elemStory = $("#story").offset().top;
   var scroll = $(window).scrollTop();
   if (scroll == beforePos) {
 
@@ -72,27 +72,27 @@ function ScrollAnime() {
     //  headerに戻ると下げる
     $(".main-start").removeClass("UpMove");
     $(".main-start").addClass("DownMove");
-  } else if(scroll >= elemFooter){
-    // GethashID('#stay');
-    // $(".main-start").addClass("UpMove");
-    // $(".main-start").removeClass("DownMove");
-    // $(".tab__wrapper").addClass("AsFooter");
   } else if (0 > scroll - beforePos) {
     // 上にスクロールすると上げる
     $(".main-start").removeClass("DownMove");
     $(".main-start").addClass("UpMove");
 
-    $(".header-set").removeClass("RightMove");
-    $(".header-set").addClass("LeftMove");
   } else {
     // default
     $(".main-start").removeClass("UpMove");
     $(".main-start").addClass("DownMove");
 
+  }
+
+  if (scroll == beforePos) {
+
+  } else if(scroll >= elemStory - 100){
+    $(".header-set").removeClass("RightMove");
+    $(".header-set").addClass("LeftMove");
+  } else {
     $(".header-set").removeClass("LeftMove");
     $(".header-set").addClass("RightMove");
   }
-
   beforePos = scroll;
 }
 
