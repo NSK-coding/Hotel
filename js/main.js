@@ -106,10 +106,10 @@ $(window).on("load", function () {
 //
 function fadeAnime() {
   $(".fadeUpTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("fadeUp");
     } else {
       $(this).removeClass("fadeUp");
@@ -117,10 +117,10 @@ function fadeAnime() {
   });
 
   $(".closeUpTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("closeUp");
     } else {
       $(this).removeClass("closeUp");
@@ -128,10 +128,10 @@ function fadeAnime() {
   });
 
   $(".fadeLeftTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("fadeLeft");
     } else {
       $(this).removeClass("fadeLeft");
@@ -139,10 +139,10 @@ function fadeAnime() {
   });
 
   $(".fadeRightTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("fadeRight");
     } else {
       $(this).removeClass("fadeRight");
@@ -150,10 +150,10 @@ function fadeAnime() {
   });
 
   $(".fadeInTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("fadeIn");
     } else {
       $(this).removeClass("fadeIn");
@@ -161,10 +161,10 @@ function fadeAnime() {
   });
 
   $(".simpleblurTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("simpleblur");
     } else {
       $(this).removeClass("simpleblur");
@@ -172,10 +172,10 @@ function fadeAnime() {
   });
 
   $(".fadeLeftUpTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("fadeLeftUp");
     } else {
       $(this).removeClass("fadeLeftUp");
@@ -183,10 +183,10 @@ function fadeAnime() {
   });
 
   $(".fadeRightUpTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("fadeRightUp");
     } else {
       $(this).removeClass("fadeRightUp");
@@ -203,12 +203,12 @@ function delayScrollAnime() {
   var value = time;
   $(".delayScroll").each(function () {
     var parent = this;
-    var elemPos = $(this).offset().top+500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     var childs = $(this).children();
 
-    if (scroll >= elemPos - windowHeight && !$(parent).hasClass("play")) {
+    if (scroll >= elemPos - windowHeight + 500 && !$(parent).hasClass("play")) {
       $(childs).each(function () {
         if (!$(this).hasClass("fadeUp")) {
           $(parent).addClass("play");
@@ -222,7 +222,7 @@ function delayScrollAnime() {
           }
         }
       });
-    } else {
+    } else if (scroll < elemPos - windowHeight) {
       $(childs).removeClass("fadeUp");
       value = time;
     }
@@ -236,17 +236,17 @@ $(window).scroll(function () {
 
 function AnimeStory() {
   $(".animeStoryTrigger").each(function () {
-    var elemPos = $(this).offset().top + 400;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 400) {
       $(this).addClass("simpleblur");
       $(".story__container").addClass("fadeLeft");
       $(".story__title--blur").addClass("simpleblur");
       $(".story__content--fadeIn").addClass("fadeIn");
       $(".story__button").addClass("simpleblur");
-    } else {
+    } else if (scroll < elemPos - windowHeight) {
       $(this).removeClass("simpleblur");
       $(".story__container").removeClass("fadeLeft");
       $(".story__title--blur").removeClass("simpleblur");
@@ -259,21 +259,21 @@ function AnimeStory() {
 
 function AnimeSpecial() {
   $(".animeSpecialTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
 
-    if (scroll >= elemPos - windowHeight) {
-      $(this).addClass("expansion");
+    if (scroll >= elemPos - windowHeight + 500) {
+      $(this).addClass("fadeIn");
       $(".special__title--blur").addClass("simpleblur");
-      $(".special__container--fadeRight").addClass("fadeRight");
+      $(".special__container--fadeRight").addClass("fadeIn");
       $(".special__content-title--blur").addClass("simpleblur");
       $(".special__content--fadeIn").addClass("fadeIn");
       $(".special__button--blur").addClass("simpleblur");
-    } else {
-      $(this).removeClass("expansion");
+    } else if (scroll < elemPos - windowHeight) {
+      $(this).removeClass("fadeIn");
       $(".special__title--blur").removeClass("simpleblur");
-      $(".special__container--fadeRight").removeClass("fadeRight");
+      $(".special__container--fadeRight").removeClass("fadeIn");
       $(".special__content-title--blur").removeClass("simpleblur");
       $(".special__content--fadeIn").removeClass("fadeIn");
       $(".special__button").removeClass("simpleblur");
@@ -284,21 +284,21 @@ function AnimeSpecial() {
 
 function AnimeEvent() {
   $(".animeEventTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
 
-    if (scroll >= elemPos - windowHeight) {
-      $(this).addClass("expansion");
+    if (scroll >= elemPos - windowHeight + 500) {
+      $(this).addClass("fadeIn");
       $(".event__title--blur").addClass("simpleblur");
-      $(".event__container--fadeLeft").addClass("fadeLeft");
+      $(".event__container--fadeLeft").addClass("fadeIn");
       $(".event__content-title--blur").addClass("simpleblur");
       $(".event__content--fadeIn").addClass("fadeIn");
       $(".event__button--blur").addClass("simpleblur");
-    } else {
-      $(this).removeClass("expansion");
+    } else if (scroll < elemPos - windowHeight) {
+      $(this).removeClass("fadeIn");
       $(".event__title--blur").removeClass("simpleblur");
-      $(".event__container--fadeLeft").removeClass("fadeLeft");
+      $(".event__container--fadeLeft").removeClass("fadeIn");
       $(".event__content-title--blur").removeClass("simpleblur");
       $(".event__content--fadeIn").removeClass("fadeIn");
       $(".event__button").removeClass("simpleblur");
@@ -309,15 +309,15 @@ function AnimeEvent() {
 
 function AnimeWedding() {
   $(".animeWeddingTrigger").each(function () {
-    var elemPos = $(this).offset().top + 200;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
 
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 200) {
       $(this).addClass("closeUp");
       $(".wedding__chapel--closeUp").addClass("closeUp");
       $(".wedding__title--blur").addClass("simpleblur");
-    } else {
+    } else if (scroll < elemPos - windowHeight) {
       $(this).removeClass("closeUp");
       $(".wedding__chapel--closeUp").removeClass("closeUp");
       $(".wedding__title--blur").removeClass("simpleblur");
@@ -327,17 +327,17 @@ function AnimeWedding() {
 
 function AnimeFitness() {
   $(".animeFitnessTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
 
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("fadeRightUp");
       $(".fitness__gym--leftUp").addClass("fadeLeftUp");
       $(".fitness__pic--pool").addClass("fadeUp");
       $(".fitness__pic--bath").addClass("fadeUp");
       $(".fitness__pic--sauna").addClass("fadeUp");
-    } else {
+    } else if (scroll < elemPos - windowHeight) {
       $(this).removeClass("fadeRightUp");
       $(".fitness__gym--leftUp").removeClass("fadeLeftUp");
       $(".fitness__pic--pool").removeClass("fadeUp");
@@ -349,15 +349,15 @@ function AnimeFitness() {
 
 function AnimeCuisine() {
   $(".animeCuisineTrigger").each(function () {
-    var elemPos = $(this).offset().top + 500;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
 
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 500) {
       $(this).addClass("simpleblur");
       // $(".wedding__chapel--closeUp").addClass("closeUp");
       // $(".wedding__title--blur").addClass("simpleblur");
-    } else {
+    } else if (scroll < elemPos - windowHeight) {
       $(this).removeClass("simpleblur");
       // $(".wedding__chapel--closeUp").removeClass("closeUp");
       // $(".wedding__title--blur").removeClass("simpleblur");
@@ -367,13 +367,13 @@ function AnimeCuisine() {
 
 function grida() {
   $(".gridanimeTrigger").each(function () {
-    var elemPos = $(this).offset().top + 300;
+    var elemPos = $(this).offset().top;
     var scroll = $(window).scrollTop();
     var windowHeight = $(window).height();
     const gridAnimation = new GridAnimation(this);
     const type = parseInt($(this).attr("data-i"));
     gridAnimation.setType(type);
-    if (scroll >= elemPos - windowHeight) {
+    if (scroll >= elemPos - windowHeight + 300) {
       if (!$(this).hasClass("gridhide")) {
         gridAnimation.trigger();
         $(this).addClass("gridhide");
