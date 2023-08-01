@@ -242,13 +242,13 @@ function AnimeStory() {
     
     if (scroll >= elemPos - windowHeight + 400) {
       $(this).addClass("simpleblur");
-      $(".story__container").addClass("fadeLeft");
+      $(".story__container").addClass("fadeIn");
       $(".story__title--blur").addClass("simpleblur");
       $(".story__content--fadeIn").addClass("fadeIn");
       $(".story__button").addClass("simpleblur");
     } else if (scroll < elemPos - windowHeight) {
       $(this).removeClass("simpleblur");
-      $(".story__container").removeClass("fadeLeft");
+      $(".story__container").removeClass("fadeIn");
       $(".story__title--blur").removeClass("simpleblur");
       $(".story__content--fadeIn").removeClass("fadeIn");
       $(".story__button").removeClass("simpleblur");

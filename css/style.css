@@ -586,7 +586,8 @@ transform: translateY(-75%);
   width: 93%;
   height: 100%;
   opacity: 0;
-  animation-delay: 4s;
+  animation-delay: 2s;
+  animation-duration: 3s;
 }
 .animeStoryTrigger {
   opacity: 0;
@@ -607,10 +608,10 @@ transform: translateY(-75%);
 }
 .story__title--blur {
   opacity: 0;
-  animation-delay: 6s;
+  animation-delay: 3s;
 }
 .story__content--fadeIn {
-  animation-delay: 6.5s;
+  animation-delay: 3.5s;
   opacity: 0;
 }
 .story__content span {
@@ -626,7 +627,7 @@ transform: translateY(-75%);
   color: white;
   max-width: 300px;
   opacity: 0;
-  animation-delay: 6s;
+  animation-delay: 4s;
 }
 .story__button:hover {
   color: var(--color-base);
@@ -843,7 +844,7 @@ right: 0;
 }
 .special__content--fadeIn {
   opacity: 0;
-  animation-delay: 3s;
+  animation-delay: 2.8s;
 }
 .special__button {
   --min-size_mt: 40;
@@ -855,7 +856,7 @@ margin-left: auto;
 }
 .special__button--blur {
   opacity: 0;
-  animation-delay: 2.5s;
+  animation-delay: 3.1s;
 }
 
 /* .special__wrapper {opacity: 1;}
@@ -1061,7 +1062,7 @@ margin-left: auto;
 }
 .event__content--fadeIn {
   opacity: 0;
-  animation-delay: 3s;
+  animation-delay: 2.8s;
 }
 .event__button {
   --min-size_mt: 40;
@@ -1074,7 +1075,7 @@ margin-left: auto;
 }
 .event__button--blur {
   opacity: 0;
-  animation-delay: 2.5s;
+  animation-delay:3.1s;
 }
 
 /* #topics {

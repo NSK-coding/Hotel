@@ -780,7 +780,7 @@ left: 25%;
 
     .fadeLeftUp{
       animation-name:fadeLeftUpAnime;
-      animation-duration: 1.5s;
+      animation-duration: 1s;
       animation-fill-mode:forwards;
       animation-timing-function: ease-in;
       opacity:0;
@@ -799,7 +799,7 @@ left: 25%;
 
     .fadeRightUp{
       animation-name:fadeRightUpAnime;
-      animation-duration: 1.5s;
+      animation-duration: 1s;
       animation-fill-mode:forwards;
       animation-timing-function: ease-in;
       opacity:0;
