@@ -24,7 +24,7 @@ height: auto;
   height: 18vw;
   background-color: var(--color-base);
   margin-left: auto;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 18%;
   z-index: 999;

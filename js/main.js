@@ -51,11 +51,13 @@ $(".tab a").on("click", function () {
 
 // 範囲外をクリックしたときの挙動
 $(document).on("click", function (e) {
+  if (window.matchMedia("(min-width: 768px)").matches) {//768px以上
   if (!$(e.target).closest(".area").length) {
     $(document).queue($(".tab__wrapper").removeClass("is-active"));
     $(document).delay(600).queue($(".tab li").removeClass("active"));
     $(document).queue($(".area").removeClass("active"));
   }
+}
 });
 
 //
