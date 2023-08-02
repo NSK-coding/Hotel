@@ -413,7 +413,7 @@ class GridAnimation {
     this.fragments = el.children;
     this.row = row;
     this.col = col;
-    this.duration = 2000;
+    this.duration = 1500;
     this.delayDelta = 70;
     this.type = null;
 
