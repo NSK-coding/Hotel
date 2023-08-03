@@ -74,7 +74,7 @@
   .section__title {
     /* font-size: clamp(3.6rem, 2.3vw, 4.4rem); */
     --min-size: 36;
-    --max-size: 44;
+    --max-size: 40;
     /* font-size: var(--clamp-size); */
   }
   .section__subtitle {

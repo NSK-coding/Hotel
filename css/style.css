@@ -552,9 +552,11 @@ transform: translateY(-75%);
 
 
 .story__title {
-  text-align: left;
   margin-top: 8%;
 
+}
+.story__subtitle {
+  /* letter-spacing: 0.05em; */
 }
 .story__image {
   position: relative;
@@ -592,6 +594,9 @@ transform: translateY(-75%);
 .animeStoryTrigger {
   opacity: 0;
 
+}
+.story__content-title {
+  text-align: left;
 }
 .story__inner {
   margin-top: 16%;
@@ -631,6 +636,12 @@ transform: translateY(-75%);
 }
 .story__button:hover {
   color: var(--color-base);
+}
+.cuisine__title--letterspacing {
+  letter-spacing: 0.04em;
+}
+.cuisine__subtitle--letterspacing {
+  letter-spacing: 0.0em;
 }
 .cuisine__wrapper {
   width: 100%;
@@ -789,6 +800,12 @@ opacity: 0.8;
   opacity: 0;
   animation-delay: 0s;
 }
+.special__title--letterspacing {
+  letter-spacing: 0.04em;
+}
+.special__subtitle--letterspacing {
+  letter-spacing: 0.0em;
+}
 .special__image {
   width: 88%;
   margin: 6vw 0 0 auto;
@@ -871,6 +888,12 @@ margin-left: auto;
 
 #fitness {
   position: relative;
+}
+.fitness__title--letterspacing {
+  letter-spacing: 0.07em;
+}
+.fitness__subtitle--letterspacing {
+  letter-spacing: 0.0em;
 }
 .fitness__flex {
   display: flex;
