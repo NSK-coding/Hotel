@@ -24,7 +24,8 @@ body {
   background-color: var(--color-body-bg);
   color: var(--color-body-txt);
   font-size: 1.6rem;
-  font-family: "Yu Mincho", "YuMincho", serif;
+  font-family: 'Noto Serif JP', "Meiryo", serif;
+
 }
 
 /* || SITEWIDE */
