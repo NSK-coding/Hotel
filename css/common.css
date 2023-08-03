@@ -86,7 +86,7 @@ li {
   display: block;
   text-align: center;
   /* font-size: 3.6rem; */
-  --min-size: 24;
+  --min-size: 18;
   --max-size: 32;
   font-size: var(--clamp-size);
   /* font-size: clamp(2.4rem, 5vw, 3.6rem); */
@@ -95,14 +95,14 @@ li {
 .section__subtitle{
   display: block;
   /* font-size: clamp(1.4rem, 3vw, 2.2rem); */
-  --min-size: 14;
+  --min-size: 11;
   --max-size: 22;
   font-size: var(--clamp-size);
 }
 .content__title {
   text-align: left;
   /* font-size: clamp(1.2rem, 3.7vw, 2.8rem); */
-  --min-size: 12;
+  --min-size: 14;
   --max-size: 28;
   font-size: var(--clamp-size);
 }
@@ -392,8 +392,8 @@ pointer-events: none;
 }
 .main-button--gold:hover {
   color: var(--color-base);
-  border-left: 3px solid var(--color-base);
-  border-right: 3px solid var(--color-base);
+  border-left: 2px solid var(--color-base);
+  border-right: 2px solid var(--color-base);
 }
 /*線の設定*/
 .main-button span {
@@ -437,7 +437,7 @@ pointer-events: none;
 
 .borderleft--gold span:before,
 .borderleft--gold span:after {
-  height: 3px;
+  height: 2px;
   background: var(--color-base);
 }
 .borderleft--gold span:before {
@@ -456,7 +456,7 @@ pointer-events: none;
 }
 .borderleft--gold:hover span::before,
 .borderleft--gold:hover span::after {
-  width: calc(100% + 4px);
+  width: calc(100% + 3px);
 
 }
 /*背景の設定*/
