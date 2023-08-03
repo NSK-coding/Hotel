@@ -423,23 +423,31 @@ pointer-events: none;
   background: var(--color-accent);
   transition: all 0.3s;
 }
+/*左上線*/
+.borderleft span::before {
+  left: 0px;
+  top: 0px;
+}
+
+/*左下線*/
+.borderleft span::after {
+  left: 0px;
+  bottom: 0px;
+}
+
 .borderleft--gold span:before,
 .borderleft--gold span:after {
   height: 3px;
   background: var(--color-base);
 }
-/*左上線*/
-.borderleft span::before {
-  left: -1px;
+.borderleft--gold span:before {
+  left: -2px;
   top: -1px;
 }
-
-/*左下線*/
-.borderleft span::after {
-  left: -1px;
+.borderleft--gold span:after {
+  left: -2px;
   bottom: -1px;
 }
-
 /*hoverをすると線が伸びる*/
 .borderleft:hover span::before,
 .borderleft:hover span::after {
@@ -448,7 +456,7 @@ pointer-events: none;
 }
 .borderleft--gold:hover span::before,
 .borderleft--gold:hover span::after {
-  width: 100%;
+  width: calc(100% + 4px);
 
 }
 /*背景の設定*/
