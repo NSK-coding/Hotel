@@ -430,13 +430,13 @@ pointer-events: none;
 }
 /*左上線*/
 .borderleft span::before {
-  left: 0;
+  left: -1px;
   top: -1px;
 }
 
 /*左下線*/
 .borderleft span::after {
-  left: 0;
+  left: -1px;
   bottom: -1px;
 }
 
