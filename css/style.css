@@ -638,7 +638,7 @@ transform: translateY(-75%);
   color: var(--color-base);
 }
 .cuisine__title--letterspacing {
-  letter-spacing: 0.04em;
+  /* letter-spacing: 0.04em; */
 }
 .cuisine__subtitle--letterspacing {
   letter-spacing: 0.0em;
