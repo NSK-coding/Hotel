@@ -24,7 +24,7 @@ height: auto;
   height: 18vw;
   background-color: var(--color-base);
   margin-left: auto;
-  position: fixed;
+  position: absolute;
   top: 0;
   right: 18%;
   z-index: 999;
@@ -562,7 +562,7 @@ transform: translateY(-75%);
   position: relative;
   width: 93%;
   height: auto;
-  margin-top: 7%;
+  margin-top: 5%;
   overflow-x:hidden
 }
 .story__box {
@@ -597,19 +597,21 @@ transform: translateY(-75%);
 }
 .story__content-title {
   text-align: left;
+  line-height: 1.6;
 }
 .story__inner {
-  margin-top: 16%;
-  margin-left: 7%;
+  margin-top: 13.5%;
+  margin-left: 8%;
   
 }
 .story__content {
-  margin-top: 4%;
+  margin-top: 7%;
   width: 100%;
   /* font-size: clamp(1rem, 2.7vw, 2rem); */
   --min-size: 10;
   --max-size: 20;
   font-size: var(--clamp-size);
+  line-height: 1.6;
 }
 .story__title--blur {
   opacity: 0;
@@ -623,7 +625,7 @@ transform: translateY(-75%);
   display: block;
 }
 .story__buttonWrapper {
-  --min-size: 20;
+  --min-size: 33;
   --max-size: 66;
   margin-top: var(--fluid-size);
 }
@@ -769,7 +771,9 @@ opacity: 0.8;
   opacity: 0;
 }
 
-
+/* #special {
+    font-family: 'YuMincho', "Yu Mincho", serif;
+} */
 
 .special__wrapper {
   margin-top: 8vw;
@@ -1171,12 +1175,13 @@ margin-left: auto;
   display: flex;
   justify-content: space-between;
   text-align: right;
-  padding: 4vw 10vw 0 4vw;
+  padding: 4vw 10vw 1vw 4vw;
   margin-top: 9%;
   /* font-size: clamp(1rem, 2.2vw, 1.6rem); */
   --min-size: 10;
   --max-size: 16;
   font-size: var(--clamp-size);
+
 }
 .footer__logo {
   width: 36%;

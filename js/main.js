@@ -67,6 +67,7 @@ var beforePos = 0;
 function ScrollAnime() {
   var elemTop = $("#header").offset().top;
   var elemStory = $("#story").offset().top;
+  var elemFooter = $("#footer").offset().top;
   var scroll = $(window).scrollTop();
   if (scroll == beforePos) {
 
@@ -95,6 +96,14 @@ function ScrollAnime() {
     $(".header-set").removeClass("LeftMove");
     $(".header-set").addClass("RightMove");
   }
+
+  if (window.matchMedia("(max-width: 767.999px)").matches) {
+    if(scroll >= elemFooter){
+      $(".header-set").addClass("hide");
+    } else {
+      $(".header-set").removeClass("hide");
+    }
+  }
   beforePos = scroll;
 }
 
@@ -104,7 +113,7 @@ $(window).scroll(function () {
 
 $(window).on("load", function () {
   ScrollAnime();
-    if (window.matchMedia("(max-width: 767px)").matches) {
+    if (window.matchMedia("(max-width: 767.999px)").matches) {
       GethashID('#stay');
 
     } else {

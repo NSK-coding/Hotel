@@ -24,8 +24,9 @@ body {
   background-color: var(--color-body-bg);
   color: var(--color-body-txt);
   font-size: 1.6rem;
-  font-family: 'Noto Serif JP', "Meiryo", serif;
-
+  /* font-family: 'Noto Serif JP', "Meiryo", serif; */
+  /* font-family: 'YuMincho', "Yu Mincho", serif; */
+  font-family: 'Noto Serif JP', serif;
 }
 
 /* || SITEWIDE */
@@ -369,16 +370,16 @@ pointer-events: none;
 .main-button {
   /* padding: 10px 30px; */
   max-width: 300px;
-  --min-size_w: 80;
+  --min-size_w: 150;
   --max-size_w: 300;
   width: var(--clamp-size_w);
   /* width: clamp(80px, calc(0.5867 * 100vw - 140px), 300px); */
   max-height: 81px;
-  --min-size_h: 25;
+  --min-size_h: 40;
   --max-size_h: 81;
   height: var(--clamp-size_h);
   /* height: clamp(25px, calc(0.149 * 100vw - 31px), 81px); */
-  --min-size: 12;
+  --min-size: 15;
   --max-size: 30;
   font-size: var(--clamp-size);
 }
@@ -400,9 +401,9 @@ pointer-events: none;
   /* position: absolute; */
   display: block;
   z-index: 2;
-  top: 0;
-  left: 18%;
-
+  top: 17%;
+  left: 25%;
+  font-feature-settings: "palt"
   /* padding: 10px 30px 0px 28px; */
   /* width: 398px; */
   /* height: 58px; */
