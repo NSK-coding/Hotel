@@ -416,6 +416,9 @@ $(window).scroll(function () {
 //
 //  GRIDANIMAION
 //
+//  Image grid animation with pure javascript and css by ApTyyyP
+//  https://codepen.io/aptyyyp/pen/bGmyLMj
+//  
 class GridAnimation {
   constructor(el, row = 13, col = 18) {
     this.element = el;
@@ -569,6 +572,7 @@ $("#slider").vegas({
   overlay: false,
   transition: "fade2",
   transitionDuration: 5000,
+  firstTransitionDuration: 6500,
   delay: 5000,
   animationDuration: 20000,
   animation: "random",
@@ -616,3 +620,7 @@ $("#slider").vegas({
   addEventListener('resize', switchViewport, false);
   switchViewport();
 })();
+
+$(window).on('load',function(){
+  $("#blanc").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
+});
