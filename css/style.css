@@ -670,13 +670,6 @@ transform: translateY(-75%);
 /* .cuisine__section-subtitle {
   display: inline;
 } */
-.cuisine__flex {
-  /* display: flex;
-  flex-wrap: wrap; */
-  --min-size: 10;
-  --max-size: 16;
-  font-size: var(--clamp-size);
-}
 
 .cuisine__grid {
   display: grid;
@@ -685,38 +678,38 @@ transform: translateY(-75%);
   gap: 2vw 2vw;
   margin: 2% auto;
   max-width: 87vw;
-
+  --min-size: 10;
+  --max-size: 16;
+  font-size: var(--clamp-size);
   /* justify-content: space-between; */
   transition: .35s linear;
   overflow-x:hidden
 }
-.cuisine__grid:has(.cuisine__img--ad:hover) {
+.cuisine__grid:has(.cuisine__visual--ad:active) {
   grid-template-columns: 64vw 22vw;
   grid-template-rows: 48vw 24vw 24vw;
 }
-.cuisine__grid:has(.cuisine__img--br:hover) {
+.cuisine__grid:has(.cuisine__visual--br:active) {
   grid-template-columns: 64vw 22vw;
   grid-template-rows: 24vw 48vw 24vw;
 }
-.cuisine__grid:has(.cuisine__img--tp:hover) {
+.cuisine__grid:has(.cuisine__visual--tp:active) {
   grid-template-columns: 64vw 22vw;
   grid-template-rows: 24vw 24vw 48vw;
 }
-.cuisine__grid:has(.cuisine__img--lb:hover) {
+.cuisine__grid:has(.cuisine__visual--lb:active) {
   grid-template-columns: 22vw 64vw;
   grid-template-rows: 48vw 24vw 24vw;
 }
-.cuisine__grid:has(.cuisine__img--ch:hover) {
+.cuisine__grid:has(.cuisine__visual--ch:active) {
   grid-template-columns: 22vw 64vw;
   grid-template-rows: 24vw 48vw 24vw;
 }
-.cuisine__grid:has(.cuisine__img--jp:hover) {
+.cuisine__grid:has(.cuisine__visual--jp:active) {
   grid-template-columns: 22vw 64vw;
   grid-template-rows: 24vw 24vw 48vw;
 }
-.cuisine__img--ad {
-  position: relative;
-}
+
 /* .cuisine__img--ad::before  {
   content: "10階　オールデイダイニング";
   position: absolute;
@@ -758,19 +751,39 @@ transform: translateY(-75%);
   bottom: auto;
   top: 6%;
 }
-.cuisine__img {
+.cuisine__visual {
 /* width: 28vw; */
-  width: 100%;
+  /* width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain; */
+  background-size: cover;
   cursor: pointer;
   /* filter: grayscale(80%); */
-
+transition: filter 0.5s;
 }
-.cuisine__img:hover {
+.cuisine__visual:hover {
   /* filter: grayscale(0); */
-opacity: 0.8;
+filter: opacity(0.8);
 }
+.cuisine__visual--ad {
+  background-image: url('../img/dining_sp.webp');
+}
+.cuisine__visual--lb {
+  background-image: url('../img/lounge_sp.webp');
+}
+.cuisine__visual--br {
+  background-image: url('../img/bar_sp.webp');
+}
+.cuisine__visual--ch {
+  background-image: url('../img/chinese_food_sp.webp');
+}
+.cuisine__visual--tp {
+  background-image: url('../img/teppan_sp.webp');
+}
+.cuisine__visual--jp {
+  background-image: url('../img/Japanese_food_sp.webp');
+}
+
 .cuisine__visual:hover > .cuisine__banner {
   animation: fadeLeftAnime 0.6s ease-in;
   animation-fill-mode:forwards;
