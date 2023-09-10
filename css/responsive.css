@@ -410,7 +410,7 @@ right: 0;
   }
 
 
-  .cuisine__flex {
+  .cuisine__grid {
 
     --min-size: 22;
     --max-size: 24;
@@ -420,16 +420,6 @@ right: 0;
     bottom: 0.5vw;
     height: 3em;
     line-height: 3em;
-  }
-  .cuisine__restaurant {
-    position: absolute;
-    left: 0;
-    bottom: 3%;
-    min-width: 80%;
-    height: 8rem;
-    text-align: center;
-    line-height: 8rem;
-    padding: 0 0.5em;
   }
 
   .cuisine__wrapper {
@@ -443,41 +433,50 @@ right: 0;
   margin: 3.5% auto;
   max-width: 91vw;
   }
-  .cuisine__img {
-    /* width: 28vw; */
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      cursor: pointer;
-      /* filter: grayscale(80%); */
-    
-    }
-    .cuisine__grid:has(.cuisine__img--ad:hover) {
+
+    .cuisine__grid:has(.cuisine__visual--ad:active) {
       grid-template-columns: 39vw 24vw 24vw;
       grid-template-rows: 33vw 11vw;
     }
-    .cuisine__grid:has(.cuisine__img--br:hover) {
+    .cuisine__grid:has(.cuisine__visual--br:active) {
       grid-template-columns: 24vw 24vw 39vw;
       grid-template-rows: 33vw 11vw;
     }
-    .cuisine__grid:has(.cuisine__img--tp:hover) {
+    .cuisine__grid:has(.cuisine__visual--tp:active) {
       grid-template-columns: 24vw 39vw 24vw;
       grid-template-rows: 11vw 33vw;
     }
-    .cuisine__grid:has(.cuisine__img--lb:hover) {
+    .cuisine__grid:has(.cuisine__visual--lb:active) {
       grid-template-columns: 24vw 39vw 24vw;
       grid-template-rows: 33vw 11vw;
     }
-    .cuisine__grid:has(.cuisine__img--ch:hover) {
+    .cuisine__grid:has(.cuisine__visual--ch:active) {
       grid-template-columns: 39vw 24vw 24vw;
       grid-template-rows: 11vw 33vw;
     }
-    .cuisine__grid:has(.cuisine__img--jp:hover) {
+    .cuisine__grid:has(.cuisine__visual--jp:active) {
       grid-template-columns: 24vw 24vw 39vw;
       grid-template-rows: 11vw 33vw;
     }
 
-
+    .cuisine__visual--ad {
+      background-image: url('../img/dining.webp');
+    }
+    .cuisine__visual--lb {
+      background-image: url('../img/lounge.webp');
+    }
+    .cuisine__visual--br {
+      background-image: url('../img/bar.webp');
+    }
+    .cuisine__visual--ch {
+      background-image: url('../img/chinese_food_11zon.webp');
+    }
+    .cuisine__visual--tp {
+      background-image: url('../img/teppan.webp');
+    }
+    .cuisine__visual--jp {
+      background-image: url('../img/Japanese_food.webp');
+    }
 
 
   .special__wrapper {
