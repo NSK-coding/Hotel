@@ -539,7 +539,7 @@ transform: translateY(-75%);
 }
 
 .topics__card {
-  width: 56.8%;
+  width: 61.8%;
   min-height: 50vh;
   margin-right: 8vw;
   background-color: white;
@@ -657,7 +657,7 @@ transform: translateY(-75%);
 }
 .cuisine__wrapper {
   width: 100%;
-  margin-top: 9%;
+  margin-top: 8%;
 }
 /* .cuisine__title {
   display: inline;
@@ -676,11 +676,9 @@ transform: translateY(-75%);
   grid-template-columns: 43vw 43vw;
   grid-template-rows: 32vw 32vw 32vw;
   gap: 2vw 2vw;
-  margin: 2% auto;
+  margin: 4% auto;
   max-width: 87vw;
-  --min-size: 10;
-  --max-size: 16;
-  font-size: var(--clamp-size);
+
   /* justify-content: space-between; */
   transition: .35s linear;
   overflow-x:hidden
@@ -738,10 +736,13 @@ transform: translateY(-75%);
   bottom: 3%;
   background-color: rgba(255, 255, 255, 0.65);
   min-width: 82%;
-  height: 5rem;
+  height: 2.5em;
+  --min-size: 10;
+  --max-size: 16;
+  font-size: var(--clamp-size);
   text-align: center;
-  line-height: 5rem;
-  padding: 0 0.3em;
+  line-height: 2.5em;
+  padding: 0 0.5em;
   opacity: 0;
   animation-delay: 1s;
 }
@@ -879,7 +880,7 @@ right: 0;
   animation-delay: 2.5s;
 }
 .special__content {
-  margin-top: 9%;
+  margin-top: 11%;
   --min-size: 10;
   --max-size: 20;
   font-size: var(--clamp-size);
@@ -892,7 +893,7 @@ right: 0;
   animation-delay: 2.8s;
 }
 .special__button {
-  --min-size_mt: 40;
+  --min-size_mt: 61;
   --max-size_mt: 124;
   margin-top: var(--clamp-size_mt);
 margin-right: 1%;
@@ -943,7 +944,7 @@ margin-left: auto;
 }
 .fitness__gym {
   width: 100%;
-  margin-top: 6%;
+  margin-top: 7%;
 }
 .fitness__container--rightUp {
   opacity: 0;
@@ -961,7 +962,7 @@ margin-left: auto;
   justify-content: center;
   gap: 0 2%;
   position: absolute;
-  --min-size_mt: 473;
+  --min-size_mt: 478;
   --max-size_mt: 955;
   top: var(--fluid-size_mt);
 }
@@ -970,7 +971,7 @@ margin-left: auto;
   box-shadow: -4px -4px 4px 0px rgba(255, 255, 255, 0.7);
 }
 .fitness__button {
-  margin: 6% auto 0;
+  margin: 7% auto 0;
   color: black;
   border: 1px solid black;
 }
@@ -999,9 +1000,12 @@ margin-left: auto;
   top: 0;
   left: 7%;
   background-color: var(--color-content-bg);
-  padding: 3% 2%;
+  padding: 3% 2% 3%;
   color: white;
   box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.wedding__section-title {
+  line-height: 1.5;
 }
 .wedding__image {
   opacity: 0;
@@ -1030,7 +1034,7 @@ margin-left: auto;
   animation-delay: 2s;
 }
 .event__wrapper {
-  margin-top: 10vw;
+  margin-top: 8vw;
   width: 100%;
   background-image: url(../img/event_bg_sp.webp);
   background-position: top right;
@@ -1052,7 +1056,7 @@ margin-left: auto;
   top: 0;
   left: 31%;
     /* padding-topは320pxのために少しずらす */
-  padding-top: 7%;
+  padding-top: 7.5%;
 }
 .event__title--blur {
   opacity: 0;
@@ -1099,13 +1103,15 @@ margin-left: auto;
 .event__content-title {
   margin-top: 18%;
   text-align: left;
+  line-height: 1.6;
 }
 .event__content-title--blur {
   opacity: 0;
   animation-delay: 2.5s;
 }
 .event__content {
-  margin-top: 9%;
+  margin-top: 11%;
+  line-height: 1.6;
   /* font-size: clamp(1rem, 2.7vw, 2rem); */
   --min-size: 10;
   --max-size: 20;
@@ -1116,7 +1122,7 @@ margin-left: auto;
   animation-delay: 2.8s;
 }
 .event__button {
-  --min-size_mt: 40;
+  --min-size_mt: 58;
   --max-size_mt: 124;
   margin-top: var(--clamp-size_mt);
   margin-left: 1%;
