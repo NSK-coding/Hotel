@@ -67,7 +67,7 @@
   } 
 }
 @media screen and (max-width: 767.999px) {
-  /* .tab__wrapper {
+  .tab__wrapper {
     margin-top: 15%;
     position: static;
     transition: none;
@@ -82,7 +82,7 @@
   .main-start.DownMove{
     pointer-events: all;
     animation: none;
-  } */
+  }
 /* .area {
   padding-bottom: 13vw;
 }
