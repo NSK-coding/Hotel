@@ -287,7 +287,7 @@ z-index: 999;
   left: 0;
   --min-size_h: -20;
   --max-size_h: 16;
-  top: calc(100vh - 4.3em - var(--fluid-size_h));
+  top: calc(100svh - 4.3em - var(--fluid-size_h));
 
 }
 /* .tab__wrapper.AsFooter{
@@ -305,13 +305,13 @@ z-index: 999;
     opacity: 0;
     --min-size_h: -20;
     --max-size_h: 16;
-    top: calc(100vh - 4.3em - var(--fluid-size_h) - 100px);
+    top: calc(100svh - 4.3em - var(--fluid-size_h) - 100px);
   }
   to {
     opacity: 1;
     --min-size_h: -20;
     --max-size_h: 16;
-    top: calc(100vh - 4.3em - var(--fluid-size_h));
+    top: calc(100svh - 4.3em - var(--fluid-size_h));
   }
 }
 
@@ -326,13 +326,13 @@ z-index: 999;
   	opacity: 1;
     --min-size_h: -20;
     --max-size_h: 16;
-    top: calc(100vh - 4.3em - var(--fluid-size_h));
+    top: calc(100svh - 4.3em - var(--fluid-size_h));
   }
   to {
   	opacity: 0;
     --min-size_h: -20;
     --max-size_h: 16;
-    top: calc(100vh - 4.3em - var(--fluid-size_h) + 100px);
+    top: calc(100svh - 4.3em - var(--fluid-size_h) + 100px);
   }
 }
 
@@ -683,27 +683,27 @@ transform: translateY(-75%);
   transition: .35s linear;
   overflow-x:hidden
 }
-.cuisine__grid:has(.cuisine__visual--ad:active) {
+.cuisine__grid:has(.cuisine__visual--ad:hover) {
   grid-template-columns: 64vw 22vw;
   grid-template-rows: 48vw 24vw 24vw;
 }
-.cuisine__grid:has(.cuisine__visual--br:active) {
+.cuisine__grid:has(.cuisine__visual--br:hover) {
   grid-template-columns: 64vw 22vw;
   grid-template-rows: 24vw 48vw 24vw;
 }
-.cuisine__grid:has(.cuisine__visual--tp:active) {
+.cuisine__grid:has(.cuisine__visual--tp:hover) {
   grid-template-columns: 64vw 22vw;
   grid-template-rows: 24vw 24vw 48vw;
 }
-.cuisine__grid:has(.cuisine__visual--lb:active) {
+.cuisine__grid:has(.cuisine__visual--lb:hover) {
   grid-template-columns: 22vw 64vw;
   grid-template-rows: 48vw 24vw 24vw;
 }
-.cuisine__grid:has(.cuisine__visual--ch:active) {
+.cuisine__grid:has(.cuisine__visual--ch:hover) {
   grid-template-columns: 22vw 64vw;
   grid-template-rows: 24vw 48vw 24vw;
 }
-.cuisine__grid:has(.cuisine__visual--jp:active) {
+.cuisine__grid:has(.cuisine__visual--jp:hover) {
   grid-template-columns: 22vw 64vw;
   grid-template-rows: 24vw 24vw 48vw;
 }

@@ -466,27 +466,27 @@ right: 0;
   max-width: 91vw;
   }
 
-    .cuisine__grid:has(.cuisine__visual--ad:active) {
+    .cuisine__grid:has(.cuisine__visual--ad:hover) {
       grid-template-columns: 39vw 24vw 24vw;
       grid-template-rows: 33vw 11vw;
     }
-    .cuisine__grid:has(.cuisine__visual--br:active) {
+    .cuisine__grid:has(.cuisine__visual--br:hover) {
       grid-template-columns: 24vw 24vw 39vw;
       grid-template-rows: 33vw 11vw;
     }
-    .cuisine__grid:has(.cuisine__visual--tp:active) {
+    .cuisine__grid:has(.cuisine__visual--tp:hover) {
       grid-template-columns: 24vw 39vw 24vw;
       grid-template-rows: 11vw 33vw;
     }
-    .cuisine__grid:has(.cuisine__visual--lb:active) {
+    .cuisine__grid:has(.cuisine__visual--lb:hover) {
       grid-template-columns: 24vw 39vw 24vw;
       grid-template-rows: 33vw 11vw;
     }
-    .cuisine__grid:has(.cuisine__visual--ch:active) {
+    .cuisine__grid:has(.cuisine__visual--ch:hover) {
       grid-template-columns: 39vw 24vw 24vw;
       grid-template-rows: 11vw 33vw;
     }
-    .cuisine__grid:has(.cuisine__visual--jp:active) {
+    .cuisine__grid:has(.cuisine__visual--jp:hover) {
       grid-template-columns: 24vw 24vw 39vw;
       grid-template-rows: 11vw 33vw;
     }
