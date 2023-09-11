@@ -1,3 +1,35 @@
+@media screen and (max-width: 374.9px) {
+  .footer__caption {
+    width: 90%;
+  }
+  .content__title {
+    font-size: 12px;
+  }
+  .story__buttonWrapper {
+    --min-size: 20;
+    --max-size: 33;
+    --min-viewport: 320;
+    --max-viewport: 375;
+    margin-top: var(--fluid-size);
+  }
+  .special__button {
+    /* --min-size_mt: 20;
+    --max-size_mt: 61;
+    --min-viewport: 320;
+    --max-viewport: 375;
+    margin-top: var(--fluid-size_mt); */
+    margin-top: 30px;
+  }
+  .event__button {
+    /* --min-size_mt: 30;
+    --max-size_mt: 58;
+    --min-viewport: 320;
+    --max-viewport: 375;
+    margin-top: var(--fluid-size_mt); */
+    margin-top: 45px;
+  }
+
+}
 @media screen and (max-width: 575px) {
   .tab__page::before{
     display: none;
@@ -1234,7 +1266,7 @@ margin-left: 4vw;
   .fitness__gallery {
     gap: 0 10px;
   left: 13%;
-  --min-size_mt: 586;
+  --min-size_mt: 617;
   --max-size_mt: 749;
   --min-viewport: 1920;
   --max-viewport: 2560;
