@@ -52,7 +52,7 @@ $(".tab a").on("click", function () {
 
 // 範囲外をクリックしたときの挙動
 $(document).on("click", function (e) {
-  if (window.matchMedia("(min-width: 768px)").matches) {//768px以上
+  if (window.matchMedia("(min-width: 1400px)").matches) {//768px以上
   if (!$(e.target).closest(".area").length) {
     $(document).queue($(".tab__wrapper").removeClass("is-active"));
     $(document).delay(600).queue($(".tab li").removeClass("active"));
@@ -98,7 +98,7 @@ function ScrollAnime() {
     $(".header-set").addClass("RightMove");
   }
 
-  if (window.matchMedia("(max-width: 767.999px)").matches) {
+  if (window.matchMedia("(max-width: 1400px)").matches) {
     if(scroll >= elemFooter){
       $(".header-set").addClass("hide");
     } else {
@@ -114,7 +114,7 @@ $(window).scroll(function () {
 
 $(window).on("load", function () {
   ScrollAnime();
-    if (window.matchMedia("(max-width: 767.999px)").matches) {
+    if (window.matchMedia("(max-width: 1400px)").matches) {
       GethashID('#stay');
 
     } else {
@@ -623,5 +623,5 @@ $("#slider").vegas({
 })();
 
 $(window).on('load',function(){
-  $("#blanc").delay(1500).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
+  $("#blanc").delay(1000).fadeOut('slow');//ローディング画面を1.5秒（1500ms）待機してからフェードアウト
 });
