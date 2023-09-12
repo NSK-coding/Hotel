@@ -436,13 +436,13 @@ right: 0;
 
   .cuisine__wrapper {
     width: 100%;
-    margin-top: 9%;
+    margin-top: 6%;
   }
   .cuisine__grid {
   grid-template-columns: 29vw 29vw 29vw;
   grid-template-rows: 22vw 22vw;
   gap: 1vw 1vw;
-  margin: 3.5% auto;
+  margin: 2.2% auto;
   max-width: 91vw;
   }
 
